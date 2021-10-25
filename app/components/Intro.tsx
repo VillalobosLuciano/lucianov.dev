@@ -14,13 +14,13 @@ function urlFor(source) {
 export default function Intro({ about }) {
   return (
     <>
-      <div className="mx-auto mt-6 md:mt-20 md:mb-6 lg:px-4">
+      <div className="hidden mx-auto mt-6 sm:block md:mt-20 md:mb-6 lg:px-4">
         <div className="lg:grid lg:grid-cols-12">
           <div className="relative z-10 pb-2 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-4">
             <div className="px-8 mx-auto rounded-full lg:p-4">
-              <div className="border border-yellow-900 rounded-full aspect-w-2 aspect-h-2 sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1">
+              <div className="border border-yellow-900 border-opacity-50 rounded-full shadow-medium aspect-w-1 aspect-h-1">
                 <Image
-                  className="object-cover object-center rounded-full shadow-medium grayscale"
+                  className="object-cover object-center rounded-full grayscale"
                   src={urlFor(about.image).url()}
                   alt={about.name}
                   layout="fill"
@@ -29,7 +29,7 @@ export default function Intro({ about }) {
             </div>
           </div>
 
-          <div className="relative bg-yellow-900 border border-yellow-900 bg-opacity-10 lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-10 lg:items-center">
+          <div className="relative bg-yellow-900 border border-yellow-900 border-opacity-50 shadow-medium bg-opacity-10 lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-10 lg:items-center">
             <div className="relative max-w-md px-4 py-8 mx-auto space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 lg:max-w-none lg:py-6 lg:px-6 lg:col-start-3 lg:col-span-8">
               <h2
                 className="text-3xl font-extrabold text-white"
@@ -50,7 +50,7 @@ export default function Intro({ about }) {
                         "I'm Luciano. Here I share my journey exploring web development,"
                       )
                       .typeString(
-                        '<strong> specially the <span style="color: #D69E2E;">React</span> ecosystem.</strong>'
+                        '<strong> specially the <span style="color: #f59e0b;">React</span> ecosystem.</strong>'
                       )
                       .pauseFor(1000)
                       .start();
@@ -80,6 +80,26 @@ export default function Intro({ about }) {
               </motion.div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* mobile version */}
+
+      <div className="flex flex-col px-4 pt-12 sm:hidden">
+        <div className="relative w-40 h-40">
+          <Image
+            className="absolute rounded-full grayscale"
+            src={urlFor(about.image).url()}
+            alt={about.name}
+            layout="fill"
+          />
+        </div>
+
+        <h3 className="pt-6 pb-2 text-3xl font-bold leading-8 tracking-tight text-gray-800 dark:text-gray-100">
+          {about.name}
+        </h3>
+        <div className="text-gray-500 dark:text-gray-400">
+          <PortableText blocks={about.bio} />
         </div>
       </div>
     </>

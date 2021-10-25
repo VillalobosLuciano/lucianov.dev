@@ -36,7 +36,7 @@ module.exports = {
       },
       boxShadow: {
         small: "0 5px 10px rgba(0, 0, 0, 0.12)",
-        medium: "0 8px 30px rgba(214, 158, 46, 0.12)",
+        medium: "0 8px 30px rgba(245, 158, 11, 0.12)",
       },
       typography: (theme) => ({
         DEFAULT: {

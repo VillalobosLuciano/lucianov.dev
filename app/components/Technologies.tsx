@@ -12,20 +12,29 @@ function urlFor(source) {
 export default function Technologies({ technologies }) {
   return (
     <>
-      <div className="px-4 py-12 mx-auto text-center lg:pt-16">
-        <p className="text-base font-semibold tracking-wider text-yellow-500 uppercase">
-          Lucky to enjoy the benefits of modern open-source technologies
-        </p>
-        <p className="mt-6 text-gray-300 lg:px-6">
-          To achieve flexibility, speed and readability in the development, I
-          use the following stack which, in my opinion, fully meets these
-          requirements.
-        </p>
+      <div className="px-4 pt-12 mx-auto lg:text-center lg:pt-16 lg:pb-14">
+        <div className="hidden sm:block">
+          <p className="text-base font-semibold tracking-wider text-yellow-500 uppercase">
+            Immersed in modern open source technologies
+          </p>
+          <p className="mt-2 text-gray-300 lg:mt-6 lg:px-10">
+            To achieve flexibility, speed and readability in development, I use
+            the following stack which, in my opinion, fully meets these
+            requirements.
+          </p>
+        </div>
+        <div className="sm:hidden">
+          <h2 className="text-3xl font-extrabold text-gray-100">Tech Stack</h2>
+          <p className="mt-2 text-gray-500 dark:text-gray-400">
+            To achieve flexibility, speed and readability in development.
+          </p>
+        </div>
 
-        <div className="px-4 mx-auto pt-14 max-w-7xl sm:px-6 lg:px-8 xl:px-16">
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-6">
+        <div className="pt-10 mx-auto sm:pt-14 max-w-7xl sm:px-6 lg:px-8 xl:px-16">
+          <div className="grid grid-cols-3 gap-4 md:grid-cols-6">
             {technologies.map((tech, i) => (
               <motion.div
+                className="py-3 bg-yellow-900 border border-yellow-900 border-opacity-60 bg-opacity-10 rounded-2xl"
                 key={tech._id}
                 initial={{
                   opacity: 0,
@@ -43,7 +52,9 @@ export default function Technologies({ technologies }) {
                     layout="fill"
                   />
                 </div>
-                <p className="pt-1 text-sm text-gray-300">{tech.name}</p>
+                <p className="pt-1 text-xs text-center text-gray-300">
+                  {tech.name}
+                </p>
               </motion.div>
             ))}
           </div>

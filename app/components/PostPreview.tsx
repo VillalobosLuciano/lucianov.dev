@@ -14,7 +14,7 @@ export default function PostPreview({ title, date, excerpt, slug }) {
       <div className="mt-1">
         <h3 className="text-xl font-semibold text-yellow-500 transition-colors duration-300 group-hover:text-yellow-600">
           <Link href={`/blog/${slug}`}>
-            <a className="hover:underline">{title}</a>
+            <a>{title}</a>
           </Link>
         </h3>
         <div className="pt-3 text-gray-400 line-clamp-4">
