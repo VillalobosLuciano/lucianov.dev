@@ -16,7 +16,7 @@ export default function Projects({ projects }) {
 
   return (
     <section>
-      <p className="px-4 pb-4 mt-2 text-gray-500 dark:text-gray-400 lg:pb-12">
+      <p className="px-4 pb-4 mt-2 leading-snug tracking-wide text-justify text-gray-500 dark:text-gray-400 lg:pb-12">
         Real projects that I developed for learning, for friends, for free, for
         fun.
       </p>
