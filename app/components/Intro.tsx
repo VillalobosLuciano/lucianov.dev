@@ -29,7 +29,7 @@ export default function Intro({ about }) {
             </div>
           </div>
 
-          <div className="relative bg-yellow-900 border border-yellow-900 border-opacity-50 shadow-medium bg-opacity-10 lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-10 lg:items-center">
+          <div className="relative bg-yellow-900 border border-yellow-900 border-opacity-50 shadow-medium bg-opacity-5 lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-10 lg:items-center">
             <div className="relative max-w-md px-4 py-8 mx-auto space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 lg:max-w-none lg:py-6 lg:px-6 lg:col-start-3 lg:col-span-8">
               <h2
                 className="text-3xl font-extrabold text-white"
@@ -93,13 +93,13 @@ export default function Intro({ about }) {
             alt={about.name}
             layout="fill"
           />
-          <div className="absolute inset-0 bg-yellow-500 bg-opacity-10 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-accentLight dark:bg-yellow-500 dark:bg-opacity-10 bg-opacity-20 mix-blend-multiply rounded-2xl" />
         </div>
 
-        <h3 className="pt-6 pb-2 pr-16 text-3xl font-extrabold leading-8 tracking-tight text-gray-800 dark:text-gray-100">
+        <h3 className="pt-6 pb-2 pr-16 text-3xl font-extrabold leading-8 tracking-tight text-accentLight dark:text-gray-100">
           {about.name}
         </h3>
-        <div className="leading-snug tracking-wide text-gray-500 dark:text-gray-400">
+        <div className="leading-snug tracking-wide text-primaryLight dark:text-gray-400">
           <PortableText blocks={about.bio} />
         </div>
       </div>

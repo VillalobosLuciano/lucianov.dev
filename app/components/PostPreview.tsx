@@ -12,7 +12,7 @@ export default function PostPreview({ title, date, excerpt, slug }) {
     >
       <Date dateString={date} />
       <div className="mt-1">
-        <h3 className="text-xl font-semibold text-yellow-500 transition-colors duration-300 group-hover:text-yellow-600">
+        <h3 className="text-xl font-semibold transition-colors duration-300 text-accentLight dark:text-yellow-500 dark:group-hover:text-yellow-600">
           <Link href={`/blog/${slug}`}>
             <a>{title}</a>
           </Link>

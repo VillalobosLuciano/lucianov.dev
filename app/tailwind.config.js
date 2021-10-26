@@ -16,8 +16,10 @@ module.exports = {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: colors.teal,
-        gray: colors.trueGray,
+        bgLight: "#FEFBF3",
+        bgAccentLight: "#F8F0DF",
+        primaryLight: "#9D9D9D",
+        accentLight: "#79B4B7",
       },
       spacing: {
         28: "7rem",
