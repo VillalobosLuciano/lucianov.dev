@@ -5,7 +5,7 @@ export default function LatestPosts({ posts }) {
   return (
     <section>
       <p className="px-4 pb-6 mt-2 text-gray-500 dark:text-gray-400 lg:pb-12">
-        Checkpoints in my learning process.
+        A place to share, also checkpoints in my learning process.
       </p>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {posts.map((post) => (

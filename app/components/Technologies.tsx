@@ -24,9 +24,12 @@ export default function Technologies({ technologies }) {
           </p>
         </div>
         <div className="sm:hidden">
-          <h2 className="text-3xl font-extrabold text-gray-100">Tech Stack</h2>
+          <h2 className="text-3xl font-extrabold tracking-tight text-gray-100">
+            Tech Stack
+          </h2>
           <p className="mt-2 text-gray-500 dark:text-gray-400">
-            To achieve flexibility, speed and readability in development.
+            My toolkit to achieve flexibility, speed and readability in
+            development.
           </p>
         </div>
 

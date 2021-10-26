@@ -14,17 +14,16 @@ export default function Nav() {
   const routesAsArr = Object.keys(routes).map((r) => routes[r]);
   const remainingRoutes = defaultRoutes.filter((r) => r.path !== currPathName);
 
-  const mobileTitle =
-    currPathName === "/"
-      ? "Home"
-      : routesAsArr
-          .filter((r) => r.path !== "/")
-          .find((r) => currPathName.includes(r.path))?.label;
+  currPathName === "/"
+    ? "Home"
+    : routesAsArr
+        .filter((r) => r.path !== "/")
+        .find((r) => currPathName.includes(r.path))?.label;
 
   return (
     <div className="max-w-4xl px-4 py-4 mx-auto border-b border-gray-200 lg:pt-8 lg:pb-6 dark:border-gray-700">
       {/* Mobile nav */}
-      <div className="fixed inset-x-0 top-0 z-50 grid grid-cols-1 py-1 bg-white border-b border-gray-200 dark:border-gray-700 bg-opacity-80 dark:bg-opacity-80 backdrop-filter backdrop-blur-sm dark:bg-gray-900 md:hidden">
+      <div className="fixed inset-x-0 top-0 z-50 grid grid-cols-1 px-4 py-1 bg-white border-b border-gray-200 dark:border-gray-700 bg-opacity-80 dark:bg-opacity-80 backdrop-filter backdrop-blur-sm dark:bg-gray-900 md:hidden">
         <div className="flex justify-between pr-2">
           <div className="inline-flex items-center mx-4 text-base font-medium tracking-wider md:mx-0">
             <span
@@ -33,9 +32,6 @@ export default function Nav() {
             >
               LV
             </span>
-            <p className="ml-2 font-sans text-sm font-semibold">
-              {mobileTitle}
-            </p>
           </div>
           <div>
             <ThemeSwitch />
@@ -57,7 +53,7 @@ export default function Nav() {
           </div>
         </div>
         {isExpanded && (
-          <div className="w-full h-px mt-2 bg-gray-900 bg-opacity-10" />
+          <div className="w-full mt-2 bg-gray-900 bg-opacity-10" />
         )}
         {isExpanded &&
           remainingRoutes.map((route) => {

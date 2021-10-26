@@ -14,7 +14,7 @@ function urlFor(source) {
 export default function Intro({ about }) {
   return (
     <>
-      <div className="hidden mx-auto mt-6 sm:block md:mt-20 md:mb-6 lg:px-4">
+      <div className="hidden mx-auto mt-6 lg:block md:mt-20 md:mb-6 lg:px-4">
         <div className="lg:grid lg:grid-cols-12">
           <div className="relative z-10 pb-2 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-4">
             <div className="px-8 mx-auto rounded-full lg:p-4">
@@ -85,20 +85,21 @@ export default function Intro({ about }) {
 
       {/* mobile version */}
 
-      <div className="flex flex-col px-4 pt-12 sm:hidden">
-        <div className="relative w-40 h-40">
+      <div className="flex flex-col px-4 pt-12 lg:hidden">
+        <div className="relative w-28 h-28">
           <Image
-            className="absolute rounded-full grayscale"
+            className="absolute rounded-2xl grayscale"
             src={urlFor(about.image).url()}
             alt={about.name}
             layout="fill"
           />
+          <div className="absolute inset-0 bg-yellow-500 bg-opacity-10 mix-blend-multiply" />
         </div>
 
-        <h3 className="pt-6 pb-2 text-3xl font-bold leading-8 tracking-tight text-gray-800 dark:text-gray-100">
+        <h3 className="pt-6 pb-2 pr-16 text-3xl font-extrabold leading-8 tracking-tight text-gray-800 dark:text-gray-100">
           {about.name}
         </h3>
-        <div className="text-gray-500 dark:text-gray-400">
+        <div className="text-gray-500 dark:text-gray-300">
           <PortableText blocks={about.bio} />
         </div>
       </div>
