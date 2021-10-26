@@ -85,8 +85,8 @@ export default function Intro({ about }) {
 
       {/* mobile version */}
 
-      <div className="flex flex-col px-4 pt-12 lg:hidden">
-        <div className="relative w-28 h-28">
+      <div className="flex flex-col px-4 pt-14 lg:hidden">
+        <div className="relative mb-6 w-28 h-28">
           <Image
             className="absolute rounded-2xl grayscale"
             src={urlFor(about.image).url()}
@@ -96,10 +96,11 @@ export default function Intro({ about }) {
           <div className="absolute inset-0 bg-accentLight dark:bg-yellow-500 dark:bg-opacity-10 bg-opacity-20 mix-blend-multiply rounded-2xl" />
         </div>
 
-        <h3 className="pt-6 pb-2 pr-16 text-3xl font-extrabold leading-8 tracking-tight text-accentLight dark:text-gray-100">
+        <h3 className="text-3xl font-extrabold leading-tight tracking-tight text-accentLight dark:text-gray-100">
           {about.name}
         </h3>
-        <div className="leading-snug tracking-wide text-primaryLight dark:text-gray-400">
+
+        <div className="pt-2 leading-snug tracking-wide text-primaryLight dark:text-gray-400">
           <PortableText blocks={about.bio} />
         </div>
       </div>

@@ -21,9 +21,9 @@ export default function Nav() {
         .find((r) => currPathName.includes(r.path))?.label;
 
   return (
-    <div className="max-w-4xl px-4 py-4 mx-auto border-b border-bgAccentLight lg:pt-8 lg:pb-6 dark:border-gray-700">
+    <div className="max-w-4xl px-4 py-4 mx-auto border-b border-bgAccentLight lg:pt-8 lg:pb-6 dark:border-yellow-900 dark:border-opacity-50">
       {/* Mobile nav */}
-      <div className="fixed inset-x-0 top-0 z-50 grid grid-cols-1 px-4 py-1.5 border-b border-gray-200 bg-bgAccentLight dark:border-gray-700 bg-opacity-90 dark:bg-opacity-90 backdrop-filter backdrop-blur-lg dark:bg-gray-900 md:hidden">
+      <div className="fixed inset-x-0 top-0 z-50 grid grid-cols-1 px-4 py-1.5 border-b border-gray-200 bg-bgAccentLight dark:border-yellow-900 dark:border-opacity-50 bg-opacity-90 dark:bg-opacity-90 backdrop-filter backdrop-blur-lg dark:bg-bgDark md:hidden">
         <div className="flex justify-between pr-2">
           <div className="inline-flex items-center mx-4 text-base font-medium tracking-wider md:mx-0">
             <span

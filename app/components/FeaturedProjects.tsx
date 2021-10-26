@@ -61,7 +61,7 @@ export default function Projects({ projects }) {
                     href=""
                     target="_blank"
                     rel="noreferrer"
-                    className="p-2 border rounded-full border-opacity-80 dark:bg-opacity-20 dark:border-opacity-80 bg-accentLight bg-opacity-10 border-accentLight dark:bg-yellow-700 dark:border-yellow-500 hover:bg-opacity-10 hover:shadow-medium dark:hover:bg-yellow-600 dark:hover:text-gray-200"
+                    className="p-2 border rounded-lg mb-1.5 border-opacity-80 dark:bg-opacity-20 dark:border-opacity-80 bg-accentLight bg-opacity-10 border-accentLight dark:bg-yellow-700 dark:border-yellow-500 hover:bg-opacity-10 hover:shadow-medium dark:hover:bg-yellow-600 dark:hover:text-gray-200"
                   >
                     <FaExternalLinkAlt />
                   </a>
@@ -69,7 +69,7 @@ export default function Projects({ projects }) {
                     href="https://github.com/VillalobosLuciano"
                     target="_blank"
                     rel="noreferrer"
-                    className="p-2 border rounded-full border-opacity-80 dark:bg-opacity-20 dark:border-opacity-80 bg-accentLight bg-opacity-10 border-accentLight dark:bg-yellow-700 dark:border-yellow-500 hover:bg-opacity-10 hover:shadow-medium dark:hover:bg-yellow-600 dark:hover:text-gray-200"
+                    className="p-2 border rounded-lg mb-1.5 border-opacity-80 dark:bg-opacity-20 dark:border-opacity-80 bg-accentLight bg-opacity-10 border-accentLight dark:bg-yellow-700 dark:border-yellow-500 hover:bg-opacity-10 hover:shadow-medium dark:hover:bg-yellow-600 dark:hover:text-gray-200"
                   >
                     <FaGithub />
                   </a>

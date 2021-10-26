@@ -10,7 +10,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body className="antialiased text-primaryLight bg-bgLight dark:bg-gray-900 dark:text-white">
+        <body className="antialiased text-primaryLight bg-bgLight dark:bg-bgDark dark:text-white">
           <Main />
           <NextScript />
         </body>

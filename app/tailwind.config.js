@@ -17,6 +17,7 @@ module.exports = {
       },
       colors: {
         bgLight: "#FEFBF3",
+        bgDark: "#191A19",
         bgAccentLight: "#F8F0DF",
         primaryLight: "#9D9D9D",
         accentLight: "#79B4B7",
