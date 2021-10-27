@@ -21,11 +21,11 @@ export default function Nav() {
         .find((r) => currPathName.includes(r.path))?.label;
 
   return (
-    <div className="max-w-4xl px-4 py-4 mx-auto border-b border-bgAccentLight lg:pt-8 lg:pb-6 dark:border-yellow-900 dark:border-opacity-50">
+    <div className="max-w-4xl px-4 py-4 mx-auto lg:border-b border-bgAccentLight lg:pt-8 lg:pb-6 dark:border-yellow-900 dark:border-opacity-50">
       {/* Mobile nav */}
-      <div className="fixed inset-x-0 top-0 z-50 grid grid-cols-1 px-4 py-1.5 border-b border-gray-200 bg-bgAccentLight dark:border-yellow-900 dark:border-opacity-50 bg-opacity-90 dark:bg-opacity-90 backdrop-filter backdrop-blur-lg dark:bg-bgDark md:hidden">
+      <div className="fixed inset-x-0 top-0 z-50 grid border-opacity-30 grid-cols-1 px-4 py-1.5 border-b border-accentLight bg-[#fcf7ed] dark:border-yellow-500 dark:border-opacity-30 bg-opacity-90 dark:bg-opacity-90 backdrop-filter backdrop-blur-lg dark:bg-bgDark md:hidden">
         <div className="flex justify-between pr-2">
-          <div className="inline-flex items-center mx-4 text-base font-medium tracking-wider md:mx-0">
+          <div className="inline-flex items-center mx-4 text-base font-medium md:mx-0">
             <span
               onClick={() => router.push("/")}
               className="px-2 py-1 mt-0.5 font-bold tracking-tighter border border-opacity-30 rounded cursor-pointer dark:border-opacity-20 dark:border-yellow-500 border-accentLight text-accentLight bg-accentLight bg-opacity-10 dark:text-yellow-500 dark:bg-yellow-300 dark:bg-opacity-5"
@@ -69,7 +69,7 @@ export default function Nav() {
       {/* End mobile nav */}
       {/* Desktop nav */}
       <div className="justify-between hidden w-full max-w-3xl px-4 mx-auto sm:px-6 xl:max-w-4xl xl:px-0 md:flex">
-        <div className="flex items-center mx-4 text-lg font-semibold tracking-wider md:mx-0">
+        <div className="flex items-center mx-4 text-lg font-semibold md:mx-0">
           <span
             onClick={() => router.push("/")}
             className="px-2 py-1 ml-2 text-blue-500 bg-blue-300 rounded cursor-pointer bg-opacity-20 dark:text-yellow-500 dark:bg-yellow-300 dark:bg-opacity-10"

@@ -100,7 +100,7 @@ export default function Intro({ about }) {
           {about.name}
         </h3>
 
-        <div className="pt-2 leading-snug tracking-wide text-primaryLight dark:text-gray-400">
+        <div className="pt-2 leading-snug text-primaryLight dark:text-gray-400">
           <PortableText blocks={about.bio} />
         </div>
       </div>

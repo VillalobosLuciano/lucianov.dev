@@ -17,7 +17,7 @@ export default function PostPreview({ title, date, excerpt, slug }) {
             <a>{title}</a>
           </Link>
         </h3>
-        <div className="pt-3 leading-snug tracking-wide text-gray-400 line-clamp-4">
+        <div className="pt-3 leading-snug text-gray-400 line-clamp-4">
           <PortableText blocks={excerpt} />
         </div>
       </div>

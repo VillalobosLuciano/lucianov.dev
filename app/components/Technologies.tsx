@@ -27,7 +27,7 @@ export default function Technologies({ technologies }) {
           <h2 className="text-3xl font-extrabold tracking-tight text-accentLight dark:text-gray-100">
             Tech Stack
           </h2>
-          <p className="mt-2 leading-snug tracking-wide text-primaryLight dark:text-gray-400">
+          <p className="mt-2 leading-snug text-primaryLight dark:text-gray-400">
             My toolkit to achieve flexibility, speed and readability in
             development.
           </p>
@@ -37,7 +37,7 @@ export default function Technologies({ technologies }) {
           <div className="grid grid-cols-3 gap-4 md:grid-cols-6">
             {technologies.map((tech, i) => (
               <motion.div
-                className="py-3 border bg-opacity-30 border-bgAccentLight bg-bgAccentLight dark:bg-yellow-900 dark:border-yellow-900 dark:border-opacity-60 dark:bg-opacity-10 rounded-2xl"
+                className="py-3 border bg-opacity-60 border-bgAccentLight bg-[#fcf7ed] dark:bg-[#2c2c30] dark:border-[#2c2c30] dark:border-opacity-20 dark:bg-opacity-10 rounded-2xl"
                 key={tech._id}
                 initial={{
                   opacity: 0,

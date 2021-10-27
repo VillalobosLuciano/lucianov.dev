@@ -43,7 +43,7 @@ export default function Post({ data = {} as any, preview }) {
               <header className="mt-12 mb-3">
                 <div className="pb-12 space-y-1 text-center border-b border-gray-700">
                   <div>
-                    <h1 className="max-w-3xl pt-1 mx-auto text-3xl font-extrabold leading-9 tracking-tight text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+                    <h1 className="max-w-3xl pt-1 mx-auto text-3xl font-extrabold leading-9 text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
                       {project.projectName}
                     </h1>
                   </div>
