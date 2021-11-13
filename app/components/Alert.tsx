@@ -16,7 +16,7 @@ export default function Alert({ preview }) {
               This page is a preview.{" "}
               <a
                 href="/api/exit-preview"
-                className="underline transition-colors duration-200 hover:text-cyan"
+                className="underline transition-colors duration-300 hover:text-cyan"
               >
                 Click here
               </a>{" "}
@@ -27,7 +27,7 @@ export default function Alert({ preview }) {
               The source code for this blog is{" "}
               <a
                 href="https://github.com/vercel/next.js/tree/canary/examples"
-                className="underline transition-colors duration-200 hover:text-success"
+                className="underline transition-colors duration-300 hover:text-success"
               >
                 available on GitHub
               </a>

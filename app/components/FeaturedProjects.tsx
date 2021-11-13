@@ -47,7 +47,7 @@ export default function Projects({ projects }) {
               <div className="flex items-center justify-between mt-4 space-x-8">
                 <div>
                   <h3
-                    className="text-base font-semibold transition duration-300 cursor-pointer text-accentLight dark:text-yellow-500 dark:hover:text-yellow-600"
+                    className="text-base font-semibold transition duration-300 cursor-pointer text-neptune-500 dark:text-yellow-500 dark:hover:text-yellow-600"
                     onClick={() => router.push(`/projects/${project.slug}`)}
                   >
                     {project.projectName}
@@ -56,12 +56,33 @@ export default function Projects({ projects }) {
                     {project.projectType}
                   </p>
                 </div>
-                <div className="flex pt-2 space-x-3 text-lg text-primaryLight dark:text-gray-300 md:space-x-2">
+                <div className="flex pt-2 space-x-3 text-lg text-gray-400 dark:text-gray-300 md:space-x-2">
                   <a
                     href=""
                     target="_blank"
                     rel="noreferrer"
-                    className="p-2 border rounded-lg mb-1.5 border-opacity-80 dark:bg-opacity-20 dark:border-opacity-80 bg-accentLight bg-opacity-10 border-accentLight dark:bg-yellow-700 dark:border-yellow-500 hover:bg-opacity-10 hover:shadow-medium dark:hover:bg-yellow-600 dark:hover:text-gray-200"
+                    className="
+                    p-2 
+                    border 
+                    rounded-xl 
+                    mb-1.5 
+                    dark:bg-opacity-20 
+                    dark:border-opacity-60 
+                    dark:bg-yellow-900 
+                    dark:border-yellow-500 
+                    dark:hover:bg-opacity-30 
+                    dark:hover:bg-yellow-600 
+                    dark:hover:text-gray-100 
+                    border-opacity-60 
+                    bg-neptune-500 
+                    hover:bg-opacity-20 
+                    bg-opacity-10 
+                    hover:border-opacity-60 
+                    border-neptune-500 
+                    hover:text-gray-500 
+                    transition  
+                    duration-300
+                    "
                   >
                     <FaLink />
                   </a>
@@ -69,7 +90,28 @@ export default function Projects({ projects }) {
                     href="https://github.com/VillalobosLuciano"
                     target="_blank"
                     rel="noreferrer"
-                    className="p-2 border rounded-lg mb-1.5 border-opacity-80 dark:bg-opacity-20 dark:border-opacity-80 bg-accentLight bg-opacity-10 border-accentLight dark:bg-yellow-700 dark:border-yellow-500 hover:bg-opacity-10 hover:shadow-medium dark:hover:bg-yellow-600 dark:hover:text-gray-200"
+                    className="
+                    p-2 
+                    border 
+                    rounded-xl 
+                    mb-1.5 
+                    dark:bg-opacity-20 
+                    dark:border-opacity-60 
+                    dark:bg-yellow-900 
+                    dark:border-yellow-500 
+                    dark:hover:bg-opacity-30 
+                    dark:hover:bg-yellow-600 
+                    dark:hover:text-gray-100 
+                    border-opacity-60 
+                    bg-neptune-500 
+                    hover:bg-opacity-20 
+                    bg-opacity-10 
+                    hover:border-opacity-60 
+                    border-neptune-500 
+                    hover:text-gray-500 
+                    transition  
+                    duration-300
+                    "
                   >
                     <FaGithub />
                   </a>
@@ -81,9 +123,9 @@ export default function Projects({ projects }) {
           <div className="text-center">No Projects Yet</div>
         )}
       </div>
-      <div className="flex mt-8 mb-4">
+      <div className="flex my-4">
         <Link href="/projects">
-          <a className="w-full py-2 mx-4 font-semibold text-center border rounded-lg text-accentLight border-opacity-80 border-accentLight bg-accentLight bg-opacity-10 dark:bg-yellow-700 dark:border-yellow-500 dark:text-yellow-500 dark:border-opacity-80 md:hidden dark:bg-opacity-20">
+          <a className="w-full py-2 mx-4 font-semibold text-center border rounded-full text-neptune-500 border-opacity-80 border-neptune-500 bg-neptune-500 bg-opacity-10 dark:bg-yellow-700 dark:border-yellow-500 dark:text-yellow-500 dark:border-opacity-80 md:hidden dark:bg-opacity-20">
             View all<span aria-hidden="true"> &rarr;</span>
           </a>
         </Link>

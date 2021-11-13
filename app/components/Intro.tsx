@@ -86,17 +86,17 @@ export default function Intro({ about }) {
       {/* mobile version */}
 
       <div className="flex flex-col px-4 pt-14 lg:hidden">
-        <div className="relative mb-6 w-28 h-28">
+        <div className="relative w-32 h-32 mb-6">
           <Image
-            className="absolute rounded-2xl grayscale"
+            className="absolute rounded-xl grayscale"
             src={urlFor(about.image).url()}
             alt={about.name}
             layout="fill"
           />
-          <div className="absolute inset-0 bg-accentLight dark:bg-yellow-500 dark:bg-opacity-10 bg-opacity-20 mix-blend-multiply rounded-2xl" />
+          <div className="absolute inset-0 bg-neptune-500 dark:bg-yellow-500 dark:bg-opacity-10 bg-opacity-20 mix-blend-multiply rounded-2xl" />
         </div>
 
-        <h3 className="text-3xl font-extrabold leading-tight tracking-tight text-accentLight dark:text-gray-100">
+        <h3 className="text-3xl font-extrabold leading-tight tracking-tight text-neptune-500 dark:text-gray-100">
           {about.name}
         </h3>
 

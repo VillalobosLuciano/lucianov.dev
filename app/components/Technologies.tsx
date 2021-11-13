@@ -24,7 +24,7 @@ export default function Technologies({ technologies }) {
           </p>
         </div>
         <div className="sm:hidden">
-          <h2 className="text-3xl font-extrabold tracking-tight text-accentLight dark:text-gray-100">
+          <h2 className="text-3xl font-extrabold tracking-tight text-neptune-500 dark:text-gray-100">
             Tech Stack
           </h2>
           <p className="mt-2 leading-snug text-primaryLight dark:text-gray-400">
