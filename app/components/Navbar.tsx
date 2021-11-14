@@ -33,7 +33,7 @@ export default function Navbar() {
               >
                 {isExpanded ? (
                   <BiX
-                    className="block w-8 h-8 border rounded-lg border-bgAccentLight dark:border-yellow-500 dark:border-opacity-80"
+                    className="block w-8 h-8 border border-opacity-50 rounded-lg border-neptune-500 dark:border-yellow-500 dark:border-opacity-80"
                     aria-hidden="true"
                   />
                 ) : (
@@ -50,7 +50,7 @@ export default function Navbar() {
           <div className="h-screen pt-10">
             {defaultRoutes.map((route) => (
               <div
-                className="pt-4 pb-2 mx-4 border-b bg border-bgAccentLight dark:border-yellow-500 dark:border-opacity-30"
+                className="pt-4 pb-2 mx-4 border-b border-opacity-50 bg border-neptune-500 dark:border-yellow-500 dark:border-opacity-30"
                 onClick={() => router.push(route.path)}
                 key={route.path}
               >
