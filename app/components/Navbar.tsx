@@ -4,7 +4,8 @@ import routes from "../config/routes";
 import { BiMenuAltRight, BiX } from "react-icons/bi";
 import Link from "next/link";
 import cn from "classnames";
-import { useState } from "react";
+import { Fragment, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
 
 const defaultRoutes = [routes.home, routes.projects, routes.thoughts];
 
@@ -32,7 +33,10 @@ export default function Navbar() {
                 onClick={() => setIsExpanded(!isExpanded)}
               >
                 {isExpanded ? (
-                  <BiX className="block w-8 h-8" aria-hidden="true" />
+                  <BiX
+                    className="block w-8 h-8 border rounded-lg border-bgAccentLight dark:border-yellow-500 dark:border-opacity-80"
+                    aria-hidden="true"
+                  />
                 ) : (
                   <BiMenuAltRight
                     className="block w-8 h-8"
@@ -43,18 +47,21 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-        {isExpanded &&
-          defaultRoutes.map((route) => (
-            <div
-              className="pt-4 pb-2 mx-4 border-b bg border-bgAccentLight dark:border-yellow-900 dark:border-opacity-50"
-              onClick={() => router.push(route.path)}
-              key={route.path}
-            >
-              <p className="my-4 font-sans text-sm font-semibold text-center text-opacity-80">
-                {route.label}
-              </p>
-            </div>
-          ))}
+        {isExpanded && (
+          <div className="h-screen pt-10">
+            {defaultRoutes.map((route) => (
+              <div
+                className="pt-4 pb-2 mx-4 border-b bg border-bgAccentLight dark:border-yellow-500 dark:border-opacity-30"
+                onClick={() => router.push(route.path)}
+                key={route.path}
+              >
+                <p className="my-4 font-sans text-sm font-semibold text-right text-opacity-80">
+                  {route.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
       {/* Desktop nav */}
       <div className="items-center justify-between hidden w-full max-w-3xl px-4 mx-auto sm:px-6 xl:max-w-4xl xl:px-0 md:flex">
