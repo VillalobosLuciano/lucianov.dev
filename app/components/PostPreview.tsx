@@ -7,7 +7,7 @@ export default function PostPreview({ title, date, excerpt, slug }) {
   const router = useRouter();
   return (
     <div
-      className="p-4 transition duration-300 ease-in-out cursor-pointer hover:shadow-medium group"
+      className="p-4 transition duration-300 ease-in-out cursor-pointer hover:shadow-neptune dark:hover:shadow-yellow group"
       onClick={() => router.push(`/blog/${slug}`)}
     >
       <Date dateString={date} />

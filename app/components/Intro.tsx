@@ -18,7 +18,7 @@ export default function Intro({ about }) {
         <div className="lg:grid lg:grid-cols-12">
           <div className="relative z-10 pb-2 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-4">
             <div className="px-8 mx-auto rounded-full lg:p-4">
-              <div className="border border-yellow-900 border-opacity-50 rounded-full shadow-medium aspect-w-1 aspect-h-1">
+              <div className="border rounded-full border-bgAccentLight dark:border-yellow-900 dark:border-opacity-50 shadow-neptune dark:shadow-yellow aspect-w-1 aspect-h-1">
                 <Image
                   className="object-cover object-center rounded-full grayscale"
                   src={urlFor(about.image).url()}
@@ -29,10 +29,10 @@ export default function Intro({ about }) {
             </div>
           </div>
 
-          <div className="relative bg-yellow-900 border border-yellow-900 border-opacity-50 shadow-medium bg-opacity-5 lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-10 lg:items-center">
+          <div className="bg-opacity-60 border-bgAccentLight bg-[#fcf7ed] relative border dark:bg-yellow-900 dark:border-yellow-900 dark:border-opacity-50 shadow-neptune dark:shadow-yellow dark:bg-opacity-5 lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-10 lg:items-center">
             <div className="relative max-w-md px-4 py-8 mx-auto space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 lg:max-w-none lg:py-6 lg:px-6 lg:col-start-3 lg:col-span-8">
               <h2
-                className="text-3xl font-extrabold text-white"
+                className="text-3xl font-extrabold text-neptune-500 dark:text-gray-200"
                 id="join-heading"
               >
                 <Typewriter
@@ -47,10 +47,7 @@ export default function Intro({ about }) {
                       .pauseFor(300)
                       .deleteAll()
                       .typeString(
-                        "I'm Luciano. Here I share my journey exploring web development,"
-                      )
-                      .typeString(
-                        '<strong> specially the <span style="color: #f59e0b;">React</span> ecosystem.</strong>'
+                        "I'm Luciano. Here I share my journey exploring web development, specially the React ecosystem."
                       )
                       .pauseFor(1000)
                       .start();
@@ -74,7 +71,7 @@ export default function Intro({ about }) {
                   },
                 }}
               >
-                <div className="mb-8 text-lg text-gray-300 lg:mb-6">
+                <div className="mb-8 text-lg text-primaryLight dark:text-gray-400 lg:mb-6">
                   <PortableText blocks={about.bio} />
                 </div>
               </motion.div>

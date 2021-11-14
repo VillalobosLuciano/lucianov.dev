@@ -50,8 +50,8 @@ module.exports = {
         "8xl": "6.25rem",
       },
       boxShadow: {
-        small: "0 5px 10px rgba(0, 0, 0, 0.12)",
-        medium: "0 8px 30px rgba(245, 158, 11, 0.12)",
+        yellow: "0 8px 30px rgba(245, 158, 11, 0.12)",
+        neptune: "0 8px 30px rgba(121, 180, 183, 0.12)",
       },
       typography: (theme) => ({
         DEFAULT: {

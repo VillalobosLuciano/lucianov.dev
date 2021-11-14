@@ -5,7 +5,7 @@ export default function SectionTitle({ title, href }) {
       <h2 className="text-3xl font-extrabold tracking-tight text-neptune-500 dark:text-gray-100 md:mx-0 sm:text-4xl">
         {title}
       </h2>
-      <h3 className="hidden font-medium text-yellow-500 transition duration-300 md:block whitespace-nowrap hover:text-yellow-600">
+      <h3 className="hidden font-medium transition duration-300 text-neptune-500 hover:text-neptune-600 dark:text-yellow-500 md:block whitespace-nowrap dark:hover:text-yellow-600">
         <Link href={href}>
           <a>
             View all<span aria-hidden="true"> &rarr;</span>

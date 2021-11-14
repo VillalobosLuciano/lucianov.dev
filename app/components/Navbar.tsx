@@ -4,8 +4,7 @@ import routes from "../config/routes";
 import { BiMenuAltRight, BiX } from "react-icons/bi";
 import Link from "next/link";
 import cn from "classnames";
-import { Fragment, useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
+import { useState } from "react";
 
 const defaultRoutes = [routes.home, routes.projects, routes.thoughts];
 
