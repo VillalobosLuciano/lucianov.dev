@@ -16,6 +16,8 @@ export default function Index({
   technologies,
   preview,
 }) {
+  const featuredProjects = projects.slice(0, 3);
+  const latestPosts = posts.slice(0, 2);
   return (
     <>
       <Layout preview={preview}>
@@ -26,9 +28,11 @@ export default function Index({
           <Intro about={about} />
           <Technologies technologies={technologies} />
           <SectionTitle title="Featured Projects" href="/projects" />
-          <FeaturedProjects projects={projects} />
+          {featuredProjects.length > 0 && (
+            <FeaturedProjects projects={featuredProjects} />
+          )}
           <SectionTitle title="Latest Posts" href="/blog" />
-          <LatestPosts posts={posts} />
+          {latestPosts.length > 0 && <LatestPosts posts={latestPosts} />}
         </Container>
       </Layout>
     </>
