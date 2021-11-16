@@ -4,6 +4,7 @@ import { FaGithub, FaLink } from "react-icons/fa";
 import { sanityClient } from "../lib/sanity.server";
 import imageUrlBuilder from "@sanity/image-url";
 import Link from "next/link";
+import cn from "classnames";
 
 const builder = imageUrlBuilder(sanityClient);
 
@@ -16,11 +17,17 @@ export default function ProjectPreview({
   mainImage,
   projectName,
   projectType,
+  scrollX,
 }) {
   const router = useRouter();
   return (
     <div className="inline-block">
-      <div className="w-full overflow-hidden">
+      <div
+        className={cn("overflow-hidden", {
+          "w-64 sm:w-full": scrollX === "true",
+          "w-full": scrollX === "false",
+        })}
+      >
         <div
           onClick={() => router.push(`/projects/${slug}`)}
           className="overflow-hidden border rounded-lg cursor-pointer dark:border-opacity-30 border-bgAccentLight dark:border-yellow-500 group aspect-w-4 aspect-h-3"

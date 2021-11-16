@@ -9,8 +9,8 @@ export default function Projects({ projects }) {
         fun.
       </p>
 
-      <div className="px-4 py-6 mx-auto overflow-hidden md:py-0 ">
-        <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 xl:grid-cols-3 lg:gap-x-8">
+      <div className="px-4 py-6 mx-auto overflow-hidden md:py-0">
+        <div className="flex grid-cols-1 overflow-x-scroll hide-scroll-bar sm:grid gap-y-10 gap-x-6 sm:grid-cols-2 xl:grid-cols-3 lg:gap-x-8">
           {projects.length ? (
             projects.map((project) => (
               <ProjectPreview
@@ -19,6 +19,7 @@ export default function Projects({ projects }) {
                 mainImage={project.mainImage}
                 projectName={project.projectName}
                 projectType={project.projectType}
+                scrollX="true"
               />
             ))
           ) : (
