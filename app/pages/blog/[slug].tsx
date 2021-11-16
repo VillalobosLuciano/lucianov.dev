@@ -37,7 +37,7 @@ export default function Post({ data = {} as any, preview }) {
           <>
             <article>
               <Head>
-                <title>{post.title} | Next.js Blog Example with Sanity</title>
+                <title>{post.title}</title>
               </Head>
               <PostHeader
                 title={post.title}

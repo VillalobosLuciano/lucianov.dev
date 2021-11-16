@@ -11,7 +11,7 @@ function urlFor(source) {
 export default function Avatar({ name, image }) {
   return (
     <div className="flex items-center">
-      <div className="relative w-12 h-12 mr-4">
+      <div className="relative w-6 h-6 mr-2">
         <Image
           src={urlFor(image).url()}
           layout="fill"
@@ -19,7 +19,12 @@ export default function Avatar({ name, image }) {
           alt={name}
         />
       </div>
-      <div className="text-xl font-bold">{name}</div>
+      <div className="text-sm text-primaryLight dark:text-gray-100">
+        {name}{" "}
+        <span className="text-opacity-30 text-neptune-500 dark:text-yellow-500 dark:text-opacity-30 pl-1.5 pr-2">
+          |
+        </span>
+      </div>
     </div>
   );
 }

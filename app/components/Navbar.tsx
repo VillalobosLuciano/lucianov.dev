@@ -12,7 +12,7 @@ export default function Navbar() {
   const [isExpanded, setIsExpanded] = useState(false);
   const router = useRouter();
   return (
-    <div className="max-w-4xl px-4 py-4 mx-auto md:border-b border-bgAccentLight md:pt-8 md:pb-6 dark:border-yellow-900 dark:border-opacity-50">
+    <div className="max-w-4xl px-4 py-4 mx-auto md:border-b md:pt-8 md:pb-6 border-opacity-30 border-neptune-500 dark:border-yellow-500 dark:border-opacity-30">
       {/* Mobile nav */}
       <div className="fixed inset-x-0 top-0 z-50 grid border-opacity-30 grid-cols-1 px-4 py-1.5 border-b border-neptune-500 bg-[#fcf7ed] dark:border-yellow-500 dark:border-opacity-30 bg-opacity-90 dark:bg-opacity-90 backdrop-filter backdrop-blur-lg dark:bg-bgDark md:hidden">
         <div className="flex justify-between pr-2">
@@ -67,7 +67,7 @@ export default function Navbar() {
         <div className="flex">
           <span
             onClick={() => router.push("/")}
-            className="px-2 py-1 font-semibold tracking-tighter border rounded cursor-pointer border-opacity-30 dark:border-opacity-20 dark:border-yellow-500 border-neptune-500 text-neptune-500 bg-neptune-500 bg-opacity-10 dark:text-yellow-500 dark:bg-yellow-300 dark:bg-opacity-5"
+            className="px-2 py-1 font-semibold tracking-tighter border rounded cursor-pointer border-opacity-30 border-neptune-500 dark:border-yellow-500 dark:border-opacity-30 text-neptune-500 bg-neptune-500 bg-opacity-10 dark:text-yellow-500 dark:bg-yellow-300 dark:bg-opacity-5"
           >
             LV
           </span>

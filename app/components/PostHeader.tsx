@@ -1,22 +1,19 @@
 import Avatar from "@/components/Avatar";
 import Date from "@/components/Date";
 import PostTitle from "@/components/PostTitle";
+import SectionSeparator from "./SectionSeparator";
 
 export default function PostHeader({ title, date, author }) {
   return (
     <>
-      <PostTitle>{title}</PostTitle>
-      <div className="hidden md:block md:mb-12">
-        <Avatar name={author.name} image={author.image} />
-      </div>
-      <div className="max-w-2xl mx-auto">
-        <div className="block mb-6 md:hidden">
+      <div className="px-4 mt-16 mb-8 space-y-3 md:text-center md:mt-12">
+        <PostTitle>{title}</PostTitle>
+        <div className="flex items-center py-4 md:justify-center">
           <Avatar name={author.name} image={author.image} />
-        </div>
-        <div className="mb-6 text-lg">
           <Date dateString={date} />
         </div>
       </div>
+      <SectionSeparator />
     </>
   );
 }

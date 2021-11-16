@@ -4,7 +4,7 @@ export default function Date({ dateString }) {
   const date = parseISO(dateString);
   return (
     <time
-      className="text-sm text-primaryLight dark:text-gray-100"
+      className="flex text-sm text-primaryLight dark:text-gray-100"
       dateTime={dateString}
     >
       {format(date, "LLLL	d, yyyy")}
