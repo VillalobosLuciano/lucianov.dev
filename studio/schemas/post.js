@@ -24,10 +24,27 @@ export default {
       to: { type: "author" },
     },
     {
-      name: "categories",
+      name: "category",
       title: "Categories",
       type: "array",
-      of: [{ type: "reference", to: { type: "category" } }],
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "category",
+              title: "Categories",
+              type: "reference",
+              to: [{ type: "category" }],
+            },
+          ],
+          preview: {
+            select: {
+              title: "category.title",
+            },
+          },
+        },
+      ],
     },
     {
       name: "date",

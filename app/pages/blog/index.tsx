@@ -14,7 +14,7 @@ export default function Index({ posts, preview }) {
         </Head>
         <Container>
           <div className="py-16 mx-auto overflow-hidden sm:py-24">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            <div className="grid grid-cols-1 space-y-10 divide-y divide-gray-200 divide-dashed dark:divide-gray-700">
               {posts.map((post) => (
                 <PostPreview
                   key={post.slug}
@@ -22,6 +22,7 @@ export default function Index({ posts, preview }) {
                   date={post.date}
                   slug={post.slug}
                   excerpt={post.excerpt}
+                  category={post.category}
                 />
               ))}
             </div>

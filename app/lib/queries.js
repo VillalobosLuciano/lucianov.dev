@@ -7,6 +7,12 @@ const postFields = groq`
   excerpt,
   "slug": slug.current,
   "author": author->{name, image},
+  category[]{
+        _key,
+        category->{
+            title
+        }
+    },
 `;
 
 const projectFields = groq`

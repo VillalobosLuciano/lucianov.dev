@@ -12,7 +12,7 @@ function urlFor(source) {
 export default function Technologies({ technologies }) {
   return (
     <>
-      <div className="px-4 pt-12 mx-auto lg:text-center lg:pt-16 lg:pb-14">
+      <div className="px-4 pt-12 mx-auto lg:text-center lg:pt-16 lg:pb-6">
         <div className="hidden sm:block">
           <p className="text-base font-semibold tracking-wider uppercase text-neptune-500 dark:text-yellow-500">
             Immersed in modern open source technologies
