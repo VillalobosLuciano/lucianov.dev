@@ -19,8 +19,6 @@ export default function Index({
   const featuredProjects = projects.slice(0, 3);
   const latestPosts = posts.slice(0, 2);
 
-  console.log("aeeer", posts[0]);
-
   return (
     <>
       <Layout preview={preview}>

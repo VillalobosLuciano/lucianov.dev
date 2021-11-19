@@ -81,7 +81,7 @@ export default function Navbar() {
                   className={cn(
                     "px-6 py-2 rounded font-semibold text-sm tracking-wide transition duration-300",
                     {
-                      "border border-opacity-30 dark:border-opacity-20 dark:border-yellow-500 border-neptune-500 text-neptune-500 bg-neptune-500 bg-opacity-10 dark:text-yellow-500 dark:bg-yellow-300 dark:bg-opacity-5":
+                      "border border-opacity-30 dark:border-opacity-20 dark:border-yellow-500 border-neptune-500 text-neptune-500 bg-neptune-500 bg-opacity-5 dark:text-yellow-500 dark:bg-yellow-300 dark:bg-opacity-5":
                         isActive,
                       "dark:text-gray-300 text-gray-400 hover:text-gray-500 dark:hover:text-gray-100":
                         !isActive,
