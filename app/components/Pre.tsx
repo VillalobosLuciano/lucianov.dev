@@ -29,13 +29,13 @@ const Pre = ({ children }: Props) => {
       ref={textInput}
       onMouseEnter={onEnter}
       onMouseLeave={onExit}
-      className="relative"
+      className="relative mx-4 -mt-6 -mb-5 bg-red-500 dark:bg-[#2b2b2b]"
     >
       {hovered && (
         <button
           aria-label="Copy code"
           type="button"
-          className={`absolute right-2 top-2 w-8 h-8 p-1 rounded border-2 bg-gray-700 dark:bg-gray-800 ${
+          className={`absolute right-2 top-2 lg:right-3 lg:top-3 lg:w-8 lg:h-8 w-7 h-7 p-1 rounded border-2 bg-gray-700 dark:bg-gray-800 ${
             copied
               ? "focus:outline-none focus:border-green-400 border-green-400"
               : "border-gray-300"
@@ -72,7 +72,7 @@ const Pre = ({ children }: Props) => {
         </button>
       )}
 
-      <pre>{children}</pre>
+      <pre className="text-sm lg:text-base">{children}</pre>
     </div>
   );
 };

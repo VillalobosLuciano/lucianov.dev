@@ -40,7 +40,7 @@ export default function ProseableText({ blocks = [] }) {
     group[0]._type === "block" ? (
       <div
         key={group[0]._key}
-        className="px-4 pt-4 pb-2 prose max-w-none dark:prose-dark"
+        className="px-4 py-2 prose lg:py-4 max-w-none dark:prose-dark"
       >
         <PortableText blocks={group} />
       </div>

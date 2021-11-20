@@ -46,8 +46,8 @@ export default function Post({ data = {} as any, preview }) {
               />
               <PostBody body={post.body} />
             </article>
-            <SectionSeparator />
-            {morePosts.length > 0 && <LatestsPosts posts={morePosts} />}
+            {/* <SectionSeparator /> */}
+            {/* {morePosts.length > 0 && <LatestsPosts posts={morePosts} />} */}
           </>
         )}
       </Container>

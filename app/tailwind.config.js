@@ -59,13 +59,16 @@ module.exports = {
           css: {
             color: theme("colors.gray.700"),
             a: {
-              color: theme("colors.primary.500"),
+              color: theme("colors.neptune.600"),
               "&:hover": {
-                color: theme("colors.primary.600"),
+                color: theme("colors.neptune.500"),
               },
-              code: { color: theme("colors.primary.400") },
+              code: { color: theme("colors.neptune.400") },
             },
             h1: {
+              fontSize: "2.1rem",
+              marginTop: "1.6rem",
+              marginBottom: "-.05em",
               fontWeight: "700",
               letterSpacing: theme("letterSpacing.tight"),
               color: theme("colors.gray.900"),
@@ -83,8 +86,8 @@ module.exports = {
               color: theme("colors.gray.900"),
             },
             code: {
-              color: theme("colors.pink.500"),
-              backgroundColor: theme("colors.gray.100"),
+              color: theme("colors.neptune.500"),
+              backgroundColor: theme("colors.neptune.50"),
               paddingLeft: "4px",
               paddingRight: "4px",
               paddingTop: "2px",
@@ -116,13 +119,16 @@ module.exports = {
           css: {
             color: theme("colors.gray.300"),
             a: {
-              color: theme("colors.primary.500"),
+              color: theme("colors.yellow.500"),
               "&:hover": {
-                color: theme("colors.primary.400"),
+                color: theme("colors.yellow.400"),
               },
-              code: { color: theme("colors.primary.400") },
+              code: { color: theme("colors.yellow.400") },
             },
             h1: {
+              fontSize: "2.1rem",
+              marginTop: "1.6rem",
+              marginBottom: "-.05em",
               fontWeight: "700",
               letterSpacing: theme("letterSpacing.tight"),
               color: theme("colors.gray.100"),

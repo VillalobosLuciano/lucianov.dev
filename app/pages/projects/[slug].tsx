@@ -51,10 +51,10 @@ export default function Post({ data = {} as any, preview }) {
               </header>
               <PostBody body={project.content} />
             </article>
-            <SectionSeparator />
-            {moreProjects.length > 0 && (
+            {/* <SectionSeparator /> */}
+            {/* {moreProjects.length > 0 && (
               <FeaturedProjects projects={moreProjects} />
-            )}
+            )} */}
           </>
         )}
       </Container>

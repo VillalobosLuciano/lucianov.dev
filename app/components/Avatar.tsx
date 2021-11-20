@@ -19,12 +19,7 @@ export default function Avatar({ name, image }) {
           alt={name}
         />
       </div>
-      <div className="text-sm text-primaryLight dark:text-gray-100">
-        {name}{" "}
-        <span className="text-opacity-30 text-neptune-500 dark:text-yellow-500 dark:text-opacity-30 pl-1.5 pr-2">
-          |
-        </span>
-      </div>
+      <div className="text-sm text-primaryLight dark:text-gray-100">{name}</div>
     </div>
   );
 }
