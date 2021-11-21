@@ -1,10 +1,13 @@
-import { useState, useRef, ReactNode } from "react";
+import { useState, useRef } from "react";
+import { useTheme } from "next-themes";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import {
+  a11yDark,
+  a11yLight,
+} from "react-syntax-highlighter/dist/cjs/styles/prism";
 
-interface Props {
-  children: ReactNode;
-}
-
-const Pre = ({ children }: Props) => {
+export default function Pre({ children, language }) {
+  const { theme: currentTheme } = useTheme();
   const textInput = useRef(null);
   const [hovered, setHovered] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -72,9 +75,14 @@ const Pre = ({ children }: Props) => {
         </button>
       )}
 
-      <pre className="text-sm lg:text-base">{children}</pre>
+      <pre className="text-sm lg:text-base">
+        <SyntaxHighlighter
+          language={language}
+          style={currentTheme == "light" ? a11yLight : a11yDark}
+        >
+          {children}
+        </SyntaxHighlighter>
+      </pre>
     </div>
   );
-};
-
-export default Pre;
+}

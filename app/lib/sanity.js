@@ -4,13 +4,7 @@ import {
   createPortableTextComponent,
 } from "next-sanity";
 import { sanityConfig } from "./config";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import {
-  a11yDark,
-  a11yLight,
-} from "react-syntax-highlighter/dist/cjs/styles/prism";
 import Pre from "../components/Pre";
-import { useTheme } from "next-themes";
 
 /**
  * Set up a helper function for generating Image URLs with only the asset reference data in your documents.
@@ -29,22 +23,11 @@ export const PortableText = createPortableTextComponent({
     types: {
       container: ({ children }) => children,
       code: ({ node = {} }) => {
-        const { theme: currentTheme } = useTheme();
         const { language, code } = node;
         if (!code) {
           return null;
         }
-        return (
-          <Pre>
-            <SyntaxHighlighter
-              language={language || ""}
-              // TODO: Add custom light theme
-              style={currentTheme == "light" ? a11yLight : a11yDark}
-            >
-              {code}
-            </SyntaxHighlighter>
-          </Pre>
-        );
+        return <Pre language={language || ""}>{code}</Pre>;
       },
     },
   },
