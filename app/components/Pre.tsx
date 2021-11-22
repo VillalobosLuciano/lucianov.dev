@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
@@ -7,6 +7,7 @@ import {
 } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 export default function Pre({ children, language }) {
+  const [mounted, setMounted] = useState(false);
   const { theme: currentTheme } = useTheme();
   const textInput = useRef(null);
   const [hovered, setHovered] = useState(false);
@@ -26,6 +27,9 @@ export default function Pre({ children, language }) {
       setCopied(false);
     }, 2000);
   };
+
+  // When mounted on client, now we can show the UI
+  useEffect(() => setMounted(true), []);
 
   return (
     <div
@@ -74,15 +78,16 @@ export default function Pre({ children, language }) {
           </svg>
         </button>
       )}
-
-      <pre className="text-sm lg:text-base">
-        <SyntaxHighlighter
-          language={language}
-          style={currentTheme == "light" ? a11yLight : a11yDark}
-        >
-          {children}
-        </SyntaxHighlighter>
-      </pre>
+      {mounted && (
+        <pre className="text-sm lg:text-base">
+          <SyntaxHighlighter
+            language={language}
+            style={currentTheme == "light" ? a11yLight : a11yDark}
+          >
+            {children}
+          </SyntaxHighlighter>
+        </pre>
+      )}
     </div>
   );
 }

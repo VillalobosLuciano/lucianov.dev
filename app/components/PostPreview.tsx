@@ -1,11 +1,8 @@
-import Date from "@/components/Date";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import { PortableText } from "@/lib/sanity";
 import { parseISO, format } from "date-fns";
 
 export default function PostPreview({ title, date, excerpt, slug, category }) {
-  const router = useRouter();
   return (
     <div className="px-4 pt-8 xl:grid xl:grid-cols-4 xl:items-baseline">
       <time className="text-base font-medium text-primaryLight dark:text-gray-100">

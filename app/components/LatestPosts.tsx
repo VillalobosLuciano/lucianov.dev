@@ -7,7 +7,7 @@ export default function LatestPosts({ posts }) {
       <p className="px-4 pb-1 mt-2 leading-snug text-primaryLight dark:text-gray-400 lg:pb-4">
         A place to share, also checkpoints in my learning process.
       </p>
-      <div className="grid grid-cols-1 space-y-10 divide-y divide-gray-200 divide-dashed dark:divide-gray-700">
+      <div className="grid grid-cols-1 space-y-10 divide-y divide-gray-200 divide-dashed dark:divide-gray-800">
         {posts.map((post) => (
           <PostPreview
             key={post.slug}

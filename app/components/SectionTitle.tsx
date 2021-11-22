@@ -2,7 +2,7 @@ import Link from "next/link";
 export default function SectionTitle({ title, href }) {
   return (
     <>
-      <hr className="w-8 mt-20 mb-2 ml-4 border-2 lg:mt-32 border-opacity-30 border-neptune-500 dark:border-yellow-500 dark:border-opacity-30" />
+      <hr className="w-8 mt-20 mb-2 ml-4 border-2 lg:mt-28 2xl:mt-32 border-opacity-30 border-neptune-500 dark:border-yellow-500 dark:border-opacity-30" />
       <div className="flex justify-between px-4 space-x-4">
         <h2 className="text-3xl font-extrabold tracking-tight text-neptune-500 dark:text-gray-100 md:mx-0 sm:text-4xl">
           {title}

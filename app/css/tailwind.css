@@ -9,3 +9,7 @@
 .hide-scroll-bar::-webkit-scrollbar {
   display: none;
 }
+
+code {
+  word-break: break-word;
+}
