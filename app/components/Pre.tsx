@@ -79,7 +79,7 @@ export default function Pre({ children, language }) {
         </button>
       )}
       {mounted && (
-        <pre className="text-sm lg:text-base">
+        <pre className="text-sm">
           <SyntaxHighlighter
             language={language}
             style={currentTheme == "light" ? a11yLight : a11yDark}

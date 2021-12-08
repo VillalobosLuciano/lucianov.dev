@@ -1,7 +1,7 @@
 import Avatar from "@/components/Avatar";
 import Date from "@/components/Date";
 import PostTitle from "@/components/PostTitle";
-import SectionSeparator from "./SectionSeparator";
+import SectionSeparator from "@/components/SectionSeparator";
 
 export default function PostHeader({ title, date, author }) {
   return (

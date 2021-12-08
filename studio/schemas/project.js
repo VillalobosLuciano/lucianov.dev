@@ -66,27 +66,25 @@ export default {
       ],
     },
     {
-      name: "abstract",
-      title: "Abstract",
+      name: "overview",
+      title: "Overview",
       type: "array",
       of: [{ type: "block" }],
     },
     {
-      title: "Content",
-      name: "content",
+      name: "highlights",
+      title: "Highlights",
+      type: "array",
+      of: [{ type: "block" }],
+    },
+    {
+      name: "dependencies",
+      title: "Dependencies",
       type: "array",
       of: [
         {
-          title: "Block",
-          type: "block",
-        },
-        {
-          type: "image",
-          options: { hotspot: true },
-        },
-        {
           type: "code",
-          title: "Code block",
+          title: "Code",
         },
       ],
     },

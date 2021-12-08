@@ -73,11 +73,13 @@ export const projectQuery = groq`
     tech[]{
       _key,
       tech->{
-          name
+          name,
+          image
       }
     },
-    abstract,
-    content,
+    overview,
+    highlights,
+    dependencies
   },
   "moreProjects": *[_type == "project" && slug.current != $slug][0...2] | order(date desc) { 
     ${projectFields}

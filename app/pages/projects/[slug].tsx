@@ -10,8 +10,22 @@ import { projectQuery, projectSlugsQuery } from "@/lib/queries";
 import { usePreviewSubscription } from "@/lib/sanity";
 import { sanityClient, getClient, overlayDrafts } from "@/lib/sanity.server";
 import FeaturedProjects from "@/components/FeaturedProjects";
+import ProjectHeader from "@/components/ProjectHeader";
+import ProjectOverview from "@/components/ProjectOverview";
+import Highlights from "../../components/ProjectHighlights";
+import ProjectDependencies from "@/components/ProjectDependencies";
+import ProjectHighlights from "@/components/ProjectHighlights";
 
 export default function Post({ data = {} as any, preview }) {
+  const getTechs = (techs) => {
+    return techs.map((tech) => {
+      return {
+        name: tech.name,
+        image: tech.image,
+      };
+    });
+  };
+
   const router = useRouter();
 
   const slug = data?.project?.slug;
@@ -36,20 +50,19 @@ export default function Post({ data = {} as any, preview }) {
           <>
             <article>
               <Head>
-                <title>
-                  {project.title} | Next.js Blog Example with Sanity
-                </title>
+                <title>{project.title}</title>
               </Head>
-              <header className="mt-12 mb-3">
-                <div className="pb-12 space-y-1 text-center border-b border-gray-700">
-                  <div>
-                    <h1 className="max-w-3xl pt-1 mx-auto text-3xl font-extrabold leading-9 text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
-                      {project.projectName}
-                    </h1>
-                  </div>
-                </div>
-              </header>
-              <PostBody body={project.content} />
+              <ProjectHeader
+                projectName={project.projectName}
+                projectType={project.projectType}
+                mainImage={project.mainImage}
+              />
+              <ProjectOverview overview={project.overview} />
+              <ProjectHighlights highlights={project.highlights} />
+              <ProjectDependencies
+                code={project.dependencies[0].code}
+                technologies={project.tech}
+              />
             </article>
             {/* <SectionSeparator /> */}
             {/* {moreProjects.length > 0 && (
