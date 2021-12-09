@@ -37,19 +37,23 @@ export default function Intro({ about }) {
               >
                 <Typewriter
                   options={{
-                    delay: 55,
-                    deleteSpeed: 25,
+                    delay: 30,
                   }}
                   onInit={(typewriter) => {
                     typewriter
                       .pauseFor(600)
                       .typeString("Hello, friend.")
-                      .pauseFor(300)
-                      .deleteAll()
+                      .pauseFor(200)
+                      .deleteAll(30)
+                      .typeString("I'm Luciano, ")
+                      .pauseFor(200)
                       .typeString(
-                        "I'm Luciano. Here I share my journey exploring web development, specially the React ecosystem."
+                        "Here I'll try to organize and share my learning process in Webdev and IoT technologies 🙃."
                       )
-                      .pauseFor(1000)
+                      .pauseFor(1500)
+                      .callFunction(function (state) {
+                        state.elements.cursor.style.display = "none";
+                      })
                       .start();
                   }}
                 />

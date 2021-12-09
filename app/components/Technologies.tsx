@@ -19,8 +19,7 @@ export default function Technologies({ technologies }) {
           </p>
           <p className="mt-2 text-primaryLight dark:text-gray-400 lg:mt-6 lg:px-10">
             To achieve flexibility, speed and readability in development, I use
-            the following stack which, in my opinion, fully meets these
-            requirements.
+            the following stack.
           </p>
         </div>
         <div className="sm:hidden">

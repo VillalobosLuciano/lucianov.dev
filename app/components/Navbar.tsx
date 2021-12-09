@@ -5,24 +5,34 @@ import { BiMenuAltRight, BiX } from "react-icons/bi";
 import Link from "next/link";
 import cn from "classnames";
 import { useState } from "react";
+import lvLight from "../public/lvLight.svg";
+import lvDark from "../public/lvDark.svg";
+import Image from "next/image";
+import { useTheme } from "next-themes";
 
 const defaultRoutes = [routes.home, routes.projects, routes.thoughts];
 
 export default function Navbar() {
+  const { theme, resolvedTheme } = useTheme();
   const [isExpanded, setIsExpanded] = useState(false);
   const router = useRouter();
+
+  const logoHandler = () => {
+    return theme === "light" ? lvLight : lvDark;
+  };
+
   return (
     <div className="max-w-4xl px-4 py-4 mx-auto md:border-b md:pt-8 md:pb-6 border-opacity-30 border-neptune-500 dark:border-yellow-500 dark:border-opacity-30">
       {/* Mobile nav */}
       <div className="fixed inset-x-0 top-0 z-50 grid border-opacity-30 grid-cols-1 px-4 py-1.5 border-b border-neptune-500 bg-[#fcf7ed] dark:border-yellow-500 dark:border-opacity-30 bg-opacity-90 dark:bg-opacity-90 backdrop-filter backdrop-blur-lg dark:bg-bgDark md:hidden">
         <div className="flex justify-between pr-2">
           <div className="inline-flex items-center mx-4 text-base font-medium md:mx-0">
-            <span
+            <div
               onClick={() => router.push("/")}
-              className="px-2 py-1 mt-0.5 font-bold tracking-tighter border border-opacity-30 rounded cursor-pointer dark:border-opacity-20 dark:border-yellow-500 border-neptune-500 text-neptune-500 bg-neptune-500 bg-opacity-10 dark:text-yellow-500 dark:bg-yellow-300 dark:bg-opacity-5"
+              className="relative w-8 h-8 cursor-pointer"
             >
-              LV
-            </span>
+              <Image alt="lucianov logo" src={logoHandler()} layout="fill" />
+            </div>
           </div>
           <div className="flex items-center space-x-2">
             <ThemeSwitch />
@@ -65,12 +75,12 @@ export default function Navbar() {
       {/* Desktop nav */}
       <div className="items-center justify-between hidden w-full max-w-3xl px-4 mx-auto sm:px-6 xl:max-w-4xl xl:px-0 md:flex">
         <div className="flex">
-          <span
+          <div
             onClick={() => router.push("/")}
-            className="px-2 py-1 font-semibold tracking-tighter border rounded cursor-pointer border-opacity-30 border-neptune-500 dark:border-yellow-500 dark:border-opacity-30 text-neptune-500 bg-neptune-500 bg-opacity-10 dark:text-yellow-500 dark:bg-yellow-300 dark:bg-opacity-5"
+            className="relative cursor-pointer w-9 h-9"
           >
-            LV
-          </span>
+            <Image alt="lucianov logo" src={logoHandler()} layout="fill" />
+          </div>
         </div>
         <div className="flex space-x-6">
           {defaultRoutes.map((route) => {

@@ -5,12 +5,12 @@ import { parseISO, format } from "date-fns";
 export default function PostPreview({ title, date, excerpt, slug, category }) {
   return (
     <div className="px-4 pt-8 xl:grid xl:grid-cols-4 xl:items-baseline">
-      <time className="text-base font-medium text-primaryLight dark:text-gray-100">
+      <time className="text-base font-medium text-primaryLight dark:text-gray-300">
         {format(parseISO(date), "MMMM dd, yyyy")}
       </time>
 
       <div className="xl:col-span-3">
-        <h3 className="mt-1 text-2xl font-semibold leading-8 tracking-tight">
+        <h3 className="mt-1 text-xl font-semibold leading-8 tracking-tight">
           <Link href={`/blog/${slug}`}>
             <a className="transition-colors duration-300 text-neptune-500 hover:text-neptune-600 dark:text-yellow-500 dark:hover:text-yellow-600">
               {title}
@@ -21,7 +21,7 @@ export default function PostPreview({ title, date, excerpt, slug, category }) {
           {category.map((tag) => (
             <p
               key={tag._key}
-              className="mt-1 mr-3 text-sm font-medium text-gray-500 uppercase transition dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-200"
+              className="mt-1 mr-3 text-sm font-semibold text-gray-500 uppercase transition cursor-pointer dark:text-gray-300 hover:text-gray-600 dark:hover:text-gray-200"
             >
               {tag.category.title}
             </p>
