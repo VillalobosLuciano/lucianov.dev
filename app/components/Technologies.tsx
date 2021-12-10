@@ -24,10 +24,10 @@ export default function Technologies({ technologies }) {
       </div>
 
       <div className="px-4 pt-10 mx-auto">
-        <div className="grid grid-cols-3 gap-4 xl:gap-6 md:grid-cols-6">
+        <div className="grid grid-cols-3 gap-4 md:grid-cols-6">
           {technologies.map((tech, i) => (
             <motion.div
-              className="py-3 border bg-opacity-60 border-bgAccentLight bg-[#fcf7ed] dark:bg-[#171717] dark:border-[#F59E0B] dark:border-opacity-5 rounded-2xl"
+              className="py-3 border bg-opacity-60 border-bgAccentLight bg-[#fcf7ed] dark:bg-[#171717] dark:border-[#F59E0B] dark:border-opacity-10 rounded-2xl"
               key={tech._id}
               initial={{
                 opacity: 0,

@@ -18,7 +18,7 @@ export default function Intro({ about }) {
         <div className="lg:grid lg:grid-cols-12">
           <div className="relative z-10 pb-2 lg:col-start-9 lg:row-start-1 lg:col-span-4 lg:py-4">
             <div className="px-8 mx-auto rounded-full lg:p-4">
-              <div className="border rounded-full border-bgAccentLight dark:border-[#F59E0B] dark:border-opacity-10 aspect-w-1 aspect-h-1">
+              <div className="border rounded-full border-bgAccentLight dark:border-[#F59E0B] dark:border-opacity-20 aspect-w-1 aspect-h-1">
                 <Image
                   className="object-cover object-center rounded-full grayscale"
                   src={urlFor(about.image).url()}
@@ -29,7 +29,7 @@ export default function Intro({ about }) {
             </div>
           </div>
 
-          <div className="bg-opacity-60 border-bgAccentLight bg-[#fcf7ed] relative border dark:bg-[#171717] dark:border-[#F59E0B] dark:border-opacity-10 lg:col-start-1 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-12 lg:items-center">
+          <div className="bg-opacity-60 border-bgAccentLight bg-[#fcf7ed] relative border dark:bg-[#171717] dark:border-[#F59E0B] dark:border-opacity-20 lg:col-start-1 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-12 lg:items-center">
             <div className="relative max-w-md pr-6 mx-auto space-y-5 pl-14 sm:max-w-3xl lg:max-w-none lg:col-start-1 lg:col-span-10">
               <h2
                 className="text-3xl font-extrabold text-neptune-500 dark:text-gray-200"
