@@ -30,13 +30,20 @@ export default function Index({ posts, initialDisplayPosts = [], preview }) {
     return searchContent.toLowerCase().includes(searchValue.toLowerCase());
   });
 
+  const tags = posts.map((value) =>
+    value.category.map((tag) => tag.category.title.toLowerCase())
+  );
+  const tagsList = [...new Set(tags.flat())];
+
+  console.log("tags", tagsList);
+
   useEffect(() => {
     if (selected.name.toLowerCase() === "serverless") {
       setSearchValue("serverless");
     } else if (selected.name.toLowerCase() === "iot") {
       setSearchValue("iot");
     } else {
-      setSearchValue(searchValue);
+      setSelected(people[0]);
     }
   }, [searchValue, selected]);
 
@@ -48,7 +55,11 @@ export default function Index({ posts, initialDisplayPosts = [], preview }) {
 
   const onSearchHandler = (e) => {
     const value = e.target.value;
+    // if (selected !== people[0]) {
+    //   e.target.value = "";
+    // }
     setSearchValue(value);
+    setSelected(people[0]);
   };
 
   const splitResult = (result) =>
@@ -107,11 +118,11 @@ export default function Index({ posts, initialDisplayPosts = [], preview }) {
                     />
                   </svg>
                 </div>
-                <div className="lg:w-1/6">
+                <div className="lg:w-1/5">
                   <Listbox value={selected} onChange={setSelected}>
                     {({ open }) => (
                       <>
-                        <div className="relative mt-1">
+                        <div className="relative">
                           <Listbox.Button className="relative w-full py-2 px-4 dark:focus:ring-yellow-[#f59e0b] text-left shadow-sm cursor-default focus:outline-none focus:ring-1 text-gray-500 placeholder-gray-400 border rounded-md bg-neptune-500 bg-opacity-5 border-opacity-30 dark:border-[#f59e0b] dark:border-opacity-20 border-neptune-500 focus:ring-neptune-500 dark:focus:ring-opacity-60 dark:focus:ring-yellow-[#f59e0b]  dark:focus:border-[#f59e0b]  dark:focus:border-opacity-60 focus:border-neptune-500 dark:bg-[#171717] dark:text-gray-100">
                             <span className="block truncate">
                               {selected.name}
