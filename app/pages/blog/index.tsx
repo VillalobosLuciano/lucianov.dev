@@ -86,7 +86,7 @@ export default function Index({ posts, initialDisplayPosts = [], preview }) {
             </div>
 
             <div className="pt-4 pb-12 mx-auto overflow-hidden sm:py-6">
-              <div className="grid grid-cols-1 space-y-10 divide-y divide-gray-200 divide-dashed dark:divide-gray-800">
+              <div className="grid grid-cols-1 space-y-10 divide-y divide-gray-200 dark:divide-[#f59e0b] dark:divide-opacity-5">
                 {!filteredBlogPosts.length && "No posts found."}
                 {displayPosts.map((post) => (
                   <PostPreview

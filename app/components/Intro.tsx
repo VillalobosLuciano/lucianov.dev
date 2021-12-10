@@ -14,11 +14,11 @@ function urlFor(source) {
 export default function Intro({ about }) {
   return (
     <>
-      <div className="hidden mx-auto mt-6 lg:block md:mt-20 md:mb-6 lg:px-4">
+      <div className="hidden pl-4 mx-auto mt-6 lg:block md:mt-20 md:mb-6">
         <div className="lg:grid lg:grid-cols-12">
-          <div className="relative z-10 pb-2 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-4">
+          <div className="relative z-10 pb-2 lg:col-start-9 lg:row-start-1 lg:col-span-4 lg:py-4">
             <div className="px-8 mx-auto rounded-full lg:p-4">
-              <div className="border rounded-full border-bgAccentLight dark:border-yellow-900 dark:border-opacity-50 shadow-neptune dark:shadow-yellow aspect-w-1 aspect-h-1">
+              <div className="border rounded-full border-bgAccentLight dark:border-[#F59E0B] dark:border-opacity-10 aspect-w-1 aspect-h-1">
                 <Image
                   className="object-cover object-center rounded-full grayscale"
                   src={urlFor(about.image).url()}
@@ -29,8 +29,8 @@ export default function Intro({ about }) {
             </div>
           </div>
 
-          <div className="bg-opacity-60 border-bgAccentLight bg-[#fcf7ed] relative border dark:bg-yellow-900 dark:border-yellow-900 dark:border-opacity-50 shadow-neptune dark:shadow-yellow dark:bg-opacity-5 lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-10 lg:items-center">
-            <div className="relative max-w-md px-4 py-8 mx-auto space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 lg:max-w-none lg:py-6 lg:px-6 lg:col-start-3 lg:col-span-8">
+          <div className="bg-opacity-60 border-bgAccentLight bg-[#fcf7ed] relative border dark:bg-[#171717] dark:border-[#F59E0B] dark:border-opacity-10 lg:col-start-1 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-12 lg:items-center">
+            <div className="relative max-w-md pr-6 mx-auto space-y-5 pl-14 sm:max-w-3xl lg:max-w-none lg:col-start-1 lg:col-span-10">
               <h2
                 className="text-3xl font-extrabold text-neptune-500 dark:text-gray-200"
                 id="join-heading"
@@ -41,14 +41,14 @@ export default function Intro({ about }) {
                   }}
                   onInit={(typewriter) => {
                     typewriter
-                      .pauseFor(600)
-                      .typeString("Hello, friend.")
-                      .pauseFor(200)
-                      .deleteAll(30)
-                      .typeString("I'm Luciano, ")
+                      .pauseFor(300)
+                      // .typeString("Hello, friend.")
+                      // .pauseFor(200)
+                      // .deleteAll(30)
+                      .typeString("Hi! I'm Luciano, ")
                       .pauseFor(200)
                       .typeString(
-                        "Here I'll try to organize and share my learning process in Webdev and IoT technologies 🙃."
+                        "here I will organize and share my learning process in WebDev and IoT technologies 🙃."
                       )
                       .pauseFor(1500)
                       .callFunction(function (state) {
@@ -75,7 +75,7 @@ export default function Intro({ about }) {
                   },
                 }}
               >
-                <div className="mb-8 text-lg text-primaryLight dark:text-gray-400 lg:mb-6">
+                <div className="text-lg text-primaryLight dark:text-gray-400">
                   <PortableText blocks={about.bio} />
                 </div>
               </motion.div>
@@ -85,11 +85,10 @@ export default function Intro({ about }) {
       </div>
 
       {/* mobile version */}
-
-      <div className="flex flex-col px-4 pt-14 lg:hidden">
-        <div className="relative w-32 h-32 mb-6">
+      <div className="flex flex-col px-4 mt-20 lg:hidden">
+        <div className="relative w-32 h-32 mb-8">
           <Image
-            className="absolute rounded-xl grayscale"
+            className="absolute rounded-lg grayscale"
             src={urlFor(about.image).url()}
             alt={about.name}
             layout="fill"

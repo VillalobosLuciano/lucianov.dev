@@ -30,7 +30,7 @@ export default function ProjectPreview({
       >
         <div
           onClick={() => router.push(`/projects/${slug}`)}
-          className="overflow-hidden border rounded-lg cursor-pointer dark:border-opacity-30 border-bgAccentLight dark:border-yellow-500 group aspect-w-4 aspect-h-3"
+          className="overflow-hidden border rounded-lg dark:border-[#F59E0B] dark:border-opacity-20 dark:bg-opacity-5 cursor-pointer border-bgAccentLight group aspect-w-4 aspect-h-3"
         >
           <Image
             className="object-cover object-center transition duration-300 filter grayscale group-hover:grayscale-0"
@@ -43,7 +43,7 @@ export default function ProjectPreview({
         <div className="flex items-center justify-between mx-1 mt-3 space-x-8">
           <div>
             <h3
-              className="text-base font-semibold transition duration-300 cursor-pointer text-neptune-500 hover:text-neptune-600 dark:text-yellow-500 dark:hover:text-yellow-600"
+              className="text-base font-semibold transition duration-300 cursor-pointer text-neptune-500 hover:text-neptune-600 dark:text-[#F59E0B] dark:hover:text-[#B45309]"
               onClick={() => router.push(`/projects/${slug}`)}
             >
               {projectName}
@@ -63,10 +63,10 @@ export default function ProjectPreview({
                           rounded-xl 
                           mb-1.5 
                           dark:bg-opacity-20 
-                          dark:border-opacity-60 
-                          dark:bg-yellow-900 
-                          dark:border-yellow-500 
-                          dark:hover:bg-opacity-30 
+                          dark:border-[#F59E0B] 
+                          dark:border-opacity-50
+                          dark:bg-[#171717] 
+                          dark:hover:bg-opacity-10 
                           dark:hover:bg-yellow-600 
                           dark:hover:text-gray-100 
                           border-opacity-60 
@@ -87,15 +87,15 @@ export default function ProjectPreview({
               target="_blank"
               rel="noreferrer"
               className="
-                          p-2 
+                           p-2 
                           border 
                           rounded-xl 
                           mb-1.5 
                           dark:bg-opacity-20 
-                          dark:border-opacity-60 
-                          dark:bg-yellow-900 
-                          dark:border-yellow-500 
-                          dark:hover:bg-opacity-30 
+                          dark:border-[#F59E0B] 
+                          dark:border-opacity-50
+                          dark:bg-[#171717] 
+                          dark:hover:bg-opacity-10 
                           dark:hover:bg-yellow-600 
                           dark:hover:text-gray-100 
                           border-opacity-60 

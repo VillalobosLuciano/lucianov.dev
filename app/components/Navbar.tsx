@@ -22,7 +22,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="max-w-4xl px-4 py-4 mx-auto md:border-b md:pt-8 md:pb-6 border-opacity-30 border-neptune-500 dark:border-yellow-500 dark:border-opacity-30">
+    <div className="max-w-4xl px-4 py-4 mx-auto md:border-b md:pt-8 md:pb-6 border-opacity-30 border-neptune-500 dark:border-[#f59e0b] dark:border-opacity-30">
       {/* Mobile nav */}
       <div className="fixed inset-x-0 top-0 z-50 grid border-opacity-30 grid-cols-1 px-4 py-1.5 border-b border-neptune-500 bg-[#fcf7ed] dark:border-yellow-500 dark:border-opacity-30 bg-opacity-90 dark:bg-opacity-90 backdrop-filter backdrop-blur-lg dark:bg-bgDark md:hidden">
         <div className="flex justify-between pr-2">
@@ -74,7 +74,7 @@ export default function Navbar() {
       </div>
       {/* Desktop nav */}
       <div className="items-center justify-between hidden w-full max-w-3xl px-4 mx-auto sm:px-6 xl:max-w-4xl xl:px-0 md:flex">
-        <div className="flex">
+        <div className="flex pl-1">
           <div
             onClick={() => router.push("/")}
             className="relative cursor-pointer w-9 h-9"
@@ -89,9 +89,9 @@ export default function Navbar() {
               <Link href={route.path} key={route.path}>
                 <a
                   className={cn(
-                    "px-6 py-2 rounded font-semibold text-sm tracking-wide transition duration-300",
+                    "px-6 py-2 rounded-lg font-semibold text-sm tracking-wide transition duration-300",
                     {
-                      "border border-opacity-30 dark:border-opacity-20 dark:border-yellow-500 border-neptune-500 text-neptune-500 bg-neptune-500 bg-opacity-5 dark:text-yellow-500 dark:bg-yellow-300 dark:bg-opacity-5":
+                      "border border-opacity-30 dark:border-opacity-20 dark:border-[#f59e0b] border-neptune-500 text-neptune-500 bg-neptune-500 bg-opacity-5 dark:text-[#f59e0b] dark:bg-[#171717]":
                         isActive,
                       "dark:text-gray-300 text-gray-400 hover:text-gray-500 dark:hover:text-gray-100":
                         !isActive,

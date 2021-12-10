@@ -6,7 +6,7 @@ export default function Projects({ projects }) {
     <section>
       <p className="px-4 pb-4 mt-2 leading-snug text-primaryLight dark:text-gray-400 lg:pb-12">
         Real projects that I developed for learning, for friends, for free, for
-        fun.
+        <b> fun</b>.
       </p>
 
       <div className="px-4 py-6 mx-auto overflow-hidden md:py-0">
@@ -30,7 +30,7 @@ export default function Projects({ projects }) {
 
       <div className="flex mt-6 mb-4 sm:hidden">
         <Link href="/projects">
-          <a className="w-full py-2 mx-4 font-semibold text-center border rounded-2xl text-neptune-500 border-opacity-80 border-neptune-500 bg-neptune-500 bg-opacity-10 dark:bg-yellow-700 dark:border-yellow-500 dark:text-yellow-500 dark:border-opacity-80 md:hidden dark:bg-opacity-20">
+          <a className="w-full py-2 mx-4 dark:border-[#F59E0B] dark:border-opacity-50 dark:bg-[#171717] text-base font-semibold text-center border rounded-lg text-neptune-500 border-opacity-80 border-neptune-500 bg-neptune-500 bg-opacity-10  dark:text-[#F59E0B] md:hidden">
             View all<span aria-hidden="true"> &rarr;</span>
           </a>
         </Link>
