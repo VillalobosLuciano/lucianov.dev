@@ -36,7 +36,7 @@ export default function Index({ posts, initialDisplayPosts = [], preview }) {
     } else if (selected.name.toLowerCase() === "iot") {
       setSearchValue("iot");
     } else {
-      setSearchValue("");
+      setSearchValue(searchValue);
     }
   }, [searchValue, selected]);
 
