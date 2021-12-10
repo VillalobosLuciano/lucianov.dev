@@ -83,8 +83,8 @@ export default function Index({ posts, initialDisplayPosts = [], preview }) {
                   Blog
                 </h1>
               </div>
-              <div className="flex items-center space-x-4">
-                <div className="relative w-1/2">
+              <div className="items-center space-y-3 lg:space-y-0 lg:space-x-4 lg:flex">
+                <div className="relative lg:w-1/2">
                   <input
                     aria-label="Search articles"
                     type="text"
@@ -107,12 +107,12 @@ export default function Index({ posts, initialDisplayPosts = [], preview }) {
                     />
                   </svg>
                 </div>
-                <div className="w-1/6">
+                <div className="lg:w-1/6">
                   <Listbox value={selected} onChange={setSelected}>
                     {({ open }) => (
                       <>
                         <div className="relative mt-1">
-                          <Listbox.Button className="relative w-full py-2 pl-3 dark:focus:ring-yellow-[#f59e0b] text-left shadow-sm cursor-default focus:outline-none focus:ring-1 text-gray-500 placeholder-gray-400 border rounded-md bg-neptune-500 bg-opacity-5 border-opacity-30 dark:border-[#f59e0b] dark:border-opacity-20 border-neptune-500 focus:ring-neptune-500 dark:focus:ring-opacity-60 dark:focus:ring-yellow-[#f59e0b]  dark:focus:border-[#f59e0b]  dark:focus:border-opacity-60 focus:border-neptune-500 dark:bg-[#171717] dark:text-gray-100">
+                          <Listbox.Button className="relative w-full py-2 px-4 dark:focus:ring-yellow-[#f59e0b] text-left shadow-sm cursor-default focus:outline-none focus:ring-1 text-gray-500 placeholder-gray-400 border rounded-md bg-neptune-500 bg-opacity-5 border-opacity-30 dark:border-[#f59e0b] dark:border-opacity-20 border-neptune-500 focus:ring-neptune-500 dark:focus:ring-opacity-60 dark:focus:ring-yellow-[#f59e0b]  dark:focus:border-[#f59e0b]  dark:focus:border-opacity-60 focus:border-neptune-500 dark:bg-[#171717] dark:text-gray-100">
                             <span className="block truncate">
                               {selected.name}
                             </span>
