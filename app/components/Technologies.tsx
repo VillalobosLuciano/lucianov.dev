@@ -24,7 +24,7 @@ export default function Technologies({ technologies }) {
       </div>
 
       <div className="px-4 pt-10 mx-auto">
-        <div className="grid grid-cols-3 gap-4 md:grid-cols-6">
+        <div className="grid grid-cols-3 gap-4 md:grid-cols-8">
           {technologies.map((tech, i) => (
             <motion.div
               className="py-3 border bg-opacity-60 border-bgAccentLight bg-[#fcf7ed] dark:bg-[#171717] dark:border-[#F59E0B] dark:border-opacity-10 rounded-2xl"
@@ -35,7 +35,7 @@ export default function Technologies({ technologies }) {
                 translateY: -50,
               }}
               animate={{ opacity: 1, translateX: 0, translateY: 0 }}
-              transition={{ duration: 0.3, delay: 0.2 + i * 0.2 }}
+              transition={{ duration: 0.3, delay: 0.1 + i * 0.2 }}
             >
               <div className="flex justify-center col-span-1 aspect-w-2 aspect-h-1 md:col-span-2 lg:col-span-1">
                 <Image
