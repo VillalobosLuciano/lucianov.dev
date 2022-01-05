@@ -66,7 +66,7 @@ export default function Intro({ about }) {
                 className="text-3xl font-extrabold text-neptune-500 dark:text-gray-200"
                 variants={item}
               >
-                Hi! I'm Luciano, here I will organize and share my learning
+                Hi! I&apos;m Luciano, here I will organize and share my learning
                 process in WebDev and IoT technologies 🙃.
               </motion.h2>
               <motion.div
