@@ -35,7 +35,7 @@ export default function Technologies({ technologies }) {
                 translateY: -50,
               }}
               animate={{ opacity: 1, translateX: 0, translateY: 0 }}
-              transition={{ duration: 0.3, delay: i * 0.2 }}
+              transition={{ duration: 0.3, delay: 0.2 + i * 0.2 }}
             >
               <div className="flex justify-center col-span-1 aspect-w-2 aspect-h-1 md:col-span-2 lg:col-span-1">
                 <Image

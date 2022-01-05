@@ -19,6 +19,8 @@ export default function Projects({ projects }) {
                 mainImage={project.mainImage}
                 projectName={project.projectName}
                 projectType={project.projectType}
+                website={project.link}
+                source={project.source}
                 scrollX="true"
               />
             ))

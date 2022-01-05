@@ -24,6 +24,8 @@ export default function Index({ projects, preview }) {
                     mainImage={project.mainImage}
                     projectName={project.projectName}
                     projectType={project.projectType}
+                    website={project.link}
+                    source={project.source}
                     scrollX="false"
                   />
                 ))

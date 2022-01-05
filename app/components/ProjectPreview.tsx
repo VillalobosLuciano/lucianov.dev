@@ -18,6 +18,8 @@ export default function ProjectPreview({
   projectName,
   projectType,
   scrollX,
+  website,
+  source,
 }) {
   const router = useRouter();
   return (
@@ -54,7 +56,7 @@ export default function ProjectPreview({
           </div>
           <div className="flex pt-2 space-x-2 text-lg text-gray-400 dark:text-gray-300 md:space-x-2">
             <a
-              href=""
+              href={website}
               target="_blank"
               rel="noreferrer"
               className="
@@ -83,7 +85,7 @@ export default function ProjectPreview({
               <FaLink />
             </a>
             <a
-              href="https://github.com/VillalobosLuciano"
+              href={source}
               target="_blank"
               rel="noreferrer"
               className="
