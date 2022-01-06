@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function LatestPosts({ posts }) {
   return (
-    <section>
+    <section className="pb-6 lg:pb-20">
       <p className="px-4 pb-1 mt-2 leading-snug text-primaryLight dark:text-gray-400 lg:pb-4">
         A place to share, also checkpoints in my learning process.
       </p>

@@ -2,8 +2,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  mode: "jit",
-  purge: [
+  content: [
     "./pages/**/*.tsx",
     "./components/**/*.tsx",
     "./layouts/**/*.tsx",
@@ -57,7 +56,7 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme("colors.gray.700"),
+            color: theme("colors.gray"),
             a: {
               color: theme("colors.neptune.600"),
               "&:hover": {
@@ -148,7 +147,7 @@ module.exports = {
             code: {
               backgroundColor: theme("colors.gray.800"),
             },
-            hr: { borderColor: theme("colors.gray.700") },
+            hr: { borderColor: theme("colors.gray") },
             "ol li:before": {
               fontWeight: "600",
               color: theme("colors.gray.400"),
@@ -162,12 +161,12 @@ module.exports = {
             },
             tbody: {
               tr: {
-                borderBottomColor: theme("colors.gray.700"),
+                borderBottomColor: theme("colors.gray"),
               },
             },
             blockquote: {
               color: theme("colors.gray.100"),
-              borderLeftColor: theme("colors.gray.700"),
+              borderLeftColor: theme("colors.gray"),
             },
           },
         },

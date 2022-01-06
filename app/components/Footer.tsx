@@ -3,7 +3,7 @@ import SocialIcons from "./SocialIcons";
 
 export default function Footer() {
   return (
-    <footer className="max-w-4xl mx-auto border-t border-opacity-30 border-neptune-500 dark:border-[#f59e0b] dark:border-opacity-30 lg:mt-24">
+    <footer className="max-w-4xl mx-auto border-t border-opacity-30 border-neptune-500 dark:border-[#f59e0b] dark:border-opacity-30 mt-4">
       <Container>
         <div className="px-4 pt-8 pb-10 md:flex md:items-center md:justify-between">
           <SocialIcons />

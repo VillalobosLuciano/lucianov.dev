@@ -56,6 +56,8 @@ export default function Post({ data = {} as any, preview }) {
                 projectName={project.projectName}
                 projectType={project.projectType}
                 mainImage={project.mainImage}
+                website={project.link}
+                code={project.source}
               />
               <ProjectOverview overview={project.overview} />
               <ProjectHighlights highlights={project.highlights} />

@@ -87,7 +87,7 @@ export default function Index({ posts, initialDisplayPosts = [], preview }) {
           <title>Luciano&apos;s Digital Space</title>
         </Head>
         <Container>
-          <div className="divide-y divide-opacity-30 divide-neptune-500 dark:divide-yellow-500 dark:divide-opacity-30">
+          <div className="pb-6 divide-y lg:pb-14 divide-opacity-30 divide-neptune-500 dark:divide-yellow-500 dark:divide-opacity-30">
             <div className="px-4 pt-12 pb-4 space-y-2 lg:pb-8 md:space-y-8">
               <div className="pt-6 pb-3 font-extrabold leading-9 tracking-tight lg:pb-1 md:leading-14">
                 <h1 className="text-3xl text-neptune-500 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl">
