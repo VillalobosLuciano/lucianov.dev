@@ -56,7 +56,7 @@ export default function Technologies({ technologies }) {
               ))}
             </div>
             <div className="w-full pt-4 text-center">
-              <hr className="border border-neptune-500/30 dark:border-[#f59e0b] dark:border-opacity-30 mb-2" />
+              <hr className="border border-neptune-500/30 dark:border-[#f59e0b] dark:border-opacity-30 mb-1" />
               <span className="font-thin tracking-tight text-gray-100 text-opacity-70">
                 user
               </span>
@@ -91,7 +91,7 @@ export default function Technologies({ technologies }) {
               ))}
             </div>
             <div className="w-full pt-4 text-center">
-              <hr className="border border-neptune-500/30 dark:border-[#f59e0b] dark:border-opacity-30 mb-2" />
+              <hr className="border border-neptune-500/30 dark:border-[#f59e0b] dark:border-opacity-30 mb-1" />
               <span className="font-thin tracking-tight text-gray-100 text-opacity-70">
                 learning
               </span>

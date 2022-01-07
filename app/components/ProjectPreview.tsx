@@ -23,10 +23,10 @@ export default function ProjectPreview({
 }) {
   const router = useRouter();
   return (
-    <div className="inline-block">
+    <div className="inline-block snap-center">
       <div
         className={cn("overflow-hidden", {
-          "w-64 sm:w-full": scrollX === "true",
+          "w-[280px] lg:w-[270px]": scrollX === "true",
           "w-full": scrollX === "false",
         })}
       >

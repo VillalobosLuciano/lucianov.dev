@@ -27,11 +27,15 @@ export default function Index({
         </Head>
         <Container>
           <Intro about={about} />
+
           <Technologies technologies={technologies} />
-          <SectionTitle title="Featured projects" href="/projects" />
-          {featuredProjects.length > 0 && (
-            <FeaturedProjects projects={featuredProjects} />
-          )}
+
+          <div className="pt-3 pb-4 lg:pt-4 lg:pb-7">
+            <SectionTitle title="Featured projects" href="/projects" />
+            {featuredProjects.length > 0 && (
+              <FeaturedProjects projects={featuredProjects} />
+            )}
+          </div>
           <SectionTitle title="Latest posts" href="/blog" />
           {latestPosts.length > 0 && <LatestPosts posts={latestPosts} />}
         </Container>

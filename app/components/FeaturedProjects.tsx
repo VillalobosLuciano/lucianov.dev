@@ -10,7 +10,7 @@ export default function Projects({ projects }) {
       </p>
 
       <div className="px-4 py-6 mx-auto overflow-hidden md:py-0">
-        <div className="flex grid-cols-1 overflow-x-scroll hide-scroll-bar sm:grid gap-y-10 gap-x-6 sm:grid-cols-2 xl:grid-cols-3 lg:gap-x-8">
+        <div className="flex grid-cols-1 mx-auto overflow-x-auto snap-proximity snap-x hide-scroll-bar sm:grid gap-y-10 gap-x-6 sm:grid-cols-2 xl:grid-cols-3">
           {projects.length ? (
             projects.map((project) => (
               <ProjectPreview
