@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <div className="max-w-4xl px-4 py-4 mx-auto md:border-b md:pt-8 md:pb-6 border-opacity-30 border-neptune-500 dark:border-[#f59e0b] dark:border-opacity-30">
       {/* Mobile nav */}
-      <div className="fixed inset-x-0 top-0 z-50 grid border-opacity-30 grid-cols-1 px-4 py-1.5 border-b border-neptune-500 bg-[#fcf7ed] dark:border-yellow-500 dark:border-opacity-30 bg-opacity-90 dark:bg-opacity-90 backdrop-filter backdrop-blur-lg dark:bg-bgDark md:hidden">
+      <div className="fixed inset-x-0 top-0 z-50 grid border-opacity-30 grid-cols-1 px-2 py-1.5 border-b border-neptune-500 bg-[#fcf7ed] dark:border-yellow-500 dark:border-opacity-30 bg-opacity-90 dark:bg-opacity-90 backdrop-filter backdrop-blur-lg dark:bg-bgDark md:hidden">
         <div className="flex justify-between pr-2">
           <div className="inline-flex items-center mx-4 text-base font-medium md:mx-0">
             <div

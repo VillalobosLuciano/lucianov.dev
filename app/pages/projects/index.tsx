@@ -5,8 +5,20 @@ import Layout from "@/components/Layout";
 import Container from "@/components/Container";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import ProjectPreview from "../../components/ProjectPreview";
+import { useState } from "react";
+import { RadioGroup } from "@headlessui/react";
+import classNames from "classnames";
+
+const project = {
+  types: [
+    { project: "soully", type: "ecommerce" },
+    { project: "lucianov", type: "portfolio" },
+    { project: "strong signal", type: "IoT app" },
+  ],
+};
 
 export default function Index({ projects, preview }) {
+  const [selectedType, setSelectedType] = useState();
   return (
     <>
       <Layout preview={preview}>
@@ -14,8 +26,45 @@ export default function Index({ projects, preview }) {
           <title>Luciano&apos;s Digital Space</title>
         </Head>
         <Container>
-          <div className="px-4 py-16 mx-auto overflow-hidden sm:py-24">
-            <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 xl:grid-cols-3 lg:gap-x-8">
+          <div className="pb-6 divide-y lg:pb-14 divide-opacity-30 divide-neptune-500 dark:divide-yellow-500 dark:divide-opacity-30">
+            <div className="px-4 pt-12 space-y-0 md:space-y-8">
+              <div className="pt-6 pb-3 font-extrabold leading-9 tracking-tight lg:pb-1 md:leading-14">
+                <h1 className="text-3xl text-neptune-500 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl">
+                  Projects
+                </h1>
+              </div>
+
+              <RadioGroup
+                value={selectedType}
+                onChange={setSelectedType}
+                className="mt-2"
+              >
+                <RadioGroup.Label className="sr-only">
+                  Choose a type
+                </RadioGroup.Label>
+                <div className="flex flex-wrap pb-8">
+                  {project.types.map((t) => (
+                    <RadioGroup.Option
+                      key={t.type}
+                      value={t}
+                      className={({ active, checked }) =>
+                        classNames(
+                          active ? "ring-1  ring-[#f59e0b]/50" : "",
+                          checked
+                            ? "dark:border-[#f59e0b]/50 dark:text-[#f59e0b] dark:hover:border-[#f59e0b]/40"
+                            : "dark:border-amber-200/30 dark:text-amber-100/80 dark:hover:border-amber-200/60",
+                          "cursor-pointer mr-4 mt-4 lg:mt-0 border border-opacity-30 capitalize dark:border-opacity-20 px-7 py-3 font-semibold text-sm tracking-wide transition duration-300 rounded-md"
+                        )
+                      }
+                    >
+                      <RadioGroup.Label as="p">{t.type}</RadioGroup.Label>
+                    </RadioGroup.Option>
+                  ))}
+                </div>
+              </RadioGroup>
+            </div>
+
+            <div className="grid grid-cols-1 px-4 py-8 gap-y-10 gap-x-6 sm:grid-cols-2 xl:grid-cols-3 lg:gap-x-8">
               {projects.length ? (
                 projects.map((project) => (
                   <ProjectPreview

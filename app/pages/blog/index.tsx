@@ -87,7 +87,7 @@ export default function Index({ posts, initialDisplayPosts = [], preview }) {
           <title>Luciano&apos;s Digital Space</title>
         </Head>
         <Container>
-          <div className="pb-6 divide-y lg:pb-14 divide-opacity-30 divide-neptune-500 dark:divide-yellow-500 dark:divide-opacity-30">
+          <div className="pb-6 divide-y lg:pb-14 divide-opacity-30 divide-neptune-500 dark:divide-amber-500 dark:divide-opacity-30">
             <div className="px-4 pt-12 pb-4 space-y-2 lg:pb-8 md:space-y-8">
               <div className="pt-6 pb-3 font-extrabold leading-9 tracking-tight lg:pb-1 md:leading-14">
                 <h1 className="text-3xl text-neptune-500 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl">
@@ -118,7 +118,7 @@ export default function Index({ posts, initialDisplayPosts = [], preview }) {
                     />
                   </svg>
                 </div>
-                <div className="lg:w-1/5">
+                <div className="pb-2 lg:pb-0 lg:w-1/5">
                   <Listbox value={selected} onChange={setSelected}>
                     {({ open }) => (
                       <>
@@ -198,7 +198,7 @@ export default function Index({ posts, initialDisplayPosts = [], preview }) {
               </div>
             </div>
 
-            <div className="pt-4 pb-12 mx-auto overflow-hidden sm:py-6">
+            <div className="pt-2 pb-12 mx-auto overflow-hidden sm:py-6">
               <div className="grid grid-cols-1 space-y-10 divide-y divide-gray-200 dark:divide-[#f59e0b] dark:divide-opacity-10">
                 {!filteredBlogPosts.length && "No posts found."}
                 {displayPosts.map((post) => (
