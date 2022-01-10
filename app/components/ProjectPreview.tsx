@@ -33,13 +33,12 @@ export default function ProjectPreview({
       >
         <div
           onClick={() => router.push(`/projects/${slug}`)}
-          className="overflow-hidden border rounded-lg dark:border-[#F59E0B] dark:border-opacity-20 dark:bg-opacity-5 cursor-pointer border-bgAccentLight group aspect-w-4 aspect-h-3"
+          className="overflow-hidden border rounded-lg dark:border-[#F59E0B]/20 cursor-pointer border-bgAccentLight group aspect-w-4 aspect-h-3"
         >
           <SanityImage
             src={mainImage}
-            className="object-contain object-center transition duration-250 filter grayscale group-hover:grayscale-0"
+            className="object-contain object-center filter grayscale group-hover:grayscale-0"
           />
-          <div className="absolute inset-0 transition duration-300 bg-opacity-60 bg-bgAccentLight dark:bg-yellow-300 dark:bg-opacity-10 mix-blend-multiply group-hover:bg-opacity-0" />
         </div>
         <div className="flex items-center justify-between mx-1 mt-3 space-x-8">
           <div>
