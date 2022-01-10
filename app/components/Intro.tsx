@@ -1,19 +1,20 @@
-import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
-// import { configuredSanityClient } from "@/lib/sanity.server";
-import { PortableText, configuredSanityClient } from "@/lib/sanity";
-import { useNextSanityImage } from "next-sanity-image";
+import { sanityClient } from "@/lib/sanity.server";
+import { PortableText } from "@/lib/sanity";
+import { useState } from "react";
+import cn from "classnames";
+import SanityImage from "./SanityImage";
 
-// const builder = imageUrlBuilder(sanityClient);
+const builder = imageUrlBuilder(sanityClient);
 
-// function urlFor(source) {
-//   return builder.image(source);
-// }
+function urlFor(source) {
+  return builder.image(source);
+}
 
 export default function Intro({ about }) {
-  const imageProps = useNextSanityImage(configuredSanityClient, about.image);
+  const [isLoading, setLoading] = useState(true);
 
   const list = {
     visible: {
@@ -52,12 +53,9 @@ export default function Intro({ about }) {
             >
               <div className="px-8 mx-auto rounded-full lg:p-4">
                 <div className="border rounded-full border-bgAccentLight dark:border-[#F59E0B] dark:border-opacity-20 aspect-w-1 aspect-h-1">
-                  <Image
-                    className="object-cover object-center rounded-full grayscale"
-                    src={imageProps}
-                    layout="fill"
-                    alt={about.name}
-                    placeholder="blur"
+                  <SanityImage
+                    className="object-contain object-center rounded-full grayscale"
+                    src={about.image}
                   />
                 </div>
               </div>
@@ -89,10 +87,9 @@ export default function Intro({ about }) {
         <div className="relative w-32 h-32 mb-8">
           <Image
             className="absolute rounded-lg grayscale"
-            src={imageProps}
+            src={urlFor(about.image).url()}
             alt={about.name}
             layout="fill"
-            placeholder="blur"
           />
           <div className="absolute inset-0 bg-neptune-500 dark:bg-yellow-500 dark:bg-opacity-10 bg-opacity-20 mix-blend-multiply rounded-2xl" />
         </div>

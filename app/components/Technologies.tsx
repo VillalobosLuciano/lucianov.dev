@@ -2,6 +2,7 @@ import { sanityClient } from "../lib/sanity.server";
 import imageUrlBuilder from "@sanity/image-url";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import SanityImage from "./SanityImage";
 
 const builder = imageUrlBuilder(sanityClient);
 
@@ -42,12 +43,16 @@ export default function Technologies({ technologies }) {
                   transition={{ duration: 0.3, delay: 0.1 + i * 0.2 }}
                 >
                   <div className="flex justify-center col-span-1 aspect-w-2 aspect-h-1 md:col-span-2 lg:col-span-1">
-                    <Image
-                      className="object-contain object-center opacity-70 dark:opacity-100 filter grayscale"
+                    <SanityImage
+                      className="object-contain object-center"
+                      src={tech.image}
+                    />
+                    {/* <Image
+                      className="object-contain object-center filter grayscale"
                       src={urlFor(tech.image).url()}
                       alt={tech.name}
                       layout="fill"
-                    />
+                    /> */}
                   </div>
                   <p className="pt-1 text-xs text-center text-primaryLight dark:text-gray-300">
                     {tech.name}
@@ -77,11 +82,9 @@ export default function Technologies({ technologies }) {
                   transition={{ duration: 0.3, delay: 0.1 + i * 0.2 }}
                 >
                   <div className="flex justify-center col-span-1 aspect-w-2 aspect-h-1 md:col-span-2 lg:col-span-1">
-                    <Image
-                      className="object-contain object-center opacity-70 dark:opacity-100 filter grayscale"
-                      src={urlFor(tech.image).url()}
-                      alt={tech.name}
-                      layout="fill"
+                    <SanityImage
+                      className="object-contain object-center"
+                      src={tech.image}
                     />
                   </div>
                   <p className="pt-1 text-xs text-center text-primaryLight dark:text-gray-300">

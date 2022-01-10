@@ -2,6 +2,7 @@ import { sanityClient } from "../lib/sanity.server";
 import imageUrlBuilder from "@sanity/image-url";
 import Image from "next/image";
 import { FaGithub, FaLink } from "react-icons/fa";
+import SanityImage from "./SanityImage";
 
 const builder = imageUrlBuilder(sanityClient);
 
@@ -20,10 +21,9 @@ export default function ProjectHeader({
     <>
       <div className="flex flex-col mx-4 my-16 lg:items-center lg:justify-between lg:flex-row-reverse">
         <div className="relative w-32 mb-6 border lg:mb-0 border-amber-500/20 h-28">
-          <Image
-            src={urlFor(mainImage).url()}
-            alt={`${projectName + " " + projectType}`}
-            layout="fill"
+          <SanityImage
+            src={mainImage}
+            className="object-contain object-center"
           />
         </div>
 

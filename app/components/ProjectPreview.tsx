@@ -5,8 +5,13 @@ import { sanityClient } from "../lib/sanity.server";
 import imageUrlBuilder from "@sanity/image-url";
 import Link from "next/link";
 import cn from "classnames";
-import { useNextSanityImage } from "next-sanity-image";
-import { configuredSanityClient } from "@/lib/sanity";
+import SanityImage from "./SanityImage";
+
+const builder = imageUrlBuilder(sanityClient);
+
+function urlFor(source) {
+  return builder.image(source);
+}
 
 export default function ProjectPreview({
   slug,
@@ -17,7 +22,6 @@ export default function ProjectPreview({
   website,
   source,
 }) {
-  const imageProps = useNextSanityImage(configuredSanityClient, mainImage);
   const router = useRouter();
   return (
     <div className="inline-block snap-center">
@@ -31,14 +35,10 @@ export default function ProjectPreview({
           onClick={() => router.push(`/projects/${slug}`)}
           className="overflow-hidden border rounded-lg dark:border-[#F59E0B] dark:border-opacity-20 dark:bg-opacity-5 cursor-pointer border-bgAccentLight group aspect-w-4 aspect-h-3"
         >
-          <div className="object-cover object-center transition duration-300 filter grayscale group-hover:grayscale-0">
-            <Image
-              src={imageProps}
-              alt={projectName}
-              layout="fill"
-              placeholder="blur"
-            />
-          </div>
+          <SanityImage
+            src={mainImage}
+            className="object-contain object-center transition duration-250 filter grayscale group-hover:grayscale-0"
+          />
           <div className="absolute inset-0 transition duration-300 bg-opacity-60 bg-bgAccentLight dark:bg-yellow-300 dark:bg-opacity-10 mix-blend-multiply group-hover:bg-opacity-0" />
         </div>
         <div className="flex items-center justify-between mx-1 mt-3 space-x-8">
