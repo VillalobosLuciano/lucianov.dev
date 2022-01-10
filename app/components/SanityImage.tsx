@@ -46,7 +46,7 @@ export default function SanityImage(props) {
         alt={props.alt}
         className={cn(
           props.className,
-          "duration-300 ease-in-out",
+          "duration-500 ease-in-out",
           isLoading ? selectedFilter.loading : selectedFilter.loaded
         )}
         layout="fill"
