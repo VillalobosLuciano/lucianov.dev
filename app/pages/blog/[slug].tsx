@@ -3,10 +3,7 @@ import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Container from "@/components/Container";
 import PostBody from "@/components/PostBody";
-import LatestsPosts from "@/components/LatestPosts";
 import PostHeader from "@/components/PostHeader";
-import SectionSeparator from "@/components/SectionSeparator";
-import Layout from "@/components/Layout";
 import PostTitle from "@/components/PostTitle";
 import { postQuery, postSlugsQuery } from "@/lib/queries";
 import { usePreviewSubscription } from "@/lib/sanity";
@@ -29,29 +26,27 @@ export default function Post({ data = {} as any, preview }) {
   }
 
   return (
-    <Layout preview={preview}>
-      <Container>
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <article>
-              <Head>
-                <title>{post.title}</title>
-              </Head>
-              <PostHeader
-                title={post.title}
-                date={post.date}
-                author={post.author}
-              />
-              <PostBody body={post.body} />
-            </article>
-            {/* <SectionSeparator /> */}
-            {/* {morePosts.length > 0 && <LatestsPosts posts={morePosts} />} */}
-          </>
-        )}
-      </Container>
-    </Layout>
+    <Container>
+      {router.isFallback ? (
+        <PostTitle>Loading…</PostTitle>
+      ) : (
+        <>
+          <article>
+            <Head>
+              <title>{post.title}</title>
+            </Head>
+            <PostHeader
+              title={post.title}
+              date={post.date}
+              author={post.author}
+            />
+            <PostBody body={post.body} />
+          </article>
+          {/* <SectionSeparator /> */}
+          {/* {morePosts.length > 0 && <LatestsPosts posts={morePosts} />} */}
+        </>
+      )}
+    </Container>
   );
 }
 

@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import Meta from "@/components/Meta";
 import Navbar from "./Navbar";
 
-export default function Layout({ preview, children }) {
+export default function Layout({ children }) {
   return (
     <>
       {/* <Meta /> */}

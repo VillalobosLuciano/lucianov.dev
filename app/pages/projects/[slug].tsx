@@ -2,17 +2,12 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Container from "@/components/Container";
-import PostBody from "@/components/PostBody";
-import SectionSeparator from "@/components/SectionSeparator";
-import Layout from "@/components/Layout";
 import PostTitle from "@/components/PostTitle";
 import { projectQuery, projectSlugsQuery } from "@/lib/queries";
 import { usePreviewSubscription } from "@/lib/sanity";
 import { sanityClient, getClient, overlayDrafts } from "@/lib/sanity.server";
-import FeaturedProjects from "@/components/FeaturedProjects";
 import ProjectHeader from "@/components/ProjectHeader";
 import ProjectOverview from "@/components/ProjectOverview";
-import Highlights from "../../components/ProjectHighlights";
 import ProjectDependencies from "@/components/ProjectDependencies";
 import ProjectHighlights from "@/components/ProjectHighlights";
 
@@ -42,38 +37,36 @@ export default function Post({ data = {} as any, preview }) {
   }
 
   return (
-    <Layout preview={preview}>
-      <Container>
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <article>
-              <Head>
-                <title>{project.title}</title>
-              </Head>
-              <ProjectHeader
-                projectName={project.projectName}
-                projectType={project.projectType}
-                mainImage={project.mainImage}
-                website={project.link}
-                code={project.source}
-              />
-              <ProjectOverview overview={project.overview} />
-              <ProjectHighlights highlights={project.highlights} />
-              <ProjectDependencies
-                code={project.dependencies[0].code}
-                technologies={project.tech}
-              />
-            </article>
-            {/* <SectionSeparator /> */}
-            {/* {moreProjects.length > 0 && (
+    <Container>
+      {router.isFallback ? (
+        <PostTitle>Loading…</PostTitle>
+      ) : (
+        <>
+          <article>
+            <Head>
+              <title>{project.title}</title>
+            </Head>
+            <ProjectHeader
+              projectName={project.projectName}
+              projectType={project.projectType}
+              mainImage={project.mainImage}
+              website={project.link}
+              code={project.source}
+            />
+            <ProjectOverview overview={project.overview} />
+            <ProjectHighlights highlights={project.highlights} />
+            <ProjectDependencies
+              code={project.dependencies[0].code}
+              technologies={project.tech}
+            />
+          </article>
+          {/* <SectionSeparator /> */}
+          {/* {moreProjects.length > 0 && (
               <FeaturedProjects projects={moreProjects} />
             )} */}
-          </>
-        )}
-      </Container>
-    </Layout>
+        </>
+      )}
+    </Container>
   );
 }
 

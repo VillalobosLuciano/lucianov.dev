@@ -9,37 +9,29 @@ import Technologies from "../components/Technologies";
 import Intro from "../components/Intro";
 import SectionTitle from "@/components/SectionTitle";
 
-export default function Index({
-  about,
-  projects,
-  posts,
-  technologies,
-  preview,
-}) {
+export default function Index({ about, projects, posts, technologies }) {
   const featuredProjects = projects.slice(0, 3);
   const latestPosts = posts.slice(0, 2);
 
   return (
     <>
-      <Layout preview={preview}>
-        <Head>
-          <title>Luciano&apos;s Digital Space</title>
-        </Head>
-        <Container>
-          <Intro about={about} />
+      <Head>
+        <title>Luciano&apos;s Digital Space</title>
+      </Head>
+      <Container>
+        <Intro about={about} />
 
-          <Technologies technologies={technologies} />
+        <Technologies technologies={technologies} />
 
-          <div className="pt-3 pb-4 lg:pt-4 lg:pb-7">
-            <SectionTitle title="Featured projects" href="/projects" />
-            {featuredProjects.length > 0 && (
-              <FeaturedProjects projects={featuredProjects} />
-            )}
-          </div>
-          <SectionTitle title="Latest posts" href="/blog" />
-          {latestPosts.length > 0 && <LatestPosts posts={latestPosts} />}
-        </Container>
-      </Layout>
+        <div className="pt-3 pb-4 lg:pt-4 lg:pb-7">
+          <SectionTitle title="Featured projects" href="/projects" />
+          {featuredProjects.length > 0 && (
+            <FeaturedProjects projects={featuredProjects} />
+          )}
+        </div>
+        <SectionTitle title="Latest posts" href="/blog" />
+        {latestPosts.length > 0 && <LatestPosts posts={latestPosts} />}
+      </Container>
     </>
   );
 }
