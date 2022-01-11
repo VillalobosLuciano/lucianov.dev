@@ -7,16 +7,9 @@ import { useState } from "react";
 import { RadioGroup } from "@headlessui/react";
 import classNames from "classnames";
 
-const project = {
-  types: [
-    { project: "soully", type: "ecommerce" },
-    { project: "lucianov", type: "portfolio" },
-    { project: "strong signal", type: "IoT app" },
-  ],
-};
-
 export default function Index({ projects }) {
   const [selectedType, setSelectedType] = useState("all");
+
   return (
     <>
       <Head>
@@ -41,23 +34,25 @@ export default function Index({ projects }) {
               </RadioGroup.Label>
               <div className="flex flex-wrap pb-8">
                 <RadioGroup.Option
+                  key="all"
                   value="all"
                   className={({ active, checked }) =>
                     classNames(
                       active ? "ring-1  ring-[#f59e0b]/50" : "",
                       checked
                         ? "dark:border-[#f59e0b]/50 dark:text-[#f59e0b] dark:hover:border-[#f59e0b]/40"
-                        : "dark:border-amber-200/30 dark:text-gray-300 dark:hover:border-amber-200/60",
+                        : "dark:border-amber-200/30 dark:text-gray-300 dark:hover:border-amber-400/40",
                       "dark:border-[#f59e0b]/30 px-4 py-2 cursor-pointer mr-4 mt-4 lg:mt-0 border capitalize font-semibold text-sm tracking-wide transition duration-300 rounded-md"
                     )
                   }
                 >
                   <RadioGroup.Label as="p">All</RadioGroup.Label>
                 </RadioGroup.Option>
-                {project.types.map((t) => (
+
+                {projects.map((p) => (
                   <RadioGroup.Option
-                    key={t.type}
-                    value={t}
+                    key={p._id}
+                    value={p}
                     className={({ active, checked }) =>
                       classNames(
                         active ? "ring-1  ring-[#f59e0b]/50" : "",
@@ -68,7 +63,7 @@ export default function Index({ projects }) {
                       )
                     }
                   >
-                    <RadioGroup.Label as="p">{t.type}</RadioGroup.Label>
+                    <RadioGroup.Label as="p">{p.projectType}</RadioGroup.Label>
                   </RadioGroup.Option>
                 ))}
               </div>
@@ -76,22 +71,37 @@ export default function Index({ projects }) {
           </div>
 
           <div className="grid grid-cols-1 px-4 py-8 gap-y-10 gap-x-6 sm:grid-cols-2 xl:grid-cols-3 lg:gap-x-8">
-            {projects.length ? (
-              projects.map((project) => (
-                <ProjectPreview
-                  key={project._id}
-                  slug={project.slug}
-                  mainImage={project.mainImage}
-                  projectName={project.projectName}
-                  projectType={project.projectType}
-                  website={project.link}
-                  source={project.source}
-                  scrollX="false"
-                />
-              ))
-            ) : (
-              <div className="text-center">No Projects Yet</div>
-            )}
+            {projects.map((p) => {
+              if (p === selectedType) {
+                return (
+                  <ProjectPreview
+                    key={p._id}
+                    slug={p.slug}
+                    mainImage={p.mainImage}
+                    projectName={p.projectName}
+                    projectDescription={p.projectDescription}
+                    website={p.link}
+                    source={p.source}
+                    scrollX="false"
+                  />
+                );
+              } else if (selectedType === "all") {
+                return (
+                  <ProjectPreview
+                    key={p._id}
+                    slug={p.slug}
+                    mainImage={p.mainImage}
+                    projectName={p.projectName}
+                    projectDescription={p.projectDescription}
+                    website={p.link}
+                    source={p.source}
+                    scrollX="false"
+                  />
+                );
+              } else {
+                return null;
+              }
+            })}
           </div>
         </div>
       </Container>

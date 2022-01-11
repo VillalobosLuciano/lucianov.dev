@@ -18,6 +18,7 @@ const postFields = groq`
 const projectFields = groq`
   _id,
   projectName,
+  projectDescription,
   projectType,
   source,
   link,

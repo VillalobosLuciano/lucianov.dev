@@ -17,7 +17,7 @@ export default function ProjectPreview({
   slug,
   mainImage,
   projectName,
-  projectType,
+  projectDescription,
   scrollX,
   website,
   source,
@@ -40,7 +40,7 @@ export default function ProjectPreview({
             className="object-contain object-center filter grayscale group-hover:grayscale-0"
           />
         </div>
-        <div className="flex items-center justify-between mx-1 mt-3 space-x-8">
+        <div className="flex items-center justify-between mx-0.5 mt-3 space-x-8">
           <div>
             <h3
               className="text-base font-semibold transition duration-300 cursor-pointer text-neptune-500 hover:text-neptune-600 dark:text-[#F59E0B] dark:hover:text-[#B45309]"
@@ -49,7 +49,7 @@ export default function ProjectPreview({
               {projectName}
             </h3>
             <p className="text-md text-primaryLight dark:text-gray-300">
-              {projectType}
+              {projectDescription}
             </p>
           </div>
           <div className="flex pt-2 space-x-2 text-lg text-gray-400 dark:text-gray-300 md:space-x-2">
