@@ -82,7 +82,6 @@ export default function Index({ projects }) {
                     projectDescription={p.projectDescription}
                     website={p.link}
                     source={p.source}
-                    scrollX="false"
                   />
                 );
               } else if (selectedType === "all") {
@@ -95,7 +94,6 @@ export default function Index({ projects }) {
                     projectDescription={p.projectDescription}
                     website={p.link}
                     source={p.source}
-                    scrollX="false"
                   />
                 );
               } else {

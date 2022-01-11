@@ -18,19 +18,13 @@ export default function ProjectPreview({
   mainImage,
   projectName,
   projectDescription,
-  scrollX,
   website,
   source,
 }) {
   const router = useRouter();
   return (
     <div className="inline-block snap-center">
-      <div
-        className={cn("overflow-hidden", {
-          "w-[280px] lg:w-[270px]": scrollX === "true",
-          "w-full": scrollX === "false",
-        })}
-      >
+      <div className="overflow-hidden w-[292px] lg:w-[270px]">
         <div
           onClick={() => router.push(`/projects/${slug}`)}
           className="overflow-hidden border rounded-lg dark:border-[#F59E0B]/20 cursor-pointer border-bgAccentLight group aspect-w-4 aspect-h-3"

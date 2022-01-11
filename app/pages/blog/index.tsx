@@ -3,8 +3,7 @@ import { indexQuery } from "@/lib/queries";
 import { getClient } from "@/lib/sanity.server";
 import Container from "@/components/Container";
 import PostPreview from "../../components/PostPreview";
-import { useState, Fragment, useEffect } from "react";
-import cn from "classnames";
+import { useState, Fragment } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, ChevronDownIcon } from "@heroicons/react/solid";
 
@@ -82,6 +81,7 @@ export default function Index({ posts }) {
                   />
                 </svg>
               </div>
+
               <div className="pb-2 lg:pb-0 lg:w-1/5">
                 <Listbox value={selected} onChange={setSelected}>
                   {({ open }) => (
