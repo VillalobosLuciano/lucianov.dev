@@ -19,19 +19,25 @@ export default function ProjectPreview({
   projectName,
   projectDescription,
   website,
+  scrollX,
   source,
 }) {
   const router = useRouter();
   return (
     <div className="inline-block snap-center">
-      <div className="overflow-hidden w-[292px] lg:w-[270px]">
+      <div
+        className={cn("overflow-hidden", {
+          "w-[295px] lg:w-full": scrollX === "true",
+          "w-full": scrollX === "false",
+        })}
+      >
         <div
           onClick={() => router.push(`/projects/${slug}`)}
           className="overflow-hidden border rounded-lg dark:border-[#F59E0B]/20 cursor-pointer border-bgAccentLight group aspect-w-4 aspect-h-3"
         >
           <SanityImage
             src={mainImage}
-            className="object-contain object-center filter grayscale group-hover:grayscale-0"
+            className="object-contain object-center w-full filter grayscale group-hover:grayscale-0"
           />
         </div>
         <div className="flex items-center justify-between mx-0.5 mt-3 space-x-8">
