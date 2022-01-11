@@ -21,7 +21,6 @@ export default function Projects({ projects }) {
                 projectDescription={project.projectDescription}
                 website={project.link}
                 source={project.source}
-                scrollX="false"
               />
             ))
           ) : (
