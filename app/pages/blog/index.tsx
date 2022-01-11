@@ -6,78 +6,44 @@ import PostPreview from "../../components/PostPreview";
 import { useState, Fragment, useEffect } from "react";
 import cn from "classnames";
 import { Listbox, Transition } from "@headlessui/react";
-import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
-
-const people = [
-  { id: 1, name: "All" },
-  { id: 2, name: "IoT" },
-  { id: 3, name: "Serverless" },
-];
+import { CheckIcon, ChevronDownIcon } from "@heroicons/react/solid";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Index({ posts, initialDisplayPosts = [] }) {
-  const [selected, setSelected] = useState(people[0]);
+export default function Index({ posts }) {
+  const tags = posts.map((post) =>
+    post.category.map((tag) => tag.category.title.toLowerCase())
+  );
+  const tagsList = [...new Set(tags.flat())];
+  tagsList.unshift("All");
+
+  const categories = tagsList.map((cat, i) => ({
+    id: i,
+    name: cat,
+  }));
+
+  const [selected, setSelected] = useState(categories[0]);
   const [searchValue, setSearchValue] = useState("");
-  const filteredBlogPosts = posts.filter((value) => {
+  const filteredBlogPosts = posts.filter((p) => {
     const searchContent =
-      value.title +
-      value.excerpt.map((oi) => oi.children.map((au) => au.text)) +
-      value.category.map((tag) => tag.category.title).join(" ");
+      p.title +
+      p.category.map((p) => p.category.title) +
+      p.excerpt.map((p) => p.children.map((c) => c.text)).join(" ");
     return searchContent.toLowerCase().includes(searchValue.toLowerCase());
   });
 
-  const tags = posts.map((value) =>
-    value.category.map((tag) => tag.category.title.toLowerCase())
-  );
-  const tagsList = [...new Set(tags.flat())];
-
-  console.log("tags", tagsList);
-
-  useEffect(() => {
-    if (selected.name.toLowerCase() === "serverless") {
-      setSearchValue("serverless");
-    } else if (selected.name.toLowerCase() === "iot") {
-      setSearchValue("iot");
-    } else {
-      setSelected(people[0]);
-    }
-  }, [searchValue, selected]);
-
-  // If initialDisplayPosts exist, display it if no searchValue is specified
-  const displayPosts =
-    initialDisplayPosts.length > 0 && !searchValue
-      ? initialDisplayPosts
-      : filteredBlogPosts;
+  const taggedPosts = posts.filter((p) => {
+    const tag = p.category.map((p) => p.category.title.toLowerCase());
+    return tag.includes(selected.name);
+  });
 
   const onSearchHandler = (e) => {
     const value = e.target.value;
-    // if (selected !== people[0]) {
-    //   e.target.value = "";
-    // }
     setSearchValue(value);
-    setSelected(people[0]);
+    setSelected(categories[0]);
   };
-
-  const splitResult = (result) =>
-    result.split(new RegExp(`(${searchValue})`, `gi`)).map((piece, index) => {
-      const isHighlighted =
-        piece.toLowerCase() === searchValue.toLocaleLowerCase();
-      return (
-        <span
-          key={index}
-          className={cn({
-            " bg-neptune-500 bg-opacity-20 dark:bg-yellow-500 dark:bg-opacity-40":
-              isHighlighted,
-            "bg-transparent": !isHighlighted,
-          })}
-        >
-          {piece}
-        </span>
-      );
-    });
 
   return (
     <>
@@ -126,7 +92,7 @@ export default function Index({ posts, initialDisplayPosts = [] }) {
                             {selected.name}
                           </span>
                           <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                            <SelectorIcon
+                            <ChevronDownIcon
                               className="w-5 h-5 text-[#f59e0b]"
                               aria-hidden="true"
                             />
@@ -141,9 +107,9 @@ export default function Index({ posts, initialDisplayPosts = [] }) {
                           leaveTo="opacity-0"
                         >
                           <Listbox.Options className="border dark:border-[#f59e0b] dark:border-opacity-20 absolute z-10 w-full py-1 mt-1 overflow-auto text-base bg-[#171717] rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                            {people.map((person) => (
+                            {categories.map((tag) => (
                               <Listbox.Option
-                                key={person.id}
+                                key={tag.id}
                                 className={({ active }) =>
                                   classNames(
                                     active
@@ -152,7 +118,7 @@ export default function Index({ posts, initialDisplayPosts = [] }) {
                                     "cursor-default select-none relative py-2 pl-8 pr-4"
                                   )
                                 }
-                                value={person}
+                                value={tag}
                               >
                                 {({ selected, active }) => (
                                   <>
@@ -164,7 +130,7 @@ export default function Index({ posts, initialDisplayPosts = [] }) {
                                         "block truncate"
                                       )}
                                     >
-                                      {person.name}
+                                      {tag.name}
                                     </span>
 
                                     {selected ? (
@@ -197,18 +163,33 @@ export default function Index({ posts, initialDisplayPosts = [] }) {
           </div>
 
           <div className="pt-2 pb-12 mx-auto overflow-hidden sm:py-6">
-            <div className="grid grid-cols-1 space-y-10 divide-y divide-gray-200 dark:divide-[#f59e0b] dark:divide-opacity-10">
-              {!filteredBlogPosts.length && "No posts found."}
-              {displayPosts.map((post) => (
-                <PostPreview
-                  key={post.slug}
-                  title={splitResult(post.title)}
-                  date={post.date}
-                  slug={post.slug}
-                  excerpt={post.excerpt}
-                  category={post.category}
-                />
-              ))}
+            <div className="grid grid-cols-1 space-y-10 divide-y divide-gray-200 dark:divide-[#f59e0b] dark:divide-opacity-10 lg:pl-1">
+              {!filteredBlogPosts.length && (
+                <p className="px-4 py-2 text-gray-400 lg:px-6">
+                  No posts found.
+                </p>
+              )}
+              {selected.name === "All"
+                ? filteredBlogPosts.map((post) => (
+                    <PostPreview
+                      key={post.slug}
+                      title={post.title}
+                      date={post.date}
+                      slug={post.slug}
+                      excerpt={post.excerpt}
+                      category={post.category}
+                    />
+                  ))
+                : taggedPosts.map((post) => (
+                    <PostPreview
+                      key={post.slug}
+                      title={post.title}
+                      date={post.date}
+                      slug={post.slug}
+                      excerpt={post.excerpt}
+                      category={post.category}
+                    />
+                  ))}
             </div>
           </div>
         </div>
