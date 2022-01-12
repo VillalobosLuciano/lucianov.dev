@@ -6,7 +6,7 @@ export default function Tooltip({ children, text, position }) {
   return (
     <>
       <NoSsr>
-        <ReactTooltip id={text} place={position} type="dark" effect="solid" />
+        <ReactTooltip id={text} place={position} type="dark" effect="float" />
 
         <div data-tip={text} data-for={text}>
           {children}

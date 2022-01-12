@@ -18,13 +18,13 @@ export default function Technologies({ technologies }) {
           development.
         </p>
       </div>
-      <div className="px-4 pt-12 mx-auto">
-        <div className="grid grid-cols-3 gap-4 md:grid-cols-8">
+      <div className="px-4 pt-8 mx-auto">
+        <div className="grid grid-cols-3 gap-4 lg:gap-x-8 md:grid-cols-8">
           <div className="col-span-5">
-            <div className="grid grid-cols-3 gap-4 md:grid-cols-5">
+            <div className="grid grid-cols-3 gap-4 lg:gap-x-3 md:grid-cols-5">
               {user.map((tech, i) => (
                 <motion.div
-                  className="py-3 border bg-opacity-60 border-bgAccentLight bg-[#fcf7ed] dark:bg-[#171717] dark:border-[#F59E0B] dark:border-opacity-10 rounded-2xl"
+                  className="py-3 border rounded-lg border-amber-500/10"
                   key={tech._id}
                   initial={{
                     opacity: 0,
@@ -55,17 +55,17 @@ export default function Technologies({ technologies }) {
               ))}
             </div>
             <div className="w-full pt-4 text-center">
-              <hr className="border border-neptune-500/30 dark:border-[#f59e0b] dark:border-opacity-30 mb-1" />
+              <hr className="border border-neptune-500/30 dark:border-[#f59e0b] dark:border-opacity-30 mb-2" />
               <span className="font-thin tracking-tight text-gray-100 text-opacity-70">
                 user
               </span>
             </div>
           </div>
           <div className="col-span-5 lg:col-span-3">
-            <div className="grid grid-cols-3 gap-4 md:grid-cols-3">
+            <div className="grid grid-cols-3 gap-4 lg:gap-x-3 md:grid-cols-3">
               {learning.map((tech, i) => (
                 <motion.div
-                  className="py-3 border bg-opacity-60 border-bgAccentLight bg-[#fcf7ed] dark:bg-[#171717] dark:border-[#F59E0B] dark:border-opacity-10 rounded-2xl"
+                  className="py-3 border rounded-lg border-amber-500/10"
                   key={tech._id}
                   initial={{
                     opacity: 0,
@@ -90,7 +90,7 @@ export default function Technologies({ technologies }) {
               ))}
             </div>
             <div className="w-full pt-4 text-center">
-              <hr className="border border-neptune-500/30 dark:border-[#f59e0b] dark:border-opacity-30 mb-1" />
+              <hr className="border border-neptune-500/30 dark:border-[#f59e0b] dark:border-opacity-30 mb-2" />
               <span className="font-thin tracking-tight text-gray-100 text-opacity-70">
                 learning
               </span>
