@@ -1,14 +1,5 @@
-import { sanityClient } from "../lib/sanity.server";
-import imageUrlBuilder from "@sanity/image-url";
-import Image from "next/image";
 import { FaGithub, FaLink } from "react-icons/fa";
 import SanityImage from "./SanityImage";
-
-const builder = imageUrlBuilder(sanityClient);
-
-function urlFor(source) {
-  return builder.image(source);
-}
 
 export default function ProjectHeader({
   projectName,

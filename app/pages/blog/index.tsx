@@ -3,15 +3,18 @@ import { indexQuery } from "@/lib/queries";
 import { getClient } from "@/lib/sanity.server";
 import Container from "@/components/Container";
 import PostPreview from "../../components/PostPreview";
-import { useState, Fragment } from "react";
+import { useState, Fragment, useEffect } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, ChevronDownIcon } from "@heroicons/react/solid";
+import { useRouter } from "next/router";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Index({ posts }) {
+  const { query } = useRouter();
+
   const tags = posts.map((post) =>
     post.category.map((tag) => tag.category.title.toLowerCase())
   );
@@ -25,6 +28,13 @@ export default function Index({ posts }) {
 
   const [selected, setSelected] = useState(categories[0]);
   const [searchValue, setSearchValue] = useState("");
+
+  useEffect(() => {
+    if (query.tag) {
+      setSelected(categories.find((cat) => cat.name === query.tag));
+    }
+  }, [query.tag, categories]);
+
   const filteredBlogPosts = posts.filter((p) => {
     const searchContent =
       p.title +

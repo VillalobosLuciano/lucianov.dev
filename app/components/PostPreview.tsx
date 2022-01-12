@@ -1,8 +1,24 @@
 import Link from "next/link";
 import { PortableText } from "@/lib/sanity";
 import { parseISO, format } from "date-fns";
+import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function PostPreview({ title, date, excerpt, slug, category }) {
+  const [tag, setTag] = useState("");
+  const router = useRouter();
+
+  const handleTagChange = (e) => {
+    e.preventDefault();
+    const tagName = e.target.innerText.toLowerCase();
+    setTag(tagName);
+    router.push({
+      pathname: "/blog",
+      query: { tag: tagName },
+    });
+    console.log(tagName);
+  };
+
   return (
     <div className="px-4 pt-8 xl:grid xl:grid-cols-4 xl:items-baseline">
       <time className="text-base font-medium text-primaryLight dark:text-gray-300">
@@ -20,8 +36,9 @@ export default function PostPreview({ title, date, excerpt, slug, category }) {
         <div className="flex flex-wrap">
           {category.map((tag) => (
             <p
+              onClick={handleTagChange}
               key={tag._key}
-              className="mt-1 mr-3 text-sm font-semibold text-gray-500 uppercase transition cursor-pointer dark:text-gray-300 hover:text-gray-600 dark:hover:text-gray-200"
+              className="mt-1 mr-3 text-sm font-semibold text-gray-500 uppercase transition cursor-pointer dark:text-gray-200 hover:text-gray-600 dark:hover:text-white"
             >
               {tag.category.title}
             </p>
