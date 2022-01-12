@@ -18,22 +18,29 @@ export default function Index({ posts }) {
   const tags = posts.map((post) =>
     post.category.map((tag) => tag.category.title.toLowerCase())
   );
+
   const tagsList = [...new Set(tags.flat())];
-  tagsList.unshift("All");
+  tagsList.unshift("all");
 
-  const categories = tagsList.map((cat, i) => ({
-    id: i,
-    name: cat,
-  }));
+  const categories = [
+    ...new Set(
+      tagsList.map((cat, i) => ({
+        id: i,
+        name: cat,
+      }))
+    ),
+  ];
 
-  const [selected, setSelected] = useState(categories[0]);
+  const categorySelected = categories.find((cat) => cat.name === query.tag);
+  const [selected, setSelected] = useState(categorySelected || categories[0]);
   const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
-    if (query.tag) {
-      setSelected(categories.find((cat) => cat.name === query.tag));
+    const category = categories.find((cat) => cat.name === query.tag);
+    if (category) {
+      setSelected(category);
     }
-  }, [query.tag, categories]);
+  }, [query.tag]);
 
   const filteredBlogPosts = posts.filter((p) => {
     const searchContent =
@@ -179,7 +186,7 @@ export default function Index({ posts }) {
                   No posts found.
                 </p>
               )}
-              {selected.name === "All"
+              {selected.name === "all"
                 ? filteredBlogPosts.map((post) => (
                     <PostPreview
                       key={post.slug}

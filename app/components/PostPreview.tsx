@@ -16,7 +16,6 @@ export default function PostPreview({ title, date, excerpt, slug, category }) {
       pathname: "/blog",
       query: { tag: tagName },
     });
-    console.log(tagName);
   };
 
   return (
