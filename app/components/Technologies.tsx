@@ -1,14 +1,6 @@
-import { sanityClient } from "../lib/sanity.server";
-import imageUrlBuilder from "@sanity/image-url";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import SanityImage from "./SanityImage";
-
-const builder = imageUrlBuilder(sanityClient);
-
-function urlFor(source) {
-  return builder.image(source);
-}
+import Tooltip from "./Tooltip";
 
 export default function Technologies({ technologies }) {
   const user = technologies.slice(0, 5);
@@ -26,7 +18,7 @@ export default function Technologies({ technologies }) {
           development.
         </p>
       </div>
-      <div className="px-4 pt-10 mx-auto">
+      <div className="px-4 pt-12 mx-auto">
         <div className="grid grid-cols-3 gap-4 md:grid-cols-8">
           <div className="col-span-5">
             <div className="grid grid-cols-3 gap-4 md:grid-cols-5">
@@ -42,21 +34,23 @@ export default function Technologies({ technologies }) {
                   animate={{ opacity: 1, translateX: 0, translateY: 0 }}
                   transition={{ duration: 0.3, delay: 0.1 + i * 0.2 }}
                 >
-                  <div className="flex justify-center col-span-1 aspect-w-2 aspect-h-1 md:col-span-2 lg:col-span-1">
-                    <SanityImage
-                      className="object-contain object-center"
-                      src={tech.image}
-                    />
-                    {/* <Image
+                  <Tooltip text={tech.name} position="top">
+                    <div className="flex justify-center col-span-1 aspect-w-2 aspect-h-1 md:col-span-2 lg:col-span-1">
+                      <SanityImage
+                        className="object-contain object-center"
+                        src={tech.image}
+                      />
+                      {/* <Image
                       className="object-contain object-center filter grayscale"
                       src={urlFor(tech.image).url()}
                       alt={tech.name}
                       layout="fill"
                     /> */}
-                  </div>
-                  <p className="pt-1 text-xs text-center text-primaryLight dark:text-gray-300">
-                    {tech.name}
-                  </p>
+                    </div>
+                    <p className="pt-1 text-xs text-center lg:hidden text-primaryLight dark:text-gray-300">
+                      {tech.name}
+                    </p>
+                  </Tooltip>
                 </motion.div>
               ))}
             </div>
@@ -81,15 +75,17 @@ export default function Technologies({ technologies }) {
                   animate={{ opacity: 1, translateX: 0, translateY: 0 }}
                   transition={{ duration: 0.3, delay: 0.1 + i * 0.2 }}
                 >
-                  <div className="flex justify-center col-span-1 aspect-w-2 aspect-h-1 md:col-span-2 lg:col-span-1">
-                    <SanityImage
-                      className="object-contain object-center"
-                      src={tech.image}
-                    />
-                  </div>
-                  <p className="pt-1 text-xs text-center text-primaryLight dark:text-gray-300">
-                    {tech.name}
-                  </p>
+                  <Tooltip text={tech.name} position="top">
+                    <div className="flex justify-center col-span-1 aspect-w-2 aspect-h-1 md:col-span-2 lg:col-span-1">
+                      <SanityImage
+                        className="object-contain object-center"
+                        src={tech.image}
+                      />
+                    </div>
+                    <p className="pt-1 text-xs text-center lg:hidden text-primaryLight dark:text-gray-300">
+                      {tech.name}
+                    </p>
+                  </Tooltip>
                 </motion.div>
               ))}
             </div>

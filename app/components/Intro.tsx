@@ -46,12 +46,12 @@ export default function Intro({ about }) {
           animate="visible"
           variants={list}
         >
-          <div className="relative z-10 pb-2 lg:col-start-9 lg:row-start-1 lg:col-span-4 lg:py-4">
+          <div className="relative z-10 pb-2 lg:col-start-9 lg:row-start-1 lg:col-span-4 lg:py-10">
             <motion.div
               className="text-lg text-primaryLight dark:text-gray-400"
               variants={item}
             >
-              <div className="px-8 mx-auto rounded-full lg:p-4">
+              <div className="w-[230px] h-[230px] mx-auto rounded-full">
                 <div className="border rounded-full border-bgAccentLight dark:border-[#F59E0B] dark:border-opacity-20 aspect-w-1 aspect-h-1">
                   <SanityImage
                     className="object-contain object-center rounded-full grayscale"
