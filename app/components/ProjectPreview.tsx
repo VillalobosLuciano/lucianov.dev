@@ -31,7 +31,7 @@ export default function ProjectPreview({
             className="object-contain object-center w-full filter grayscale group-hover:grayscale-0"
           />
         </div>
-        <div className="flex items-end justify-between ml-0.5 mt-3">
+        <div className="flex items-end justify-between mx-0.5 mt-3">
           <div className="-space-y-0.5">
             <h3
               className="text-lg font-semibold leading-snug transition duration-300 cursor-pointer text-neptune-500 hover:text-neptune-600 dark:text-amber-500/90 dark:hover:text-amber-500"
@@ -43,7 +43,7 @@ export default function ProjectPreview({
               {projectDescription}
             </p>
           </div>
-          <div className="flex space-x-2 text-lg text-gray-400 dark:text-gray-300 md:space-x-3">
+          <div className="flex space-x-2 text-lg text-gray-400 dark:text-gray-300">
             <IconButton href={website}>
               <FaLink className="w-5 h-5" />
             </IconButton>

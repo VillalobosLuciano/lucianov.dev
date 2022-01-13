@@ -89,13 +89,13 @@ export default function Pre({ children, language }) {
               currentTheme === "dark"
                 ? {
                     border: "none",
-                    margin: "0.2rem",
+                    margin: "1px 0",
                     backgroundColor: "#161618",
                   }
                 : {
                     border: "none",
                     backgroundColor: "#FEFBF3",
-                    margin: "0.2rem",
+                    margin: "1px 0",
                   }
             }
           >

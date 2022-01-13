@@ -20,7 +20,7 @@ export default function ProjectDependencies({ code, technologies }) {
 
   return (
     <div className="">
-      <h1 className="mx-4 mt-6 text-2xl text-gray-900 lg:mt-12 font-semiboldtracking-tight dark:text-white">
+      <h1 className="mx-4 mt-6 text-2xl text-gray-900 lg:mt-12 font-semiboldtracking-tight dark:text-gray-200">
         Dependencies
       </h1>
       <div className="w-full max-w-2xl pb-6 mt-2 lg:max-w-none lg:col-span-4 lg:pb-16">
