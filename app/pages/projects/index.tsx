@@ -16,10 +16,10 @@ export default function Index({ projects }) {
         <title>Luciano&apos;s Digital Space</title>
       </Head>
       <Container>
-        <div className="pb-6 divide-y lg:pb-14 divide-opacity-30 divide-neptune-500 dark:divide-yellow-500 dark:divide-opacity-30">
+        <div className="pb-6 divide-y lg:pb-14 divide-opacity-30 divide-neptune-500 dark:divide-yellow-500/30">
           <div className="px-4 pt-12 space-y-0 md:space-y-8">
             <div className="pt-6 pb-3 font-extrabold leading-9 tracking-tight lg:pb-1 md:leading-14">
-              <h1 className="text-3xl text-neptune-500 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl">
+              <h1 className="text-3xl text-neptune-500 dark:text-gray-300 sm:text-4xl sm:leading-10 md:text-6xl">
                 Projects
               </h1>
             </div>
@@ -38,11 +38,11 @@ export default function Index({ projects }) {
                   value="all"
                   className={({ active, checked }) =>
                     classNames(
-                      active ? "ring-1  ring-[#f59e0b]/50" : "",
+                      active ? "ring-1  ring-amber-500/50" : "",
                       checked
-                        ? "dark:border-[#f59e0b]/50 dark:text-[#f59e0b] dark:hover:border-[#f59e0b]/40"
-                        : "dark:border-amber-200/30 dark:text-gray-300 dark:hover:border-amber-400/40",
-                      "dark:border-[#f59e0b]/30 px-4 py-2 cursor-pointer mr-4 mt-4 lg:mt-0 border capitalize font-semibold text-sm tracking-wide transition duration-300 rounded-md"
+                        ? "border dark:border-amber-500/20 dark:text-amber-500/90"
+                        : "dark:border-amber-200/30 dark:text-gray-400 dark:hover:border-amber-400/40",
+                      "dark:border-amber-500/20 px-4 py-2 cursor-pointer mr-4 mt-4 lg:mt-0 border capitalize font-semibold text-sm tracking-wide transition duration-300 rounded-md"
                     )
                   }
                 >
@@ -55,11 +55,11 @@ export default function Index({ projects }) {
                     value={p}
                     className={({ active, checked }) =>
                       classNames(
-                        active ? "ring-1  ring-[#f59e0b]/50" : "",
+                        active ? "ring-1  ring-amber-500/50" : "",
                         checked
-                          ? "dark:border-[#f59e0b]/50 dark:text-[#f59e0b] dark:hover:border-[#f59e0b]/40"
-                          : "dark:border-amber-200/30 dark:text-gray-300 dark:hover:border-amber-400/40",
-                        "dark:border-[#f59e0b]/30 px-4 py-2 cursor-pointer mr-4 mt-4 lg:mt-0 border capitalize font-semibold text-sm tracking-wide transition duration-300 rounded-md"
+                          ? "border dark:border-amber-500/20 dark:text-amber-500/80"
+                          : "dark:border-amber-200/30 dark:text-gray-400 dark:hover:border-amber-500/30",
+                        "dark:border-amber-500/20 px-4 py-2 cursor-pointer mr-4 mt-4 lg:mt-0 border capitalize font-semibold text-sm tracking-wide transition duration-300 rounded-md"
                       )
                     }
                   >

@@ -67,10 +67,10 @@ export default function Index({ posts }) {
         <title>Luciano&apos;s Digital Space</title>
       </Head>
       <Container>
-        <div className="pb-6 divide-y lg:pb-14 divide-opacity-30 divide-neptune-500 dark:divide-amber-500 dark:divide-opacity-30">
+        <div className="pb-6 divide-y lg:pb-14 divide-opacity-30 divide-neptune-500 dark:divide-amber-500/30">
           <div className="px-4 pt-12 pb-4 space-y-2 lg:pb-8 md:space-y-8">
             <div className="pt-6 pb-3 font-extrabold leading-9 tracking-tight lg:pb-1 md:leading-14">
-              <h1 className="text-3xl text-neptune-500 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl">
+              <h1 className="text-3xl text-neptune-500 dark:text-gray-300 sm:text-4xl sm:leading-10 md:text-6xl">
                 Blog
               </h1>
             </div>
@@ -81,10 +81,10 @@ export default function Index({ posts }) {
                   type="text"
                   onChange={onSearchHandler}
                   placeholder="Search articles"
-                  className="block w-full px-4 py-2 text-gray-500 placeholder-gray-400 border rounded-md bg-neptune-500 bg-opacity-5 border-opacity-30 dark:border-[#f59e0b] dark:border-opacity-20 border-neptune-500 focus:ring-neptune-500 dark:focus:ring-opacity-60 dark:focus:ring-yellow-[#f59e0b]  dark:focus:border-[#f59e0b]  dark:focus:border-opacity-60 focus:border-neptune-500 dark:bg-[#171717] dark:text-gray-100"
+                  className="block w-full px-4 py-2 text-gray-400 placeholder-gray-400 border rounded-md dark:border-amber-500/30 border-neptune-500 focus:ring-neptune-500 dark:focus:ring-amber-500/50 dark:focus:border-amber-500/30 focus:border-neptune-500 dark:text-gray-300 dark:bg-bgDark"
                 />
                 <svg
-                  className="absolute w-5 h-5 text-neptune-500 right-3 top-3 dark:text-[#f59e0b]"
+                  className="absolute w-5 h-5 text-neptune-500 right-3 top-3 dark:text-amber-500/90"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -104,13 +104,13 @@ export default function Index({ posts }) {
                   {({ open }) => (
                     <>
                       <div className="relative">
-                        <Listbox.Button className="relative w-full py-2 px-4 dark:focus:ring-yellow-[#f59e0b] text-left shadow-sm cursor-default focus:outline-none focus:ring-1 text-gray-500 placeholder-gray-400 border rounded-md bg-neptune-500 bg-opacity-5 border-opacity-30 dark:border-[#f59e0b] dark:border-opacity-20 border-neptune-500 focus:ring-neptune-500 dark:focus:ring-opacity-60 dark:focus:ring-yellow-[#f59e0b]  dark:focus:border-[#f59e0b]  dark:focus:border-opacity-60 focus:border-neptune-500 dark:bg-[#171717] dark:text-gray-100">
+                        <Listbox.Button className="relative w-full px-4 py-2 text-left text-gray-500 placeholder-gray-400 capitalize border rounded-md shadow-sm cursor-default dark:focus:ring-amber-500/50 focus:outline-none focus:ring-1 dark:border-amber-500/30 border-neptune-500 focus:ring-neptune-500/60 dark:focus:border-amber-500/10 focus:border-neptune-500 dark:bg-bgDark dark:text-gray-300">
                           <span className="block truncate">
                             {selected.name}
                           </span>
                           <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                             <ChevronDownIcon
-                              className="w-5 h-5 text-[#f59e0b]"
+                              className="w-5 h-5 dark:text-amber-500/90"
                               aria-hidden="true"
                             />
                           </span>
@@ -123,14 +123,14 @@ export default function Index({ posts }) {
                           leaveFrom="opacity-100"
                           leaveTo="opacity-0"
                         >
-                          <Listbox.Options className="border dark:border-[#f59e0b] dark:border-opacity-20 absolute z-10 w-full py-1 mt-1 overflow-auto text-base bg-[#171717] rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                          <Listbox.Options className="border dark:border-amber-500 dark:border-opacity-20 absolute z-10 w-full py-1 mt-1 overflow-auto text-base bg-[#171717] rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                             {categories.map((tag) => (
                               <Listbox.Option
                                 key={tag.id}
                                 className={({ active }) =>
                                   classNames(
                                     active
-                                      ? "text-white bg-[#f59e0b] bg-opacity-20"
+                                      ? "text-white bg-amber-500 bg-opacity-20"
                                       : "text-gray-100",
                                     "cursor-default select-none relative py-2 pl-8 pr-4"
                                   )
@@ -155,7 +155,7 @@ export default function Index({ posts }) {
                                         className={classNames(
                                           active
                                             ? "text-gray-100"
-                                            : "text-[#f59e0b]",
+                                            : "text-amber-500",
                                           "absolute inset-y-0 left-0 flex items-center pl-1.5"
                                         )}
                                       >
@@ -180,7 +180,7 @@ export default function Index({ posts }) {
           </div>
 
           <div className="pt-2 pb-12 mx-auto overflow-hidden sm:py-6">
-            <div className="grid grid-cols-1 space-y-10 divide-y divide-gray-200 dark:divide-[#f59e0b] dark:divide-opacity-10 lg:pl-1">
+            <div className="grid grid-cols-1 space-y-10 divide-y divide-gray-200 dark:divide-amber-500/10 lg:pl-1">
               {!filteredBlogPosts.length && (
                 <p className="px-4 py-2 text-gray-400 lg:px-6">
                   No posts found.

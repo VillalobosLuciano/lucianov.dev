@@ -37,6 +37,7 @@ export const indexQuery = groq`{
     _id,
     name,
     image,
+    intro,
     bio
   },
   "technologies": *[_type == "tech"] | order(index asc) {

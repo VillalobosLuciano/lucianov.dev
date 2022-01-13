@@ -32,7 +32,7 @@ export default function Projects({ projects }) {
 
       <div className="flex mt-6 mb-4 sm:hidden">
         <Link href="/projects">
-          <a className="w-full py-2 mx-4 dark:border-[#F59E0B] dark:border-opacity-50 dark:bg-[#171717] text-base font-semibold text-center border rounded-md text-neptune-500 border-opacity-80 border-neptune-500 bg-neptune-500 bg-opacity-10  dark:text-[#F59E0B] md:hidden">
+          <a className="w-full py-2 mx-4 text-base font-semibold text-center border rounded-lg dark:border-amber-500/40 text-neptune-500 border-opacity-80 border-neptune-500 dark:text-gray-400 md:hidden">
             View all<span aria-hidden="true"> &rarr;</span>
           </a>
         </Link>

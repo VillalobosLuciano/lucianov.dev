@@ -27,7 +27,7 @@ export default function PostPreview({ title, date, excerpt, slug, category }) {
       <div className="xl:col-span-3">
         <h3 className="mt-1 text-xl font-semibold leading-8 tracking-tight">
           <Link href={`/blog/${slug}`}>
-            <a className="transition-colors duration-300 text-neptune-500 hover:text-neptune-600 dark:text-[#f59e0b] dark:hover:text-[#B45309]">
+            <a className="transition-colors duration-300 text-neptune-500 hover:text-neptune-600 dark:text-amber-500/90 dark:hover:text-amber-500">
               {title}
             </a>
           </Link>
@@ -37,7 +37,7 @@ export default function PostPreview({ title, date, excerpt, slug, category }) {
             <p
               onClick={handleTagChange}
               key={tag._key}
-              className="mt-1 mr-3 text-sm font-semibold text-gray-500 uppercase transition cursor-pointer dark:text-gray-200 hover:text-gray-600 dark:hover:text-white"
+              className="mt-1 mr-3 text-sm font-semibold text-gray-500 uppercase transition cursor-pointer dark:text-gray-200/90 hover:text-gray-600 dark:hover:text-gray-200"
             >
               {tag.category.title}
             </p>

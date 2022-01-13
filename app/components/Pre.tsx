@@ -1,13 +1,13 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { useTheme } from "next-themes";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
-  a11yDark,
+  xonokai,
   a11yLight,
 } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import NoSsr from "./NoSsr";
 
 export default function Pre({ children, language }) {
-  const [mounted, setMounted] = useState(false);
   const { theme: currentTheme } = useTheme();
   const textInput = useRef(null);
   const [hovered, setHovered] = useState(false);
@@ -28,66 +28,81 @@ export default function Pre({ children, language }) {
     }, 2000);
   };
 
-  // When mounted on client, now we can show the UI
-  useEffect(() => setMounted(true), []);
-
   return (
-    <div
-      ref={textInput}
-      onMouseEnter={onEnter}
-      onMouseLeave={onExit}
-      className="relative mx-4 -mt-6 -mb-5 bg-red-500 dark:bg-[#2b2b2b]"
-    >
-      {hovered && (
-        <button
-          aria-label="Copy code"
-          type="button"
-          className={`absolute right-2 top-2 lg:right-3 lg:top-3 lg:w-8 lg:h-8 w-7 h-7 p-1 rounded border-2 bg-gray-700 dark:bg-gray-800 ${
-            copied
-              ? "focus:outline-none focus:border-green-400 border-green-400"
-              : "border-gray-300"
-          }`}
-          onClick={onCopy}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            fill="none"
-            className={copied ? "text-green-400" : "text-gray-300"}
+    <NoSsr>
+      <div
+        ref={textInput}
+        onMouseEnter={onEnter}
+        onMouseLeave={onExit}
+        className="relative"
+      >
+        {hovered && (
+          <button
+            aria-label="Copy code"
+            type="button"
+            className={`z-20 absolute right-2 top-2 lg:right-3 lg:top-3 w-9 h-9 p-1.5 rounded-md border dark:border-amber-500/30 ${
+              copied
+                ? "focus:outline-none focus:border-amber-500/90 border-amber-500/90"
+                : "border-gray-300"
+            }`}
+            onClick={onCopy}
           >
-            {copied ? (
-              <>
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
-                />
-              </>
-            ) : (
-              <>
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                />
-              </>
-            )}
-          </svg>
-        </button>
-      )}
-      {mounted && (
-        <pre className="text-sm">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              fill="none"
+              className={copied ? "text-amber-500/90" : "text-gray-300"}
+            >
+              {copied ? (
+                <>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+                  />
+                </>
+              ) : (
+                <>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                  />
+                </>
+              )}
+            </svg>
+          </button>
+        )}
+        <pre className="text-base border border-amber-500/20">
           <SyntaxHighlighter
+            codeTagProps={{
+              className: `${
+                currentTheme === "dark" ? "text-gray-300" : "text-gray-700"
+              }`,
+            }}
             language={language}
-            style={currentTheme == "light" ? a11yLight : a11yDark}
+            style={currentTheme === "dark" ? xonokai : a11yLight}
+            customStyle={
+              currentTheme === "dark"
+                ? {
+                    border: "none",
+                    margin: "0.2rem",
+                    backgroundColor: "#161618",
+                  }
+                : {
+                    border: "none",
+                    backgroundColor: "#FEFBF3",
+                    margin: "0.2rem",
+                  }
+            }
           >
             {children}
           </SyntaxHighlighter>
         </pre>
-      )}
-    </div>
+      </div>
+    </NoSsr>
   );
 }

@@ -26,6 +26,19 @@ export default {
       },
     },
     {
+      name: "intro",
+      title: "Intro",
+      type: "array",
+      of: [
+        {
+          title: "Block",
+          type: "block",
+          styles: [{ title: "Normal", value: "normal" }],
+          lists: [],
+        },
+      ],
+    },
+    {
       name: "bio",
       title: "Bio",
       type: "array",

@@ -4,7 +4,6 @@ import imageUrlBuilder from "@sanity/image-url";
 import { sanityClient } from "@/lib/sanity.server";
 import { PortableText } from "@/lib/sanity";
 import { useState } from "react";
-import cn from "classnames";
 import SanityImage from "./SanityImage";
 
 const builder = imageUrlBuilder(sanityClient);
@@ -14,8 +13,6 @@ function urlFor(source) {
 }
 
 export default function Intro({ about }) {
-  const [isLoading, setLoading] = useState(true);
-
   const list = {
     visible: {
       opacity: 1,
@@ -39,20 +36,20 @@ export default function Intro({ about }) {
 
   return (
     <>
-      <div className="hidden pl-4 mx-auto mt-6 lg:block md:mt-20 md:mb-6">
+      <div className="hidden mt-6 -mr-10 rounded-lg lg:pl-4 lg:block md:pt-16">
         <motion.div
           className="lg:grid lg:grid-cols-12"
           initial="hidden"
           animate="visible"
           variants={list}
         >
-          <div className="relative z-10 pb-2 lg:col-start-9 lg:row-start-1 lg:col-span-4 lg:py-10">
+          <div className="relative z-10 pb-2 mr-4 lg:col-start-9 lg:row-start-1 lg:col-span-4 lg:py-12">
             <motion.div
               className="text-lg text-primaryLight dark:text-gray-400"
               variants={item}
             >
               <div className="w-[230px] h-[230px] mx-auto rounded-full">
-                <div className="border rounded-full border-bgAccentLight dark:border-[#F59E0B] dark:border-opacity-20 aspect-w-1 aspect-h-1">
+                <div className="border rounded-full border-bgAccentLight dark:border-amber-500/20 aspect-w-1 aspect-h-1">
                   <SanityImage
                     className="object-contain object-center rounded-full grayscale"
                     src={about.image}
@@ -62,14 +59,13 @@ export default function Intro({ about }) {
             </motion.div>
           </div>
 
-          <div className="bg-opacity-60 border-bgAccentLight bg-[#fcf7ed] relative border dark:bg-[#171717] dark:border-[#F59E0B] dark:border-opacity-20 lg:col-start-1 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-12 lg:items-center">
-            <div className="relative max-w-md pr-6 mx-auto space-y-5 pl-14 sm:max-w-3xl lg:max-w-none lg:col-start-1 lg:col-span-10">
+          <div className="relative border dark:border-amber-500/20 lg:col-start-1 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-12 lg:items-center">
+            <div className="relative max-w-md mx-auto mr-6 space-y-5 pl-14 sm:max-w-3xl lg:max-w-none lg:col-start-1 lg:col-span-10">
               <motion.h2
-                className="text-3xl font-extrabold text-neptune-500 dark:text-gray-200"
+                className="text-3xl font-extrabold text-neptune-500 dark:text-gray-300"
                 variants={item}
               >
-                Hi! I&apos;m Luciano, here I will organize and share my learning
-                process in WebDev and IoT technologies 🙃.
+                <PortableText blocks={about.intro} />
               </motion.h2>
               <motion.div
                 className="text-lg text-primaryLight dark:text-gray-400"

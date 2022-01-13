@@ -1,55 +1,7 @@
-import React, { useMemo } from "react";
-import PropTypes from "prop-types";
-import { PortableText } from "@/lib/sanity";
-
-/**
- * Use Tailwind CSS's `prose` classes with Portable Text markup (blocks)
- * Without inheriting styles for custom components (types)
- */
-export default function ProseableText({ blocks = [] }) {
-  // Group together standard `_type === "block"`  blocks
-  // eg <p>, <li>, etc – and separate out everyone else
-  const blockGroups = useMemo(
-    () =>
-      blocks.reduce(
-        (acc, item) => {
-          const lastIdx = acc.length - 1;
-
-          if (
-            // We don't have items in this group yet
-            acc[lastIdx].length === 0 ||
-            // The last group has the same `type`
-            acc[lastIdx][0]._type === item._type
-          ) {
-            acc[lastIdx].push(item);
-          } else {
-            // Time to create a new group, because the `type` is different compared to last group
-            acc.push([item]);
-          }
-
-          return acc;
-        },
-        [[]]
-      ),
-    [blocks]
-  );
-
-  if (!blockGroups?.length) return null;
-
-  return blockGroups.map((group) =>
-    group[0]._type === "block" ? (
-      <div
-        key={group[0]._key}
-        className="px-4 py-2 prose lg:py-4 max-w-none dark:prose-dark"
-      >
-        <PortableText blocks={group} />
-      </div>
-    ) : (
-      <PortableText key={group[0]._key} blocks={group} />
-    )
+export default function ProseableText({ children }) {
+  return (
+    <div className="px-4 py-6 prose lg:pt-6 lg:pb-16 max-w-none dark:prose-invert prose-pre:lg:p-1 prose-pre:dark:bg-bgDark prose-headings:mb-4 prose-headings:mt-8 prose-pre:bg-bgLight prose-a:dark:text-amber-500/90 hover:prose-a:dark:text-amber-500 prose-headings:dark:text-gray-300">
+      {children}
+    </div>
   );
 }
-
-ProseableText.propTypes = {
-  blocks: PropTypes.array.isRequired,
-};

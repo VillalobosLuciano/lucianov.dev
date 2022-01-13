@@ -1,4 +1,4 @@
-import ProseableText from "./ProseableText";
+import { PortableText } from "@/lib/sanity";
 
 export default function ProjectHighlights({ highlights }) {
   return (
@@ -6,7 +6,7 @@ export default function ProjectHighlights({ highlights }) {
       <h1 className="mx-4 mt-6 text-2xl text-gray-900 lg:mt-12 font-semiboldtracking-tight dark:text-white">
         Highlights
       </h1>
-      <ProseableText blocks={highlights} />
+      <PortableText blocks={highlights} />
     </div>
   );
 }
