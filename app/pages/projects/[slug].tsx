@@ -48,6 +48,7 @@ export default function Post({ data = {} as any, preview }) {
             </Head>
             <ProjectHeader
               projectName={project.projectName}
+              projectDescription={project.projectDescription}
               projectType={project.projectType}
               mainImage={project.mainImage}
               website={project.link}

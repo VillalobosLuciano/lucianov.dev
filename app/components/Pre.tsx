@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
@@ -25,7 +25,7 @@ export default function Pre({ children, language }) {
     navigator.clipboard.writeText(textInput.current.textContent);
     setTimeout(() => {
       setCopied(false);
-    }, 2000);
+    }, 1000);
   };
 
   return (
@@ -40,7 +40,7 @@ export default function Pre({ children, language }) {
           <button
             aria-label="Copy code"
             type="button"
-            className={`z-20 absolute right-2 top-2 lg:right-3 lg:top-3 w-9 h-9 p-1.5 rounded-md border dark:border-amber-500/30 ${
+            className={`z-20 absolute right-2 top-2 lg:right-3 lg:top-3 w-9 h-9 p-1.5 rounded-md border dark:border-amber-500/30 hidden lg:block ${
               copied
                 ? "focus:outline-none focus:border-amber-500/90 border-amber-500/90"
                 : "border-gray-300"
@@ -76,7 +76,7 @@ export default function Pre({ children, language }) {
             </svg>
           </button>
         )}
-        <pre className="text-base border border-amber-500/20">
+        <pre className="text-base border border-amber-500/30">
           <SyntaxHighlighter
             codeTagProps={{
               className: `${
@@ -89,13 +89,13 @@ export default function Pre({ children, language }) {
               currentTheme === "dark"
                 ? {
                     border: "none",
-                    margin: "1px 0",
+                    margin: "-4px 1px",
                     backgroundColor: "#161618",
                   }
                 : {
                     border: "none",
                     backgroundColor: "#FEFBF3",
-                    margin: "1px 0",
+                    margin: "-4px 1px",
                   }
             }
           >

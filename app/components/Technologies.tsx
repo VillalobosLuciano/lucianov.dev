@@ -40,12 +40,6 @@ export default function Technologies({ technologies }) {
                         className="object-contain object-center"
                         src={tech.image}
                       />
-                      {/* <Image
-                      className="object-contain object-center filter grayscale"
-                      src={urlFor(tech.image).url()}
-                      alt={tech.name}
-                      layout="fill"
-                    /> */}
                     </div>
                     <p className="pt-1 text-xs text-center lg:hidden text-primaryLight dark:text-gray-300">
                       {tech.name}

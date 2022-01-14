@@ -8,23 +8,24 @@ export default function ProjectHeader({
   mainImage,
   website,
   code,
+  projectDescription,
 }) {
   return (
     <>
-      <div className="flex flex-col mx-4 mt-20 lg:my-16 lg:space-x-6 lg:items-center lg:flex-row">
-        <div className="relative w-32 border lg:-mb-1.5 lg:h-32 lg:w-36 border-amber-500/20 h-28">
+      <div className="flex flex-col mx-4 mt-20 lg:mt-16 lg:space-x-6 lg:items-center lg:flex-row">
+        <div className="relative w-32 border rounded-md lg:-mb-1.5 lg:h-32 lg:w-36 border-amber-500/20 h-28">
           <SanityImage
             src={mainImage}
             className="object-contain object-center"
           />
         </div>
-        <div className="flex-col my-4 space-y-3 lg:space-y-4">
-          <div className="lg:pt-1">
-            <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+        <div className="flex-col my-4 space-y-2 lg:space-y-4">
+          <div className="lg:pt-1 lg:space-y-1">
+            <h1 className="text-3xl font-extrabold leading-9 tracking-tight md:leading-14 text-neptune-500 dark:text-gray-300 sm:text-4xl sm:leading-10 md:text-5xl">
               {projectName}
             </h1>
-            <p className="text-lg text-gray-900 sm:text-xl dark:text-gray-200">
-              {projectType}
+            <p className="text-lg text-gray-900 sm:text-xl dark:text-gray-400">
+              {projectDescription}
             </p>
           </div>
 

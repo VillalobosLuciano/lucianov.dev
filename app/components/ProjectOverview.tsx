@@ -4,8 +4,8 @@ import ProseableText from "./ProseableText";
 export default function ProjectOverview({ overview }) {
   return (
     <>
-      <h1 className="pb-4 mx-4 mt-8 text-2xl font-thin text-gray-900 lg:mt-12 dark:text-gray-200">
-        Project Overview
+      <h1 className="px-4 pt-10 pb-4 text-3xl font-semibold leading-9 tracking-tight md:leading-14 text-neptune-500 dark:text-gray-300 sm:leading-10">
+        Project overview
       </h1>
       <ProseableText>
         <PortableText blocks={overview} />

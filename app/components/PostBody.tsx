@@ -4,7 +4,9 @@ import ProseableText from "./ProseableText";
 export default function PostBody({ body }) {
   return (
     <ProseableText>
-      <PortableText blocks={body} />
+      <div className="pt-2 pb-12 lg:pb-20">
+        <PortableText blocks={body} />
+      </div>
     </ProseableText>
   );
 }
