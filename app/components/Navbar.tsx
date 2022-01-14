@@ -43,7 +43,7 @@ export default function Navbar() {
               >
                 {isExpanded ? (
                   <BiX
-                    className="block w-8 h-8 border border-opacity-50 rounded-lg border-neptune-500 dark:border-yellow-500 dark:border-opacity-80"
+                    className="block w-8 h-8 border border-opacity-50 rounded-md border-neptune-500 dark:border-yellow-500 dark:border-opacity-80"
                     aria-hidden="true"
                   />
                 ) : (
@@ -89,7 +89,7 @@ export default function Navbar() {
               <Link href={route.path} key={route.path}>
                 <a
                   className={cn(
-                    "px-6 py-2 rounded-lg font-semibold text-sm tracking-wide transition duration-300",
+                    "px-6 py-2 rounded-md font-semibold text-sm tracking-wide transition duration-300",
                     {
                       "border dark:border-amber-500/20 dark:text-amber-500/90":
                         isActive,

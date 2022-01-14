@@ -13,13 +13,13 @@ export default function ProjectHeader({
   return (
     <>
       <div className="flex flex-col mx-4 mt-20 lg:mt-16 lg:space-x-6 lg:items-center lg:flex-row">
-        <div className="relative w-32 border rounded-md lg:-mb-1.5 lg:h-32 lg:w-36 border-amber-500/20 h-28">
+        <div className="relative w-32 border rounded-md lg:-mb-1.5 lg:h-36 lg:w-40 border-amber-500/20 h-28">
           <SanityImage
             src={mainImage}
             className="object-contain object-center"
           />
         </div>
-        <div className="flex-col my-4 space-y-2 lg:space-y-4">
+        <div className="flex-col my-4 space-y-2 lg:space-y-5">
           <div className="lg:pt-1 lg:space-y-1">
             <h1 className="text-3xl font-extrabold leading-9 tracking-tight md:leading-14 text-neptune-500 dark:text-gray-300 sm:text-4xl sm:leading-10 md:text-5xl">
               {projectName}

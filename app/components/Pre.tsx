@@ -40,10 +40,10 @@ export default function Pre({ children, language }) {
           <button
             aria-label="Copy code"
             type="button"
-            className={`z-20 absolute right-2 top-2 lg:right-3 lg:top-3 w-9 h-9 p-1.5 rounded-md border dark:border-amber-500/30 hidden lg:block ${
+            className={`z-20 absolute right-2 top-2 lg:right-2.5 lg:top-2.5 w-9 h-9 p-1.5 rounded-md border dark:border-amber-500/30 hidden lg:block ${
               copied
                 ? "focus:outline-none focus:border-amber-500/90 border-amber-500/90"
-                : "border-gray-300"
+                : "border-gray-300/90"
             }`}
             onClick={onCopy}
           >
@@ -52,7 +52,7 @@ export default function Pre({ children, language }) {
               viewBox="0 0 24 24"
               stroke="currentColor"
               fill="none"
-              className={copied ? "text-amber-500/90" : "text-gray-300"}
+              className={copied ? "text-amber-500/90" : "text-gray-300/90"}
             >
               {copied ? (
                 <>
@@ -76,7 +76,7 @@ export default function Pre({ children, language }) {
             </svg>
           </button>
         )}
-        <pre className="text-base border border-amber-500/30">
+        <pre className="text-base border border-amber-500/20">
           <SyntaxHighlighter
             codeTagProps={{
               className: `${

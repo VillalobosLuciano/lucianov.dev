@@ -36,7 +36,7 @@ export default function Intro({ about }) {
 
   return (
     <>
-      <div className="hidden mt-6 -mr-10 rounded-lg lg:pl-4 lg:block md:pt-16">
+      <div className="hidden mt-6 -mr-10 rounded-md lg:pl-4 lg:block md:pt-16">
         <motion.div
           className="lg:grid lg:grid-cols-12"
           initial="hidden"
@@ -59,7 +59,7 @@ export default function Intro({ about }) {
             </motion.div>
           </div>
 
-          <div className="relative border dark:border-amber-500/20 lg:col-start-1 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-12 lg:items-center">
+          <div className="relative border dark:border-amber-500/20 lg:col-start-1 lg:row-start-1 lg:col-span-10 lg:rounded-2xl lg:grid lg:grid-cols-12 lg:items-center">
             <div className="relative max-w-md pl-16 mx-auto mr-6 space-y-5 sm:max-w-3xl lg:max-w-none lg:col-start-1 lg:col-span-10">
               <motion.h2
                 className="text-3xl font-extrabold text-neptune-500 dark:text-gray-300"
@@ -82,7 +82,7 @@ export default function Intro({ about }) {
       <div className="flex flex-col px-4 mt-20 lg:hidden">
         <div className="relative w-32 h-32 mb-8">
           <Image
-            className="absolute rounded-lg grayscale"
+            className="absolute rounded-md grayscale"
             src={urlFor(about.image).url()}
             alt={about.name}
             layout="fill"

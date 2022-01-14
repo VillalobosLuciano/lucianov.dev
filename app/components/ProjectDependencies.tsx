@@ -53,7 +53,7 @@ export default function ProjectDependencies({ code, technologies }) {
                   {technologies.map((tech, i) => (
                     <Tooltip text={tech.tech.name} position="bottom" key={i}>
                       <motion.div
-                        className="py-4 border rounded-lg border-amber-500/10"
+                        className="py-4 border rounded-md border-amber-500/10"
                         key={i}
                         initial={{
                           opacity: 0,

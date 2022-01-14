@@ -25,7 +25,7 @@ export default function Technologies({ technologies }) {
               {user.map((tech, i) => (
                 <Tooltip text={tech.name} position="bottom" key={tech._id}>
                   <motion.div
-                    className="py-4 border rounded-lg border-amber-500/10"
+                    className="py-4 border rounded-md border-amber-500/10"
                     key={tech._id}
                     initial={{
                       opacity: 0,
@@ -60,7 +60,7 @@ export default function Technologies({ technologies }) {
               {learning.map((tech, i) => (
                 <Tooltip text={tech.name} position="bottom" key={tech._id}>
                   <motion.div
-                    className="py-4 border rounded-lg border-amber-500/10"
+                    className="py-4 border rounded-md border-amber-500/10"
                     key={tech._id}
                     initial={{
                       opacity: 0,
