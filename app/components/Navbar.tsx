@@ -89,7 +89,7 @@ export default function Navbar() {
               <Link href={route.path} key={route.path}>
                 <a
                   className={cn(
-                    "px-6 py-2 rounded-md font-semibold text-sm tracking-wide transition duration-300",
+                    "px-6 py-2 rounded-md font-semibold text-sm tracking-wide transition duration-300 border-transparent",
                     {
                       "border dark:border-amber-500/20 dark:text-amber-500/90":
                         isActive,

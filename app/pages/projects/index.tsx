@@ -41,7 +41,7 @@ export default function Index({ projects }) {
                       active ? "ring-1  ring-amber-500/50" : "",
                       checked
                         ? "border dark:border-amber-500/20 dark:text-amber-500/90"
-                        : "dark:border-amber-200/30 dark:text-gray-400 dark:hover:border-amber-400/40",
+                        : "dark:border-amber-50/10 dark:text-gray-400 dark:hover:border-amber-400/40",
                       "dark:border-amber-500/20 px-4 py-2 cursor-pointer mr-4 mt-4 lg:mt-0 border capitalize font-semibold text-sm tracking-wide transition duration-300 rounded-md"
                     )
                   }
@@ -57,9 +57,9 @@ export default function Index({ projects }) {
                       classNames(
                         active ? "ring-1  ring-amber-500/50" : "",
                         checked
-                          ? "border dark:border-amber-500/20 dark:text-amber-500/80"
-                          : "dark:border-amber-200/30 dark:text-gray-400 dark:hover:border-amber-500/30",
-                        "dark:border-amber-500/20 px-4 py-2 cursor-pointer mr-4 mt-4 lg:mt-0 border capitalize font-semibold text-sm tracking-wide transition duration-300 rounded-md"
+                          ? "border dark:border-amber-500/30 dark:text-amber-500/80"
+                          : "dark:border-amber-500/10 dark:text-gray-400 dark:hover:border-amber-500/30",
+                        "dark:border-amber-500/30 px-4 py-2 cursor-pointer mr-4 mt-4 lg:mt-0 border capitalize font-semibold text-sm tracking-wide transition duration-300 rounded-md"
                       )
                     }
                   >
