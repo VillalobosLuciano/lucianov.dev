@@ -123,7 +123,7 @@ export default function Index({ posts }) {
                           leaveFrom="opacity-100"
                           leaveTo="opacity-0"
                         >
-                          <Listbox.Options className="border dark:border-amber-500 dark:border-opacity-20 absolute z-10 w-full py-1 mt-1 overflow-auto text-base bg-[#171717] rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                          <Listbox.Options className="absolute z-10 w-full py-1 mt-1 overflow-auto text-base border rounded-md shadow-lg dark:border-amber-500 dark:border-opacity-20 dark:bg-bgDark bg-bgLight max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                             {categories.map((tag) => (
                               <Listbox.Option
                                 key={tag.id}
@@ -132,7 +132,7 @@ export default function Index({ posts }) {
                                     active
                                       ? "text-white bg-amber-500 bg-opacity-20"
                                       : "text-gray-100",
-                                    "cursor-default select-none relative py-2 pl-8 pr-4"
+                                    "cursor-default select-none relative py-2 pl-8 pr-4 capitalize"
                                   )
                                 }
                                 value={tag}
