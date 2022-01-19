@@ -18,6 +18,7 @@ export default function Projects({ projects }) {
                 slug={project.slug}
                 mainImage={project.mainImage}
                 projectName={project.projectName}
+                projectType={project.projectType}
                 projectDescription={project.projectDescription}
                 website={project.link}
                 source={project.source}

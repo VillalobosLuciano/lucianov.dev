@@ -3,7 +3,7 @@ import ThemeSwitch from "./ThemeSwitch";
 import routes from "../config/routes";
 import { BiMenuAltRight, BiX } from "react-icons/bi";
 import Link from "next/link";
-import cn from "classnames";
+import clsx from "clsx";
 import { useState } from "react";
 import lvLight from "../public/lvLight.svg";
 import lvDark from "../public/lvDark.svg";
@@ -88,7 +88,7 @@ export default function Navbar() {
             return (
               <Link href={route.path} key={route.path}>
                 <a
-                  className={cn(
+                  className={clsx(
                     "px-6 py-2 rounded-md font-semibold text-sm tracking-wide transition duration-300 border-transparent",
                     {
                       "border dark:border-amber-500/20 dark:text-amber-500/90":

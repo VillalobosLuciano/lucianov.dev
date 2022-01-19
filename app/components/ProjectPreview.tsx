@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { FaGithub, FaLink } from "react-icons/fa";
-import cn from "classnames";
+import clsx from "clsx";
 import SanityImage from "./SanityImage";
 import IconButton from "./IconButton";
 
@@ -9,6 +9,7 @@ export default function ProjectPreview({
   mainImage,
   projectName,
   projectDescription,
+  projectType,
   website,
   scrollX,
   source,
@@ -17,7 +18,7 @@ export default function ProjectPreview({
   return (
     <div className="inline-block snap-center">
       <div
-        className={cn("overflow-hidden", {
+        className={clsx("overflow-hidden", {
           "w-[295px] lg:w-full": scrollX === "true",
           "w-full": scrollX === "false",
         })}
@@ -40,7 +41,7 @@ export default function ProjectPreview({
               {projectName}
             </h3>
             <p className="text-base font-thin leading-snug text-primaryLight dark:text-gray-400">
-              {projectDescription}
+              {projectType}
             </p>
           </div>
           <div className="flex space-x-2 text-lg text-gray-400 dark:text-gray-300">

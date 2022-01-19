@@ -16,7 +16,7 @@ export default function Index({ about, projects, posts, technologies }) {
   return (
     <>
       <Head>
-        <title>Luciano&apos;s Digital Space</title>
+        <title>Luciano Villalobos</title>
       </Head>
       <Container>
         <Intro about={about} />

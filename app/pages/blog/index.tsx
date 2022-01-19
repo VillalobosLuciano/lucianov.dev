@@ -64,7 +64,7 @@ export default function Index({ posts }) {
   return (
     <>
       <Head>
-        <title>Luciano&apos;s Digital Space</title>
+        <title>Luciano Villalobos</title>
       </Head>
       <Container>
         <div className="pb-6 divide-y lg:pb-14 divide-opacity-30 divide-neptune-500 dark:divide-amber-500/30">

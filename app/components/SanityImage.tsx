@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import cn from "classnames";
+import clsx from "clsx";
 import imageUrlBuilder from "@sanity/image-url";
 import { sanityClient } from "@/lib/sanity.server";
 
@@ -44,7 +44,7 @@ export default function SanityImage(props) {
       <Image
         src={urlFor(props.src).url()}
         alt={props.alt}
-        className={cn(
+        className={clsx(
           props.className,
           "duration-300 ease-in-out",
           isLoading ? selectedFilter.loading : selectedFilter.loaded

@@ -5,7 +5,7 @@ import Container from "@/components/Container";
 import ProjectPreview from "../../components/ProjectPreview";
 import { useState } from "react";
 import { RadioGroup } from "@headlessui/react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 export default function Index({ projects }) {
   const [selectedType, setSelectedType] = useState("all");
@@ -13,7 +13,7 @@ export default function Index({ projects }) {
   return (
     <>
       <Head>
-        <title>Luciano&apos;s Digital Space</title>
+        <title>Luciano Villalobos</title>
       </Head>
       <Container>
         <div className="pb-6 divide-y lg:pb-14 divide-opacity-30 divide-neptune-500 dark:divide-yellow-500/30">
@@ -37,7 +37,7 @@ export default function Index({ projects }) {
                   key="all"
                   value="all"
                   className={({ active, checked }) =>
-                    classNames(
+                    clsx(
                       active ? "ring-1  ring-amber-500/50" : "",
                       checked
                         ? "border dark:border-amber-500/20 dark:text-amber-500/90"
@@ -54,7 +54,7 @@ export default function Index({ projects }) {
                     key={p._id}
                     value={p}
                     className={({ active, checked }) =>
-                      classNames(
+                      clsx(
                         active ? "ring-1  ring-amber-500/50" : "",
                         checked
                           ? "border dark:border-amber-500/30 dark:text-amber-500/80"
@@ -79,6 +79,7 @@ export default function Index({ projects }) {
                     slug={p.slug}
                     mainImage={p.mainImage}
                     projectName={p.projectName}
+                    projectType={p.projectType}
                     projectDescription={p.projectDescription}
                     website={p.link}
                     source={p.source}
@@ -92,6 +93,7 @@ export default function Index({ projects }) {
                     slug={p.slug}
                     mainImage={p.mainImage}
                     projectName={p.projectName}
+                    projectType={p.projectType}
                     projectDescription={p.projectDescription}
                     website={p.link}
                     source={p.source}

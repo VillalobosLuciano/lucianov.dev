@@ -27,7 +27,7 @@ export default function PostPreview({ title, date, excerpt, slug, category }) {
       <div className="xl:col-span-3">
         <h3 className="mt-1 text-xl font-semibold leading-8 tracking-tight">
           <Link href={`/blog/${slug}`}>
-            <a className="transition-colors duration-300 text-neptune-500 hover:text-neptune-600 dark:text-amber-500/90 dark:hover:text-amber-500">
+            <a className="capitalize transition-colors duration-300 text-neptune-500 hover:text-neptune-600 dark:text-amber-500/90 dark:hover:text-amber-500">
               {title}
             </a>
           </Link>
