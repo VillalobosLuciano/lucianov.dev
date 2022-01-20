@@ -63,6 +63,7 @@ export async function getStaticProps({ params, preview = false }) {
         morePosts: overlayDrafts(morePosts),
       },
     },
+    revalidate: 60,
   };
 }
 
