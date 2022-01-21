@@ -11,10 +11,10 @@ export default function Footer() {
             Luciano Villalobos • {new Date().getFullYear()}
           </p>
           <div className="flex space-x-2 text-lg text-gray-400 dark:text-gray-300">
-            <IconButton>
+            <IconButton href="https://github.com/VillalobosLuciano">
               <FaGithub className="w-5 h-5" />
             </IconButton>
-            <IconButton>
+            <IconButton href="https://twitter.com/lucianov0">
               <FaTwitter className="w-5 h-5" />
             </IconButton>
           </div>

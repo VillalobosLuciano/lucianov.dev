@@ -3,8 +3,8 @@ import SanityImage from "./SanityImage";
 import Tooltip from "./Tooltip";
 
 export default function Technologies({ technologies }) {
-  const user = technologies.slice(0, 5);
-  const learning = technologies.slice(5, 8);
+  const user = technologies.slice(0, 6);
+  const learning = technologies.slice(6, 9);
 
   return (
     <>
@@ -19,9 +19,9 @@ export default function Technologies({ technologies }) {
         </p>
       </div>
       <div className="px-4 pt-8 mx-auto">
-        <div className="grid grid-cols-3 gap-4 lg:gap-x-8 md:grid-cols-8">
-          <div className="col-span-5">
-            <div className="grid grid-cols-3 gap-4 px-2 md:grid-cols-5">
+        <div className="grid grid-cols-3 gap-4 lg:gap-x-8 md:grid-cols-9">
+          <div className="col-span-6">
+            <div className="grid grid-cols-3 gap-4 px-2 md:grid-cols-6">
               {user.map((tech, i) => (
                 <Tooltip text={tech.name} position="bottom" key={tech._id}>
                   <motion.div
@@ -35,7 +35,7 @@ export default function Technologies({ technologies }) {
                     animate={{ opacity: 1, translateX: 0, translateY: 0 }}
                     transition={{ duration: 0.3, delay: 0.1 + i * 0.2 }}
                   >
-                    <div className="relative flex justify-center w-full col-span-1 aspect-square h-11 md:col-span-2 lg:col-span-1">
+                    <div className="relative flex justify-center w-full h-10 col-span-1 aspect-square md:col-span-2 lg:col-span-1">
                       <SanityImage
                         className="object-contain object-center"
                         src={tech.image}
@@ -55,7 +55,7 @@ export default function Technologies({ technologies }) {
               </span>
             </div>
           </div>
-          <div className="col-span-5 lg:col-span-3">
+          <div className="col-span-6 lg:col-span-3">
             <div className="grid grid-cols-3 gap-4 px-2 md:grid-cols-3">
               {learning.map((tech, i) => (
                 <Tooltip text={tech.name} position="bottom" key={tech._id}>
@@ -70,7 +70,7 @@ export default function Technologies({ technologies }) {
                     animate={{ opacity: 1, translateX: 0, translateY: 0 }}
                     transition={{ duration: 0.3, delay: 0.1 + i * 0.2 }}
                   >
-                    <div className="relative flex justify-center w-full col-span-1 aspect-square h-11 md:col-span-2 lg:col-span-1">
+                    <div className="relative flex justify-center w-full h-10 col-span-1 aspect-square md:col-span-2 lg:col-span-1">
                       <SanityImage
                         className="object-contain object-center"
                         src={tech.image}
