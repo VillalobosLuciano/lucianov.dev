@@ -43,7 +43,7 @@ export default function PostPreview({ title, date, excerpt, slug, category }) {
             </p>
           ))}
         </div>
-        <div className="mt-3 max-w-none text-primaryLight dark:text-gray-400 line-clamp-3">
+        <div className="mt-3 max-w-none text-primaryLight dark:text-gray-400">
           <PortableText blocks={excerpt} />
         </div>
       </div>

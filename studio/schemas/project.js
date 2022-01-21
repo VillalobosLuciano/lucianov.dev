@@ -77,8 +77,8 @@ export default {
       of: [{ type: "block" }],
     },
     {
-      name: "highlights",
-      title: "Highlights",
+      name: "features",
+      title: "Features",
       type: "array",
       of: [{ type: "block" }],
     },

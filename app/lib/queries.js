@@ -80,7 +80,7 @@ export const projectQuery = groq`
       }
     },
     overview,
-    highlights,
+    features,
     dependencies
   },
   "moreProjects": *[_type == "project" && slug.current != $slug][0...2] | order(date desc) { 

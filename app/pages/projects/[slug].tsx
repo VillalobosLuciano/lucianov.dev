@@ -9,7 +9,7 @@ import { sanityClient, getClient, overlayDrafts } from "@/lib/sanity.server";
 import ProjectHeader from "@/components/ProjectHeader";
 import ProjectOverview from "@/components/ProjectOverview";
 import ProjectDependencies from "@/components/ProjectDependencies";
-import ProjectHighlights from "@/components/ProjectHighlights";
+import ProjectFeatures from "@/components/ProjectFeatures";
 
 export default function Post({ data = {} as any, preview }) {
   const getTechs = (techs) => {
@@ -55,7 +55,7 @@ export default function Post({ data = {} as any, preview }) {
               code={project.source}
             />
             <ProjectOverview overview={project.overview} />
-            <ProjectHighlights highlights={project.highlights} />
+            <ProjectFeatures features={project.features} />
             <ProjectDependencies
               code={project.dependencies[0].code}
               technologies={project.tech}

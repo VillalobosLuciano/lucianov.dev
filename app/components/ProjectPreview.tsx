@@ -25,7 +25,7 @@ export default function ProjectPreview({
       >
         <div
           onClick={() => router.push(`/projects/${slug}`)}
-          className="overflow-hidden border rounded-md cursor-pointer dark:border-amber-500/20 border-bgAccentLight group aspect-w-4 aspect-h-3"
+          className="relative overflow-hidden border rounded-md cursor-pointer dark:border-amber-500/20 border-bgAccentLight group aspect-4/3"
         >
           <SanityImage
             src={mainImage}

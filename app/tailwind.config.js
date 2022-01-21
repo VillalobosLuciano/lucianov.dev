@@ -33,6 +33,9 @@ module.exports = {
           900: "#1C3334",
         },
       },
+      aspectRatio: {
+        "4/3": "4 / 3",
+      },
       spacing: {
         28: "7rem",
       },
@@ -59,10 +62,5 @@ module.exports = {
   variants: {
     typography: ["dark"],
   },
-  plugins: [
-    require("@tailwindcss/forms"),
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/aspect-ratio"),
-    require("@tailwindcss/line-clamp"),
-  ],
+  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
 };

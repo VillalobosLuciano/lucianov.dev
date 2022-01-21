@@ -15,6 +15,7 @@ export default function ProjectHeader({
       <div className="flex flex-col mx-4 mt-20 lg:mt-16 lg:space-x-6 lg:items-center lg:flex-row">
         <div className="relative w-32 border rounded-md lg:-mb-1.5 lg:h-36 lg:w-40 border-amber-500/20 h-28">
           <SanityImage
+            placeholderFilter="hue-rotate"
             src={mainImage}
             className="object-contain object-center"
           />

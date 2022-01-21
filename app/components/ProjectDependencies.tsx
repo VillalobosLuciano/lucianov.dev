@@ -49,7 +49,7 @@ export default function ProjectDependencies({ code, technologies }) {
           <Tab.Panels as={Fragment}>
             <Tab.Panel className="">
               <div className="w-full px-4 pt-6 mx-auto lg:py-4">
-                <div className="grid grid-cols-3 gap-4 md:grid-cols-8">
+                <div className="grid grid-cols-3 gap-4 md:grid-cols-9">
                   {technologies.map((tech, i) => (
                     <Tooltip text={tech.tech.name} position="bottom" key={i}>
                       <motion.div
@@ -63,7 +63,7 @@ export default function ProjectDependencies({ code, technologies }) {
                         animate={{ opacity: 1, translateX: 0, translateY: 0 }}
                         transition={{ duration: 0.3, delay: 0.1 + i * 0.2 }}
                       >
-                        <div className="flex justify-center col-span-1 aspect-w-2 aspect-h-1 md:col-span-2 lg:col-span-1">
+                        <div className="relative flex justify-center w-full col-span-1 h-11 aspect-square md:col-span-2 lg:col-span-1">
                           <SanityImage
                             className="object-contain object-center"
                             src={tech.tech.image}

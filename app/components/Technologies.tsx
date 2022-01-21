@@ -35,7 +35,7 @@ export default function Technologies({ technologies }) {
                     animate={{ opacity: 1, translateX: 0, translateY: 0 }}
                     transition={{ duration: 0.3, delay: 0.1 + i * 0.2 }}
                   >
-                    <div className="flex justify-center col-span-1 aspect-w-2 aspect-h-1 md:col-span-2 lg:col-span-1">
+                    <div className="relative flex justify-center w-full col-span-1 aspect-square h-11 md:col-span-2 lg:col-span-1">
                       <SanityImage
                         className="object-contain object-center"
                         src={tech.image}
@@ -56,7 +56,7 @@ export default function Technologies({ technologies }) {
             </div>
           </div>
           <div className="col-span-5 lg:col-span-3">
-            <div className="grid grid-cols-3 gap-4 md:grid-cols-3">
+            <div className="grid grid-cols-3 gap-4 px-2 md:grid-cols-3">
               {learning.map((tech, i) => (
                 <Tooltip text={tech.name} position="bottom" key={tech._id}>
                   <motion.div
@@ -70,17 +70,11 @@ export default function Technologies({ technologies }) {
                     animate={{ opacity: 1, translateX: 0, translateY: 0 }}
                     transition={{ duration: 0.3, delay: 0.1 + i * 0.2 }}
                   >
-                    <div className="flex justify-center col-span-1 aspect-w-2 aspect-h-1 md:col-span-2 lg:col-span-1">
+                    <div className="relative flex justify-center w-full col-span-1 aspect-square h-11 md:col-span-2 lg:col-span-1">
                       <SanityImage
                         className="object-contain object-center"
                         src={tech.image}
                       />
-                      {/* <Image
-                      className="object-contain object-center filter grayscale"
-                      src={urlFor(tech.image).url()}
-                      alt={tech.name}
-                      layout="fill"
-                    /> */}
                     </div>
                     <p className="pt-1 text-xs text-center lg:hidden text-primaryLight dark:text-gray-300">
                       {tech.name}
