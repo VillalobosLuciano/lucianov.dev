@@ -15,7 +15,7 @@ module.exports = {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        bgLight: "#FEFBF3",
+        bgLight: "#fbfcfc",
         bgDark: "#161618",
         bgAccentLight: "#F8F0DF",
         primaryLight: "#9D9D9D",

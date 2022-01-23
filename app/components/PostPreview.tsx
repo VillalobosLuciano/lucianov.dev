@@ -20,14 +20,14 @@ export default function PostPreview({ title, date, excerpt, slug, category }) {
 
   return (
     <div className="px-4 pt-8 xl:grid xl:grid-cols-4 xl:items-baseline">
-      <time className="text-base font-medium text-primaryLight dark:text-gray-300">
+      <time className="text-base font-medium text-gray-400 dark:text-gray-300">
         {format(parseISO(date), "MMMM dd, yyyy")}
       </time>
 
       <div className="xl:col-span-3">
         <h3 className="mt-1 text-xl font-semibold leading-8 tracking-tight">
           <Link href={`/blog/${slug}`}>
-            <a className="capitalize transition-colors duration-300 text-neptune-500 hover:text-neptune-600 dark:text-amber-500/90 dark:hover:text-amber-500">
+            <a className="capitalize transition-colors duration-300 text-teal-500/90 hover:text-teal-500 dark:text-amber-500/90 dark:hover:text-amber-500">
               {title}
             </a>
           </Link>
@@ -37,13 +37,13 @@ export default function PostPreview({ title, date, excerpt, slug, category }) {
             <p
               onClick={handleTagChange}
               key={tag._key}
-              className="mt-1 mr-3 text-sm font-semibold text-gray-500 uppercase transition cursor-pointer dark:text-gray-200/90 hover:text-gray-600 dark:hover:text-gray-200"
+              className="mt-1 mr-3 text-sm font-semibold uppercase transition cursor-pointer text-gray-500/90 dark:text-gray-200/90 hover:text-gray-500 dark:hover:text-gray-200"
             >
               {tag.category.title}
             </p>
           ))}
         </div>
-        <div className="mt-3 max-w-none text-primaryLight dark:text-gray-400">
+        <div className="mt-3 text-gray-400 max-w-none">
           <PortableText blocks={excerpt} />
         </div>
       </div>

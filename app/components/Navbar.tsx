@@ -22,13 +22,16 @@ export default function Navbar() {
   };
 
   return (
-    <div className="max-w-4xl px-4 py-4 mx-auto md:border-b md:pt-8 md:pb-6 border-neptune-500 dark:border-amber-500/30">
+    <div className="max-w-4xl px-4 py-4 mx-auto md:border-b md:pt-8 md:pb-6 dark:border-amber-500/30 border-teal-600/30">
       {/* Mobile nav */}
-      <div className="fixed inset-x-0 top-0 z-50 grid border-opacity-30 grid-cols-1 px-2 py-1.5 border-b border-neptune-500 bg-[#fcf7ed] dark:border-yellow-500 dark:border-opacity-30 bg-opacity-90 dark:bg-opacity-90 backdrop-filter backdrop-blur-lg dark:bg-bgDark md:hidden">
+      <div className="fixed inset-x-0 top-0 z-50 grid grid-cols-1 px-2 py-1.5 border-b border-teal-600/30 dark:border-amber-500/30 backdrop-filter backdrop-blur-lg dark:bg-bgDark/90 bg-bgLight md:hidden">
         <div className="flex justify-between pr-2">
           <div className="inline-flex items-center mx-4 text-base font-medium md:mx-0">
             <div
-              onClick={() => router.push("/")}
+              onClick={() => {
+                router.push("/");
+                setIsExpanded(false);
+              }}
               className="relative w-8 h-8 cursor-pointer"
             >
               <Image alt="lucianov logo" src={logoHandler()} layout="fill" />
@@ -38,12 +41,12 @@ export default function Navbar() {
             <ThemeSwitch />
             <div className="pt-2 pr-1">
               <button
-                className="text-gray-400 transition duration-300 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-100"
+                className="text-gray-400 transition duration-300 dark:text-gray-300"
                 onClick={() => setIsExpanded(!isExpanded)}
               >
                 {isExpanded ? (
                   <BiX
-                    className="block w-8 h-8 border border-opacity-50 rounded-md border-neptune-500 dark:border-yellow-500 dark:border-opacity-80"
+                    className="block w-8 h-8 border rounded-md border-teal-600/50 dark:border-amber-500/50"
                     aria-hidden="true"
                   />
                 ) : (
@@ -60,11 +63,14 @@ export default function Navbar() {
           <div className="h-screen pt-10">
             {defaultRoutes.map((route) => (
               <div
-                className="pt-4 pb-2 mx-4 border-b border-opacity-50 bg border-neptune-500 dark:border-yellow-500 dark:border-opacity-30"
-                onClick={() => router.push(route.path)}
+                className="pt-4 pb-2 mx-4 border-b border-teal-600/50 dark:border-amber-500/30"
+                onClick={() => {
+                  router.push(route.path);
+                  setIsExpanded(false);
+                }}
                 key={route.path}
               >
-                <p className="my-4 font-sans text-sm font-semibold text-right text-opacity-80">
+                <p className="my-4 text-sm font-semibold text-right">
                   {route.label}
                 </p>
               </div>
@@ -89,11 +95,11 @@ export default function Navbar() {
               <Link href={route.path} key={route.path}>
                 <a
                   className={clsx(
-                    "px-6 py-2 rounded-md font-semibold text-sm tracking-wide transition duration-300 border-transparent",
+                    "px-6 py-2 rounded-md font-semibold text-sm tracking-wide transition duration-300",
                     {
-                      "border dark:border-amber-500/20 dark:text-amber-500/90":
+                      "border dark:border-amber-500/20 dark:text-amber-500/90 border-teal-500/30 text-teal-600/90":
                         isActive,
-                      "dark:text-gray-300 text-gray-400 hover:text-gray-500 dark:hover:text-gray-200":
+                      "dark:text-gray-300 text-gray-500/90 hover:text-gray-500 dark:hover:text-gray-200":
                         !isActive,
                     }
                   )}

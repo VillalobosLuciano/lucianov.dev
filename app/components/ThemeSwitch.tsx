@@ -20,7 +20,7 @@ const ThemeSwitch = () => {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
-          className="text-gray-400 transition duration-300 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-200"
+          className="text-gray-400 transition duration-300 dark:text-gray-300 hover:text-gray-500/90 dark:hover:text-gray-200"
         >
           {theme === "dark" || resolvedTheme === "dark" ? (
             <path

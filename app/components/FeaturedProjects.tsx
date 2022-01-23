@@ -4,7 +4,7 @@ import ProjectPreview from "@/components/ProjectPreview";
 export default function Projects({ projects }) {
   return (
     <section>
-      <p className="px-4 pb-4 mt-2 leading-snug text-primaryLight dark:text-gray-400 lg:pb-12">
+      <p className="px-4 pb-4 mt-2 leading-snug text-gray-400 lg:pb-12">
         Real projects that I developed for learning, for friends, for free, for
         <b> fun</b>.
       </p>
@@ -33,7 +33,7 @@ export default function Projects({ projects }) {
 
       <div className="flex mt-6 mb-4 sm:hidden">
         <Link href="/projects">
-          <a className="w-full py-2 mx-4 text-base font-semibold text-center border rounded-md dark:border-amber-500/40 text-neptune-500 border-opacity-80 border-neptune-500 dark:text-amber-500/90 md:hidden">
+          <a className="w-full py-2 mx-4 text-base font-semibold text-center border rounded-md text-teal-500/90 dark:border-amber-500/40 border-teal-500/40 dark:text-amber-500/90 md:hidden">
             View all<span aria-hidden="true"> &rarr;</span>
           </a>
         </Link>
