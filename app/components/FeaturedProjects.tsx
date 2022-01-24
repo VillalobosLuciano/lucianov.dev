@@ -5,8 +5,8 @@ export default function Projects({ projects }) {
   return (
     <section>
       <p className="px-4 pb-4 mt-2 leading-snug text-gray-400 lg:pb-12">
-        Real projects that I developed for learning, for friends, for free, for
-        <b> fun</b>.
+        These are real projects I developed for learning, for friends, for free,
+        for<b> fun</b>.
       </p>
 
       <div className="px-4 py-6 mx-auto overflow-hidden md:py-0">

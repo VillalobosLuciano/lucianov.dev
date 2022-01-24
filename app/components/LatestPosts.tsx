@@ -5,7 +5,7 @@ export default function LatestPosts({ posts }) {
   return (
     <section className="pb-6 lg:pb-24">
       <p className="px-4 pb-1 mt-2 leading-snug text-gray-400 lg:pb-4">
-        A place to share, also checkpoints in my learning process.
+        This is where I document my learning journey.
       </p>
       <div className="grid grid-cols-1 space-y-10 divide-y divide-teal-600/10 dark:divide-amber-500/10">
         {posts.map((post) => (
