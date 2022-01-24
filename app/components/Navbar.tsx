@@ -97,7 +97,7 @@ export default function Navbar() {
                   className={clsx(
                     "px-6 py-2 rounded-md font-semibold text-sm tracking-wide transition duration-300",
                     {
-                      "border dark:border-amber-500/20 dark:text-amber-500/90 border-teal-500/30 text-teal-600/90":
+                      "border dark:border-amber-500/20 dark:text-amber-500/90 border-teal-600/30 text-teal-600/90":
                         isActive,
                       "dark:text-gray-300 text-gray-500/90 hover:text-gray-500 dark:hover:text-gray-200":
                         !isActive,

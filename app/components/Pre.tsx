@@ -3,7 +3,7 @@ import { useTheme } from "next-themes";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
   xonokai,
-  a11yLight,
+  oakidia,
 } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import NoSsr from "./NoSsr";
 
@@ -42,7 +42,7 @@ export default function Pre({ children, language }) {
             type="button"
             className={`z-20 absolute right-2 top-2 lg:right-2.5 lg:top-2.5 w-9 h-9 p-1.5 rounded-md border dark:border-amber-500/30 hidden lg:block ${
               copied
-                ? "focus:outline-none focus:border-amber-500/90 border-amber-500/90"
+                ? "focus:outline-none focus:border-teal-600/90 border-teal-600/90 dark:focus:border-amber-500/90 dark:border-amber-500/90"
                 : "border-gray-300/90"
             }`}
             onClick={onCopy}
@@ -52,7 +52,11 @@ export default function Pre({ children, language }) {
               viewBox="0 0 24 24"
               stroke="currentColor"
               fill="none"
-              className={copied ? "text-amber-500/90" : "text-gray-300/90"}
+              className={
+                copied
+                  ? "text-teal-600/90 dark:text-amber-500/90"
+                  : "dark:text-gray-300 text-gray-400"
+              }
             >
               {copied ? (
                 <>
@@ -76,26 +80,26 @@ export default function Pre({ children, language }) {
             </svg>
           </button>
         )}
-        <pre className="text-base border border-amber-500/20">
+        <pre className="border rounded-md border-teal-600/20 dark:border-amber-500/20">
           <SyntaxHighlighter
             codeTagProps={{
               className: `${
-                currentTheme === "dark" ? "text-gray-300" : "text-gray-700"
+                currentTheme === "dark" ? "text-gray-300" : "text-gray-600"
               }`,
             }}
             language={language}
-            style={currentTheme === "dark" ? xonokai : a11yLight}
+            style={currentTheme === "dark" ? xonokai : oakidia}
             customStyle={
               currentTheme === "dark"
                 ? {
-                    border: "none",
-                    margin: "-4px 1px",
                     backgroundColor: "#161618",
+                    border: "none",
+                    margin: "-1px 0",
                   }
                 : {
+                    backgroundColor: "#fbfcfc",
                     border: "none",
-                    backgroundColor: "#FEFBF3",
-                    margin: "-4px 1px",
+                    margin: "1px 0",
                   }
             }
           >

@@ -7,7 +7,7 @@ export default function LatestPosts({ posts }) {
       <p className="px-4 pb-1 mt-2 leading-snug text-gray-400 lg:pb-4">
         A place to share, also checkpoints in my learning process.
       </p>
-      <div className="grid grid-cols-1 space-y-10 divide-y divide-teal-500/10 dark:divide-amber-500/10">
+      <div className="grid grid-cols-1 space-y-10 divide-y divide-teal-600/10 dark:divide-amber-500/10">
         {posts.map((post) => (
           <PostPreview
             key={post.slug}
@@ -21,7 +21,7 @@ export default function LatestPosts({ posts }) {
       </div>
       <div className="flex mt-12 mb-16 sm:hidden">
         <Link href="/blog">
-          <a className="w-full py-2 mx-4 text-base font-semibold text-center border rounded-md text-teal-500/90 dark:border-amber-500/40 border-teal-500/40 dark:text-amber-500/90 md:hidden">
+          <a className="w-full py-2 mx-4 text-base font-semibold text-center border rounded-md text-teal-600/90 dark:border-amber-500/40 border-teal-600/40 dark:text-amber-500/90 md:hidden">
             View all<span aria-hidden="true"> &rarr;</span>
           </a>
         </Link>

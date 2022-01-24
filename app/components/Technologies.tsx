@@ -8,9 +8,9 @@ export default function Technologies({ technologies }) {
 
   return (
     <>
-      <hr className="w-6 mt-16 mb-2 ml-4 border-2 lg:mt-24 border-teal-500/30 dark:border-amber-500/30" />
+      <hr className="w-6 mt-16 mb-2 ml-4 border-2 lg:mt-24 border-teal-600/30 dark:border-amber-500/30" />
       <div className="px-4">
-        <h2 className="text-3xl font-extrabold tracking-tight text-gray-500/90 dark:text-gray-300 md:mx-0 sm:text-4xl">
+        <h2 className="text-3xl font-extrabold tracking-tight text-gray-500 dark:text-gray-300 md:mx-0 sm:text-4xl">
           Tech stack
         </h2>
         <p className="mt-2 leading-snug text-gray-400">
@@ -25,7 +25,7 @@ export default function Technologies({ technologies }) {
               {user.map((tech, i) => (
                 <Tooltip text={tech.name} position="bottom" key={tech._id}>
                   <motion.div
-                    className="py-4 border rounded-md border-teal-500/10 dark:border-amber-500/10"
+                    className="py-4 border rounded-md border-teal-600/10 dark:border-amber-500/10"
                     key={tech._id}
                     initial={{
                       opacity: 0,
@@ -49,7 +49,7 @@ export default function Technologies({ technologies }) {
               ))}
             </div>
             <div className="w-full pt-4 mb-2 text-center">
-              <hr className="mb-2 border border-teal-500/30 dark:border-amber-500/30" />
+              <hr className="mb-2 border border-teal-600/30 dark:border-amber-500/30" />
               <span className="font-thin tracking-tight text-gray-400">
                 Current stack
               </span>
@@ -60,7 +60,7 @@ export default function Technologies({ technologies }) {
               {learning.map((tech, i) => (
                 <Tooltip text={tech.name} position="bottom" key={tech._id}>
                   <motion.div
-                    className="py-4 border rounded-md border-teal-500/10 dark:border-amber-500/10"
+                    className="py-4 border rounded-md border-teal-600/10 dark:border-amber-500/10"
                     key={tech._id}
                     initial={{
                       opacity: 0,
@@ -84,7 +84,7 @@ export default function Technologies({ technologies }) {
               ))}
             </div>
             <div className="w-full pt-4 mb-2 text-center">
-              <hr className="mb-2 border border-teal-500/30 dark:border-amber-500/30" />
+              <hr className="mb-2 border border-teal-600/30 dark:border-amber-500/30" />
               <span className="font-thin tracking-tight text-gray-400">
                 Learning
               </span>

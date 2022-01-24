@@ -13,7 +13,7 @@ export default function ProjectHeader({
   return (
     <>
       <div className="flex flex-col mx-4 mt-20 lg:mt-16 lg:space-x-6 lg:items-center lg:flex-row">
-        <div className="relative w-32 border rounded-md lg:-mb-1.5 lg:h-36 lg:w-40 border-amber-500/20 h-28">
+        <div className="relative w-32 border rounded-md lg:-mb-1.5 lg:h-36 lg:w-40 dark:border-amber-500/20 border-teal-600/20 h-28">
           <SanityImage
             placeholderFilter="hue-rotate"
             src={mainImage}
@@ -22,15 +22,15 @@ export default function ProjectHeader({
         </div>
         <div className="flex-col my-4 space-y-2 lg:space-y-5">
           <div className="lg:pt-1 lg:space-y-1">
-            <h1 className="text-3xl font-extrabold leading-9 tracking-tight md:leading-14 text-neptune-500 dark:text-gray-300 sm:text-4xl sm:leading-10 md:text-5xl">
+            <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-600/90 md:leading-14 dark:text-gray-300 sm:text-4xl sm:leading-10 md:text-5xl">
               {projectName}
             </h1>
-            <p className="text-lg text-gray-900 sm:text-xl dark:text-gray-400">
+            <p className="text-lg text-gray-500 sm:text-xl dark:text-gray-400">
               {projectDescription}
             </p>
           </div>
 
-          <div className="flex space-x-2 text-lg text-gray-400 dark:text-gray-300">
+          <div className="flex space-x-2">
             <IconButton href={website}>
               <FaLink className="w-5 h-5" />
             </IconButton>

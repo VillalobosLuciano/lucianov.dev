@@ -13,7 +13,7 @@ export default function Avatar({ name, image }) {
       <div className="relative w-5 h-5 mr-2 -mb-0.5">
         <Image src={logoHandler()} layout="fill" alt={name} />
       </div>
-      <div className="text-sm text-primaryLight dark:text-gray-400">{name}</div>
+      <div className="text-sm text-gray-500 dark:text-gray-300">{name}</div>
     </div>
   );
 }

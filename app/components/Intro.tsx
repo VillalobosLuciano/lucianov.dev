@@ -46,7 +46,7 @@ export default function Intro({ about }) {
             </motion.div>
           </div>
 
-          <div className="relative border dark:border-amber-500/20 border-teal-500/20 lg:col-start-1 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-12 lg:items-center">
+          <div className="relative border dark:border-amber-500/20 border-teal-600/20 lg:col-start-1 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-12 lg:items-center">
             <div className="relative max-w-md pl-16 mx-auto mr-6 space-y-5 sm:max-w-3xl lg:max-w-none lg:col-start-1 lg:col-span-10">
               <motion.h2
                 className="text-3xl font-extrabold text-gray-500/90 dark:text-gray-300"

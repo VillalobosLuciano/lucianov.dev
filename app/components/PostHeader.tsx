@@ -10,7 +10,7 @@ export default function PostHeader({ title, date, author }) {
         <PostTitle>{title}</PostTitle>
         <div className="flex items-center py-4 space-x-3">
           <Avatar name={author.name} image={author.image} />
-          <div className="text-sm text-primaryLight dark:text-gray-400">|</div>
+          <div className="text-sm text-gray-500 dark:text-gray-300">|</div>
           <Date dateString={date} />
         </div>
       </div>

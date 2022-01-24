@@ -25,7 +25,7 @@ export default function ProjectPreview({
       >
         <div
           onClick={() => router.push(`/projects/${slug}`)}
-          className="relative overflow-hidden border rounded-md cursor-pointer dark:border-amber-500/20 border-teal-500/20 group aspect-4/3"
+          className="relative overflow-hidden border rounded-md cursor-pointer dark:border-amber-500/20 border-teal-600/20 group aspect-4/3"
         >
           <SanityImage
             src={mainImage}
@@ -35,7 +35,7 @@ export default function ProjectPreview({
         <div className="flex items-end justify-between mx-0.5 mt-3">
           <div className="-space-y-0.5">
             <h3
-              className="text-lg font-semibold leading-snug transition duration-300 cursor-pointer text-teal-500/90 hover:text-teal-500 dark:text-amber-500/90 dark:hover:text-amber-500"
+              className="text-lg font-semibold leading-snug transition duration-300 cursor-pointer text-teal-600/90 hover:text-teal-600 dark:text-amber-500/90 dark:hover:text-amber-500"
               onClick={() => router.push(`/projects/${slug}`)}
             >
               {projectName}
