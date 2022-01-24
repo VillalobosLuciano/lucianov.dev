@@ -84,7 +84,7 @@ export default function Pre({ children, language }) {
           <SyntaxHighlighter
             codeTagProps={{
               className: `${
-                currentTheme === "dark" ? "text-gray-300" : "text-gray-600"
+                currentTheme === "dark" ? "text-gray-300" : "text-gray-500"
               }`,
             }}
             language={language}
@@ -99,7 +99,7 @@ export default function Pre({ children, language }) {
                 : {
                     backgroundColor: "#fbfcfc",
                     border: "none",
-                    margin: "1px 0",
+                    margin: "2px 0",
                   }
             }
           >

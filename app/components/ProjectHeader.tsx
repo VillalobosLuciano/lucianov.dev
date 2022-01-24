@@ -7,7 +7,7 @@ export default function ProjectHeader({
   projectType,
   mainImage,
   website,
-  code,
+  source,
   projectDescription,
 }) {
   return (
@@ -30,13 +30,17 @@ export default function ProjectHeader({
             </p>
           </div>
 
-          <div className="flex space-x-2">
-            <IconButton href={website}>
-              <FaLink className="w-5 h-5" />
-            </IconButton>
-            <IconButton href={code}>
-              <FaGithub className="w-5 h-5" />
-            </IconButton>
+          <div className="flex space-x-2 text-lg">
+            {website && (
+              <IconButton href={website}>
+                <FaLink className="w-5 h-5" />
+              </IconButton>
+            )}
+            {source && (
+              <IconButton href={source}>
+                <FaGithub className="w-5 h-5" />
+              </IconButton>
+            )}
           </div>
         </div>
       </div>

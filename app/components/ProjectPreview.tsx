@@ -44,13 +44,17 @@ export default function ProjectPreview({
               {projectType}
             </p>
           </div>
-          <div className="flex space-x-2 text-lg">
-            <IconButton href={website}>
-              <FaLink className="w-5 h-5" />
-            </IconButton>
-            <IconButton href={source}>
-              <FaGithub className="w-5 h-5" />
-            </IconButton>
+          <div className="flex space-x-2">
+            {website && (
+              <IconButton href={website}>
+                <FaLink className="w-5 h-5" />
+              </IconButton>
+            )}
+            {source && (
+              <IconButton href={source}>
+                <FaGithub className="w-5 h-5" />
+              </IconButton>
+            )}
           </div>
         </div>
       </div>
