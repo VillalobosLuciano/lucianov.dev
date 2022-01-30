@@ -1,10 +1,16 @@
 import "@/css/tailwind.css";
 import { ThemeProvider } from "next-themes";
 import { motion } from "framer-motion";
+import { hotjar } from "react-hotjar";
 import type { AppProps } from "next/app";
 import Layout from "../components/Layout";
+import { useEffect } from "react";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
+  useEffect(() => {
+    hotjar.initialize(2806310, 6);
+  }, []);
+
   return (
     <ThemeProvider attribute="class">
       <Layout>
