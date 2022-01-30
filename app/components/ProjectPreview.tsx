@@ -3,6 +3,7 @@ import { FaGithub, FaLink } from "react-icons/fa";
 import clsx from "clsx";
 import SanityImage from "./SanityImage";
 import IconButton from "./IconButton";
+import { hotjar } from "react-hotjar";
 
 export default function ProjectPreview({
   slug,
@@ -15,6 +16,12 @@ export default function ProjectPreview({
   source,
 }) {
   const router = useRouter();
+
+  const handleClick = () => {
+    hotjar.event(`${projectName} y wea`);
+    router.push(`/projects/${slug}`);
+  };
+
   return (
     <div className="inline-block snap-center">
       <div
@@ -24,7 +31,7 @@ export default function ProjectPreview({
         })}
       >
         <div
-          onClick={() => router.push(`/projects/${slug}`)}
+          onClick={handleClick}
           className="relative overflow-hidden border rounded-md cursor-pointer dark:border-amber-500/20 border-teal-600/20 group aspect-4/3"
         >
           <SanityImage
