@@ -47,16 +47,29 @@ export const indexQuery = groq`{
   },
 }`;
 
+// export const postQuery = groq`
+// {
+//   "post": *[_type == "post" && slug.current == $slug][0] {
+//     body,
+//     ${postFields}
+//   },
+// }
+// `;
+
 export const postQuery = groq`
 {
-  "post": *[_type == "post" && slug.current == $slug][0] {
+  "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) [0] {
     body,
     ${postFields}
   },
-  "morePosts": *[_type == "post" && slug.current != $slug][0...2] | order(date desc) {
+  "next": *[_type == "post" && slug.current < $slug] | order(date asc, _updatedAt asc) [0] {
     ${postFields}
-  }
-}`;
+  },
+  "previous": *[_type == "post" && slug.current > $slug] | order(date desc, _updatedAt desc) [0] {
+    ${postFields}
+  },
+}
+`;
 
 export const postSlugsQuery = groq`
 *[_type == "post" && defined(slug.current)][].slug.current

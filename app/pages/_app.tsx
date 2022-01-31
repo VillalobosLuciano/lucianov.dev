@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   }, []);
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+    <ThemeProvider attribute="class" defaultTheme="dark">
       <Layout>
         <motion.div
           key={router.route}

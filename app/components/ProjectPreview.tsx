@@ -3,7 +3,6 @@ import { FaGithub, FaLink } from "react-icons/fa";
 import clsx from "clsx";
 import SanityImage from "./SanityImage";
 import IconButton from "./IconButton";
-import { hotjar } from "react-hotjar";
 
 export default function ProjectPreview({
   slug,
@@ -18,7 +17,6 @@ export default function ProjectPreview({
   const router = useRouter();
 
   const handleClick = () => {
-    hotjar.event(`${projectName} y wea`);
     router.push(`/projects/${slug}`);
   };
 
