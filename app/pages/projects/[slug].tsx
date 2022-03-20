@@ -87,7 +87,6 @@ export async function getStaticProps({ params, preview = false }) {
         moreProjects: overlayDrafts(moreProjects),
       },
     },
-    revalidate: 60,
   };
 }
 
